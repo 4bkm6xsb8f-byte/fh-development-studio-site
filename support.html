@@ -1,46 +1,114 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Support - FH Development Studio</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support | FH Development Studio</title>
+  <meta name="description" content="Support information for FH Development Studio applications, including FHWebCheck." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" href="assets/fh-icon.png" />
 </head>
 <body>
-<div class="container">
-    <div class="nav">
-        <a href="/">Home</a>
-        <a href="/privacy.html">Privacy</a>
-        <a href="/support.html">Support</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="FH Development Studio Home">
+        <img class="brand-logo" src="assets/fh-logo.png" alt="FH Development Studio logo" />
+      </a>
+
+      <nav class="nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="privacy.html">Privacy</a>
+        <a class="active" href="support.html">Support</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
+  </header>
 
-    <h1>Support</h1>
+  <main>
+    <section class="page-banner" style="background: linear-gradient(135deg, #f4f8fd 0%, #dceafb 55%, #ffffff 100%); color: var(--primary-dark);">
+      <div class="container page-banner-inner">
+        <h1 style="color: var(--primary-dark); text-shadow: none;">Support</h1>
+        <p style="color: var(--text-soft);">
+          We’re here to help with questions about our apps, product behavior, and basic troubleshooting.
+        </p>
+      </div>
+    </section>
 
-    <p>
-        Need help with one of our applications? Contact us below.
-    </p>
+    <section class="section">
+      <div class="container support-grid">
+        <div class="card support-card" id="contact">
+          <div class="support-card-title">
+            <span class="support-icon-wrap" aria-hidden="true">
+              <svg viewBox="0 0 64 64" width="38" height="38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 16C6 12.6863 8.68629 10 12 10H52C55.3137 10 58 12.6863 58 16V48C58 51.3137 55.3137 54 52 54H12C8.68629 54 6 51.3137 6 48V16Z" fill="#8CE29D"/>
+                <path d="M8 16.5L29.2 31.2C30.8926 32.3742 33.1074 32.3742 34.8 31.2L56 16.5" stroke="#1C4AA8" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <rect x="6" y="10" width="52" height="44" rx="6" stroke="#1C4AA8" stroke-width="3.5"/>
+              </svg>
+            </span>
+            <span>Contact Support</span>
+          </div>
 
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:support@fhdevelopmentstudio.com">support@fhdevelopmentstudio.com</a></p>
+          <div class="support-box">
+            <p>
+              Email us at
+              <a href="mailto:support@fhdevelopmentstudio.com">support@fhdevelopmentstudio.com</a>
+            </p>
 
-    <h2>FHWebCheck Help</h2>
+            <a
+              class="btn btn-primary"
+              href="mailto:support@fhdevelopmentstudio.com?subject=FH%20Development%20Studio%20Support%20Request"
+            >
+              Send a Message
+            </a>
+          </div>
+        </div>
 
-    <h3>Why is a site showing offline?</h3>
-    <p>
-        Temporary connectivity or server issues can cause false offline readings.
-        Recheck after a short period.
-    </p>
+        <div class="card faq-card">
+          <div class="faq-title">
+            <span class="faq-icon-wrap" aria-hidden="true">
+              <img src="assets/fh-icon.png" alt="" />
+            </span>
+            <span>FHWebCheck FAQs</span>
+          </div>
 
-    <h3>How often are checks performed?</h3>
-    <p>
-        Checks occur when the app is opened and periodically in the background,
-        depending on iOS system scheduling.
-    </p>
+          <div class="faq-list">
+            <div class="faq-item">
+              <h3>Why is my site showing offline?</h3>
+              <p>
+                A website may appear offline because of temporary hosting issues, network routing problems,
+                SSL or DNS issues, or short-lived server outages. Try checking again after a few minutes.
+              </p>
+            </div>
 
-    <h3>Notifications not working?</h3>
-    <p>
-        Ensure notifications are enabled for the app in iOS settings.
-    </p>
+            <div class="faq-item">
+              <h3>How often are checks done?</h3>
+              <p>
+                FHWebCheck checks sites when the app is opened and may perform background activity based on
+                iOS scheduling behavior. Actual background timing is controlled in part by the operating system.
+              </p>
+            </div>
 
-    <p>Typical response time: 1–2 business days.</p>
-</div>
+            <div class="faq-item">
+              <h3>Not receiving notifications?</h3>
+              <p>
+                Make sure notifications are enabled for FHWebCheck in iPhone Settings. Also confirm that Focus modes,
+                summary delivery, or notification permissions are not suppressing alerts.
+              </p>
+            </div>
+          </div>
+
+          <p class="spacer-top" style="margin:18px 2px 0; color: var(--muted);">
+            Typical response time: 1–2 business days.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      © 2026 FH Development Studio. All rights reserved.
+    </div>
+  </footer>
 </body>
 </html>
