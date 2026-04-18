@@ -57,7 +57,7 @@ a:hover { text-decoration: underline; }
 }
 
 .brand { display: flex; align-items: center; gap: 14px; min-width: 0; }
-.brand-logo { height: 44px; width: auto; }
+.brand-logo { height: 70px; width: auto; }
 .brand-icon { height: 42px; width: 42px; object-fit: contain; }
 
 .nav { display: flex; align-items: center; gap: 28px; }
