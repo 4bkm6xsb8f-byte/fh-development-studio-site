@@ -1,32 +1,99 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>FH Development Studio</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FH Development Studio</title>
+  <meta name="description" content="FH Development Studio builds simple, reliable applications with clarity, performance, and privacy in mind." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" href="assets/fh-icon.png" />
 </head>
 <body>
-<div class="container">
-    <div class="nav">
-        <a href="/">Home</a>
-        <a href="/privacy.html">Privacy</a>
-        <a href="/support.html">Support</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="FH Development Studio Home">
+        <img class="brand-logo" src="assets/fh-logo.png" alt="FH Development Studio logo" />
+      </a>
+
+      <nav class="nav" aria-label="Main navigation">
+        <a class="active" href="index.html">Home</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="support.html">Support</a>
+        <a href="support.html#contact">Contact</a>
+      </nav>
     </div>
+  </header>
 
-    <h1>FH Development Studio</h1>
-    <p class="tagline">
-        Building simple, reliable applications with a focus on performance and clarity.
-    </p>
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <span class="kicker">FH Development Studio</span>
+        <h1>Building Apps with Clarity and Performance</h1>
+        <p>
+          Crafting reliable mobile applications with a focus on simplicity, usability,
+          clean design, and dependable real-world performance.
+        </p>
 
-    <h2>Applications</h2>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="support.html#contact">Get in Touch</a>
+          <a class="btn btn-secondary" href="#apps">View Our Apps</a>
+        </div>
+      </div>
+    </section>
 
-    <h3>FHWebCheck</h3>
-    <p>
-        FHWebCheck is an iPhone app that monitors websites and alerts you when they go offline.
-        Designed for simplicity, speed, and reliability.
-    </p>
+    <section class="section" id="apps">
+      <div class="container">
+        <h2 class="section-title">Our Apps</h2>
 
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:support@fhdevelopmentstudio.com">support@fhdevelopmentstudio.com</a></p>
-</div>
+        <div class="card apps-card">
+          <div class="app-feature">
+            <div class="app-phone" aria-hidden="true">
+              <div class="app-phone-screen">
+                <div class="status-badge"></div>
+              </div>
+            </div>
+
+            <div class="app-copy">
+              <h3>FHWebCheck</h3>
+              <p>
+                Website monitoring for people who want fast visibility into uptime issues.
+                FHWebCheck helps users check website availability and stay informed when a site goes offline.
+              </p>
+              <a class="btn btn-primary" href="support.html">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">About Us</h2>
+
+        <div class="card about-card">
+          <ul class="about-list">
+            <li>
+              <span class="check" aria-hidden="true"></span>
+              <span><strong>FH Development Studio</strong> is dedicated to building intuitive, focused, high-performance applications.</span>
+            </li>
+            <li>
+              <span class="check" aria-hidden="true"></span>
+              <span>We emphasize clear user experience, strong visual polish, and practical reliability over unnecessary complexity.</span>
+            </li>
+            <li>
+              <span class="check" aria-hidden="true"></span>
+              <span>Privacy and straightforward support are part of the product, not an afterthought.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      © 2026 FH Development Studio. All rights reserved.
+    </div>
+  </footer>
 </body>
 </html>
