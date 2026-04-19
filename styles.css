@@ -129,7 +129,7 @@ a:hover { text-decoration: underline; }
 .hero-inner {
   position: relative;
   z-index: 1;
-  padding: 88px 0 92px;
+  padding: 76px 0 80px;
 }
 
 .hero-layout {
@@ -198,15 +198,15 @@ a:hover { text-decoration: underline; }
 
 .hero-panel {
   padding: 28px;
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, rgba(242, 247, 255, 0.92) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.35);
   box-shadow: var(--shadow-strong);
   backdrop-filter: blur(10px);
 }
 
 .hero-panel h2 {
   margin: 0 0 18px;
-  color: white;
+  color: var(--primary-dark);
   font-size: var(--fs-title-sm);
   line-height: 1.2;
 }
@@ -221,18 +221,19 @@ a:hover { text-decoration: underline; }
   min-height: 120px;
   padding: 18px;
   border-radius: 12px;
-  background: rgba(8, 26, 64, 0.34);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(233, 241, 252, 0.96) 100%);
+  border: 1px solid rgba(17, 70, 166, 0.10);
 }
 
 .hero-stat strong {
   display: block;
   margin-bottom: 8px;
   font-size: 1rem;
+  color: var(--primary-dark);
 }
 
 .hero-stat span {
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--text-soft);
   font-size: var(--fs-body);
   line-height: 1.55;
 }
@@ -277,7 +278,7 @@ a:hover { text-decoration: underline; }
   border: 1px solid var(--line);
 }
 
-.section { padding: 56px 0; }
+.section { padding: 44px 0; }
 
 .section-tinted {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.36) 0%, rgba(242, 247, 255, 0.75) 100%);
@@ -531,7 +532,7 @@ a:hover { text-decoration: underline; }
 .page-banner-inner {
   position: relative;
   z-index: 1;
-  padding: 70px 0 74px;
+  padding: 58px 0 62px;
   text-align: center;
   max-width: 820px;
   margin: 0 auto;
@@ -892,6 +893,10 @@ a:hover { text-decoration: underline; }
   justify-content: center;
 }
 
+.support-icon-wrap svg {
+  display: block;
+}
+
 .support-box {
   border: 1px solid var(--line);
   background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
@@ -1021,7 +1026,11 @@ a:hover { text-decoration: underline; }
     align-items: flex-start;
   }
 
-  .nav { gap: 18px; }
+  .nav {
+    width: 100%;
+    gap: 12px 18px;
+    align-items: flex-start;
+  }
   .nav a.active::after,
   .nav a:hover::after { bottom: -8px; }
 
@@ -1048,14 +1057,19 @@ a:hover { text-decoration: underline; }
     text-align: center;
   }
 
+  .hero-actions,
+  .inline-actions {
+    justify-content: center;
+  }
+
   .app-copy p { margin-left: auto; margin-right: auto; }
   .hero-stat-grid { grid-template-columns: 1fr 1fr; }
 }
 
 @media (max-width: 720px) {
   .container { width: min(var(--max), calc(100% - 28px)); }
-  .hero-inner { padding: 66px 0 72px; }
-  .page-banner-inner { padding: 54px 0 58px; }
+  .hero-inner { padding: 60px 0 66px; }
+  .page-banner-inner { padding: 48px 0 52px; }
 
   .apps-card,
   .support-card,
@@ -1068,13 +1082,68 @@ a:hover { text-decoration: underline; }
   .cta-card { padding: 20px; }
 
   .brand-logo { height: 38px; }
-  .section { padding: 40px 0; }
+  .section { padding: 34px 0; }
   .footer-shell { padding: 26px 0 18px; }
   .footer-inner { padding: 16px 0 22px; }
+  .nav {
+    gap: 10px 14px;
+  }
+  .nav a {
+    font-size: 0.92rem;
+  }
+  .hero-layout {
+    gap: 24px;
+  }
+  .hero-copy p,
+  .page-banner p,
+  .section-intro,
+  .content-block p,
+  .content-block li,
+  .feature-card p,
+  .service-card p,
+  .process-card p,
+  .app-copy p,
+  .support-box p,
+  .faq-item p,
+  .cta-card p {
+    font-size: 1rem;
+  }
+  .hero-actions,
+  .inline-actions {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+  .hero-actions .btn,
+  .inline-actions .btn {
+    width: 100%;
+  }
+  .hero-points {
+    gap: 10px;
+    margin-top: 22px;
+  }
+  .hero-panel {
+    padding: 20px;
+  }
+  .hero-stat {
+    min-height: 0;
+    padding: 16px;
+  }
+  .support-grid {
+    grid-template-columns: 1fr;
+  }
+  .support-card-title,
+  .faq-title {
+    font-size: 1.35rem;
+  }
   .hero-stat-grid,
   .feature-grid,
   .service-grid { grid-template-columns: 1fr; }
-  .footer-links { gap: 12px; }
+  .footer-links {
+    gap: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
   .workmark-lg { font-size: 2.4rem; }
   .workmark-md { font-size: 2rem; }
 }
