@@ -4,7 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Support | FH Development Studio</title>
-  <meta name="description" content="Support information for FH Development Studio applications, including FHWebCheck." />
+  <meta
+    name="description"
+    content="Contact FH Development Studio for app support, product questions, or inquiries about mobile and web development services."
+  />
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" type="image/png" href="assets/fh-icon.png" />
 </head>
@@ -16,6 +19,7 @@
       </a>
       <nav class="nav" aria-label="Main navigation">
         <a href="index.html">Home</a>
+        <a href="marketing.html">Services</a>
         <a href="privacy.html">Privacy</a>
         <a class="active" href="support.html">Support</a>
         <a href="#contact">Contact</a>
@@ -24,17 +28,19 @@
   </header>
 
   <main>
-    <section class="page-banner" style="background: linear-gradient(135deg, #f4f8fd 0%, #dceafb 55%, #ffffff 100%); color: var(--primary-dark);">
+    <section class="page-banner page-banner-light">
       <div class="container page-banner-inner">
-        <h1 style="color: var(--primary-dark); text-shadow: none;">Support</h1>
-        <p style="color: var(--text-soft);">
-          We’re here to help with questions about our apps, product behavior, and basic troubleshooting.
+        <span class="eyebrow">Support and Contact</span>
+        <h1>Reach FH Development Studio directly.</h1>
+        <p>
+          Use this page for app support, product questions, or to start a conversation
+          about a mobile app, website, or custom software project.
         </p>
       </div>
     </section>
 
     <section class="section">
-      <div class="container support-grid">
+      <div class="container support-grid support-grid-wide">
         <div class="card support-card" id="contact">
           <div class="support-card-title">
             <span class="support-icon-wrap" aria-hidden="true">
@@ -44,17 +50,26 @@
                 <rect x="6" y="10" width="52" height="44" rx="6" stroke="#1C4AA8" stroke-width="3.5"/>
               </svg>
             </span>
-            <span>Contact Support</span>
+            <span>Contact FH Development Studio</span>
           </div>
 
           <div class="support-box">
             <p>
-              Email us at
+              Email:
               <a href="mailto:support@fhdevelopmentstudio.com">support@fhdevelopmentstudio.com</a>
             </p>
-            <a class="btn btn-primary" href="mailto:support@fhdevelopmentstudio.com?subject=FH%20Development%20Studio%20Support%20Request">
-              Send a Message
-            </a>
+            <p>
+              Include the product name, a short description of the issue or request, and any relevant screenshots
+              or device details so we can respond more efficiently.
+            </p>
+            <div class="inline-actions">
+              <a class="btn btn-primary" href="mailto:support@fhdevelopmentstudio.com?subject=FH%20Development%20Studio%20Inquiry">
+                Send an Email
+              </a>
+              <a class="btn btn-secondary btn-secondary-dark" href="marketing.html">
+                View Services
+              </a>
+            </div>
           </div>
         </div>
 
@@ -63,42 +78,83 @@
             <span class="faq-icon-wrap" aria-hidden="true">
               <img src="assets/fh-icon.png" alt="" />
             </span>
-            <span>FHWebCheck FAQs</span>
+            <span>Support Details</span>
           </div>
 
           <div class="faq-list">
             <div class="faq-item">
-              <h3>Why is my site showing offline?</h3>
+              <h3>What can this page be used for?</h3>
               <p>
-                A website may appear offline because of temporary hosting issues, network routing problems,
-                SSL or DNS issues, or short-lived server outages. Try checking again after a few minutes.
+                Product support questions, bug reports, feature feedback, privacy questions,
+                and new business inquiries related to mobile or web development work.
               </p>
             </div>
             <div class="faq-item">
-              <h3>How often are checks done?</h3>
+              <h3>How quickly will you respond?</h3>
               <p>
-                FHWebCheck checks sites when the app is opened and may perform background activity based on
-                iOS scheduling behavior. Actual background timing is controlled in part by the operating system.
+                Typical response time is 1 to 2 business days. More complex product questions may require additional follow-up.
               </p>
             </div>
             <div class="faq-item">
-              <h3>Not receiving notifications?</h3>
+              <h3>What helps support move faster?</h3>
               <p>
-                Make sure notifications are enabled for FHWebCheck in iPhone Settings. Also confirm that Focus modes,
-                summary delivery, or notification permissions are not suppressing alerts.
+                Include the app or project name, the behavior you expected, what happened instead,
+                and the device, browser, or platform involved.
               </p>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
 
-          <p class="spacer-top" style="margin:18px 2px 0; color: var(--muted);">
-            Typical response time: 1–2 business days.
-          </p>
+    <section class="section section-tinted">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">FHWebCheck</span>
+          <h2 class="section-title">Quick answers for the current app.</h2>
+        </div>
+        <div class="card content-card">
+          <div class="content-stack">
+            <div class="content-block">
+              <h2>Why is a site showing offline?</h2>
+              <p>
+                Temporary hosting issues, DNS problems, SSL errors, or short outages can all affect availability checks.
+                If the issue appears briefly, try checking again after a short delay.
+              </p>
+            </div>
+            <div class="content-block">
+              <h2>How often are checks performed?</h2>
+              <p>
+                FHWebCheck performs checks when the app is opened and may run background activity according to iOS behavior.
+                Background timing is not fully controlled by the app itself.
+              </p>
+            </div>
+            <div class="content-block">
+              <h2>Not receiving notifications?</h2>
+              <p>
+                Verify notification permissions in iPhone Settings and make sure Focus modes, summaries,
+                or other notification controls are not delaying or suppressing alerts.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
+    <div class="container footer-shell">
+      <div class="footer-brand">
+        <strong>FH Development Studio</strong>
+        <p>Mobile apps, web experiences, and custom software built with focus and care.</p>
+      </div>
+      <div class="footer-links" aria-label="Footer links">
+        <a href="index.html">Home</a>
+        <a href="marketing.html">Services</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="mailto:support@fhdevelopmentstudio.com">support@fhdevelopmentstudio.com</a>
+      </div>
+    </div>
     <div class="container footer-inner">
       © 2026 FH Development Studio. All rights reserved.
     </div>

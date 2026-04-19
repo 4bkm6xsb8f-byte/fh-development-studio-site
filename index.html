@@ -3,8 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FH Development Studio</title>
-  <meta name="description" content="FH Development Studio builds simple, reliable applications with clarity, performance, and privacy in mind." />
+  <title>FH Development Studio | Mobile and Web Development</title>
+  <meta
+    name="description"
+    content="FH Development Studio designs and builds mobile apps, web products, and custom software with a focus on reliability, performance, and clear communication."
+  />
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" type="image/png" href="assets/fh-icon.png" />
 </head>
@@ -16,6 +19,7 @@
       </a>
       <nav class="nav" aria-label="Main navigation">
         <a class="active" href="index.html">Home</a>
+        <a href="marketing.html">Services</a>
         <a href="privacy.html">Privacy</a>
         <a href="support.html">Support</a>
         <a href="support.html#contact">Contact</a>
@@ -25,23 +29,84 @@
 
   <main>
     <section class="hero">
-      <div class="container hero-inner">
-        <span class="kicker">FH Development Studio</span>
-        <h1>Building Apps with Clarity and Performance</h1>
-        <p>
-          Crafting reliable mobile applications with a focus on simplicity, usability,
-          clean design, and dependable real-world performance.
-        </p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="support.html#contact">Get in Touch</a>
-          <a class="btn btn-secondary" href="#apps">View Our Apps</a>
+      <div class="container hero-inner hero-layout">
+        <div class="hero-copy">
+          <span class="kicker">Mobile and Web Development</span>
+          <h1>Practical software for teams that need dependable delivery.</h1>
+          <p>
+            FH Development Studio builds polished mobile apps, responsive websites, and custom tools
+            that are easy to use, straightforward to maintain, and ready for real-world growth.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="support.html#contact">Start a Conversation</a>
+            <a class="btn btn-secondary" href="marketing.html">Explore Services</a>
+          </div>
+          <ul class="hero-points" aria-label="Company strengths">
+            <li>iOS-focused mobile development and modern web experiences</li>
+            <li>Clear scoping, privacy-aware product decisions, and ongoing support</li>
+            <li>Fast, maintainable builds that prioritize usability and performance</li>
+          </ul>
+        </div>
+        <div class="hero-panel card">
+          <h2>What We Build</h2>
+          <div class="hero-stat-grid">
+            <div class="hero-stat">
+              <strong>Mobile Apps</strong>
+              <span>Native-feeling products built for reliability and clean user flows.</span>
+            </div>
+            <div class="hero-stat">
+              <strong>Web Platforms</strong>
+              <span>Marketing sites, dashboards, and internal tools that scale with your team.</span>
+            </div>
+            <div class="hero-stat">
+              <strong>Product Support</strong>
+              <span>Launch preparation, iteration planning, and direct post-release help.</span>
+            </div>
+            <div class="hero-stat">
+              <strong>Focused Scope</strong>
+              <span>Lean delivery with thoughtful tradeoffs instead of unnecessary complexity.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-tinted">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Capabilities</span>
+          <h2 class="section-title">A studio shaped around product clarity.</h2>
+          <p class="section-intro">
+            The site now presents FH Development Studio as a development partner, not only as the maker of a single app.
+          </p>
+        </div>
+        <div class="feature-grid">
+          <article class="card feature-card">
+            <h3>Mobile App Development</h3>
+            <p>Build and refine iPhone experiences with strong UX, thoughtful system behavior, and clean release readiness.</p>
+          </article>
+          <article class="card feature-card">
+            <h3>Web Design and Development</h3>
+            <p>Create responsive websites and product interfaces that communicate value clearly and perform well across devices.</p>
+          </article>
+          <article class="card feature-card">
+            <h3>Internal Tools and Utilities</h3>
+            <p>Turn manual workflows into efficient internal software that saves time and reduces operational friction.</p>
+          </article>
+          <article class="card feature-card">
+            <h3>Product Improvement</h3>
+            <p>Audit rough edges, clarify roadmap priorities, and improve existing apps without overcomplicating the codebase.</p>
+          </article>
         </div>
       </div>
     </section>
 
     <section class="section" id="apps">
       <div class="container">
-        <h2 class="section-title">Our Apps</h2>
+        <div class="section-heading">
+          <span class="eyebrow">Featured Product</span>
+          <h2 class="section-title">A studio with shipped work.</h2>
+        </div>
         <div class="card apps-card">
           <div class="app-feature">
             <div class="app-phone" aria-hidden="true">
@@ -52,10 +117,13 @@
             <div class="app-copy">
               <h3>FHWebCheck</h3>
               <p>
-                Website monitoring for people who want fast visibility into uptime issues.
-                FHWebCheck helps users check website availability and stay informed when a site goes offline.
+                FHWebCheck gives users fast visibility into website uptime issues with a simple, focused experience.
+                It reflects the studio’s product style: useful by default, visually clean, and built around practical reliability.
               </p>
-              <a class="btn btn-primary" href="support.html">Learn More</a>
+              <div class="inline-actions">
+                <a class="btn btn-primary" href="support.html">Support</a>
+                <a class="btn btn-secondary btn-secondary-dark" href="privacy.html">Privacy Policy</a>
+              </div>
             </div>
           </div>
         </div>
@@ -64,19 +132,76 @@
 
     <section class="section">
       <div class="container">
-        <h2 class="section-title">About Us</h2>
+        <div class="section-heading">
+          <span class="eyebrow">Process</span>
+          <h2 class="section-title">How projects move forward.</h2>
+        </div>
+        <div class="process-grid">
+          <article class="card process-card">
+            <span class="process-step">01</span>
+            <h3>Discovery and Scope</h3>
+            <p>Clarify objectives, audience, platform requirements, and the smallest useful version of the product.</p>
+          </article>
+          <article class="card process-card">
+            <span class="process-step">02</span>
+            <h3>Design and Build</h3>
+            <p>Shape the user experience, implement the core product, and keep performance and maintainability in view.</p>
+          </article>
+          <article class="card process-card">
+            <span class="process-step">03</span>
+            <h3>Launch and Support</h3>
+            <p>Prepare releases, tighten details, and stay available for iteration, fixes, and ongoing product improvement.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Why FH</span>
+          <h2 class="section-title">Built for trust, not just visuals.</h2>
+        </div>
         <div class="card about-card">
           <ul class="about-list">
-            <li><span class="check" aria-hidden="true"></span><span><strong>FH Development Studio</strong> is dedicated to building intuitive, focused, high-performance applications.</span></li>
-            <li><span class="check" aria-hidden="true"></span><span>We emphasize clear user experience, strong visual polish, and practical reliability over unnecessary complexity.</span></li>
-            <li><span class="check" aria-hidden="true"></span><span>Privacy and straightforward support are part of the product, not an afterthought.</span></li>
+            <li><span class="check" aria-hidden="true"></span><span><strong>Clear communication:</strong> project language stays practical, direct, and understandable.</span></li>
+            <li><span class="check" aria-hidden="true"></span><span><strong>Privacy-aware product choices:</strong> data collection and third-party services are considered carefully.</span></li>
+            <li><span class="check" aria-hidden="true"></span><span><strong>Lean execution:</strong> product decisions favor real user value over bloated feature sets.</span></li>
+            <li><span class="check" aria-hidden="true"></span><span><strong>Long-term usability:</strong> interfaces are designed to feel clean, focused, and easy to support.</span></li>
           </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-cta">
+      <div class="container">
+        <div class="card cta-card">
+          <div>
+            <span class="eyebrow">Next Step</span>
+            <h2>Need a mobile app, web presence, or product refresh?</h2>
+            <p>
+              FH Development Studio works best with teams that value clarity, reliability, and a well-scoped build.
+            </p>
+          </div>
+          <a class="btn btn-primary" href="support.html#contact">Contact FH Development Studio</a>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
+    <div class="container footer-shell">
+      <div class="footer-brand">
+        <strong>FH Development Studio</strong>
+        <p>Mobile apps, web experiences, and custom software built with focus and care.</p>
+      </div>
+      <div class="footer-links" aria-label="Footer links">
+        <a href="marketing.html">Services</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="support.html">Support</a>
+        <a href="mailto:support@fhdevelopmentstudio.com">support@fhdevelopmentstudio.com</a>
+      </div>
+    </div>
     <div class="container footer-inner">
       © 2026 FH Development Studio. All rights reserved.
     </div>
