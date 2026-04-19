@@ -70,7 +70,7 @@ a:hover { text-decoration: underline; }
 }
 
 .brand { display: flex; align-items: center; gap: 14px; min-width: 0; }
-.brand-logo { height: 70px; width: auto; }
+.brand-logo { height: 81px; width: auto; }
 
 .nav { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
 
@@ -895,6 +895,8 @@ a:hover { text-decoration: underline; }
 
 .support-icon-wrap svg {
   display: block;
+  width: 30px;
+  height: 30px;
 }
 
 .support-box {
@@ -1081,7 +1083,7 @@ a:hover { text-decoration: underline; }
   .service-card,
   .cta-card { padding: 20px; }
 
-  .brand-logo { height: 38px; }
+  .brand-logo { height: 44px; }
   .section { padding: 34px 0; }
   .footer-shell { padding: 26px 0 18px; }
   .footer-inner { padding: 16px 0 22px; }
