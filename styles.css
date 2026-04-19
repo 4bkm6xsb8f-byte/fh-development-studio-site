@@ -45,7 +45,7 @@ body {
 img { max-width: 100%; display: block; }
 
 a { color: var(--primary-mid); text-decoration: none; }
-a:hover { text-decoration: underline; }
+a:hover { text-decoration: none; }
 
 .container {
   width: min(var(--max), calc(100% - 48px));
