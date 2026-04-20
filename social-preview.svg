@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">FH Development Studio social preview</title>
+  <desc id="desc">A blue gradient social preview card for FH Development Studio with the FH logo, company name, and the text Mobile apps, websites, and focused software products built with clarity.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0D3580" />
+      <stop offset="55%" stop-color="#1146A6" />
+      <stop offset="100%" stop-color="#43A7F2" />
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.28)" />
+      <stop offset="100%" stop-color="rgba(255,255,255,0)" />
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" rx="36" />
+  <circle cx="980" cy="110" r="240" fill="rgba(255,255,255,0.08)" />
+  <circle cx="180" cy="570" r="260" fill="rgba(255,255,255,0.08)" />
+  <g transform="translate(92 92)">
+    <rect x="0" y="0" width="156" height="156" rx="30" fill="rgba(255,255,255,0.14)" stroke="rgba(255,255,255,0.22)" />
+    <image href="assets/fh-icon.png" x="28" y="28" width="100" height="100" />
+  </g>
+  <g fill="#FFFFFF" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+    <text x="92" y="320" font-size="28" font-weight="700" letter-spacing="4">FH DEVELOPMENT STUDIO</text>
+    <text x="92" y="396" font-size="64" font-weight="800">Mobile apps, websites,</text>
+    <text x="92" y="470" font-size="64" font-weight="800">and focused software</text>
+    <text x="92" y="544" font-size="64" font-weight="800">products built with clarity.</text>
+  </g>
+</svg>

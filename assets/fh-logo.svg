@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="180" viewBox="0 0 760 180" role="img" aria-labelledby="title desc">
+  <title id="title">FH Development Studio logo</title>
+  <desc id="desc">FH Development Studio logo with the FH icon at left and the company name as a crisp wordmark at right.</desc>
+  <image href="fh-icon.png" x="0" y="12" width="156" height="156" preserveAspectRatio="xMidYMid meet" />
+  <g fill="#1146A6" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+    <text x="184" y="82" font-size="58" font-weight="800" letter-spacing="-1.8">FH Development</text>
+    <text x="184" y="140" font-size="58" font-weight="800" letter-spacing="-1.8">Studio</text>
+  </g>
+</svg>

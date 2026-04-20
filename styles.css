@@ -18,6 +18,7 @@
   --shadow-strong: 0 18px 50px rgba(10, 36, 90, 0.18);
   --radius: 14px;
   --max: 1180px;
+  --header-offset: 104px;
   --fs-body: 1rem;
   --fs-body-lg: 1.02rem;
   --fs-lead: 1.08rem;
@@ -31,6 +32,8 @@
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
+body, h1, h2, h3, h4, h5, h6, p, ul { margin-block-start: 0; }
+body, h1, h2, h3, h4, h5, h6, p, ul { margin-block-end: 0; }
 
 body {
   margin: 0;
@@ -52,6 +55,55 @@ img { max-width: 100%; display: block; }
 
 a { color: var(--primary-mid); text-decoration: none; }
 a:hover { text-decoration: none; }
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid rgba(67, 167, 242, 0.45);
+  outline-offset: 3px;
+}
+
+main,
+section,
+footer {
+  display: block;
+}
+
+section[id],
+.support-card[id] {
+  scroll-margin-top: var(--header-offset);
+}
+
+.skip-link {
+  position: absolute;
+  left: 16px;
+  top: -48px;
+  z-index: 1100;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: var(--primary-dark);
+  color: white;
+  font-weight: 700;
+  transition: top 0.18s ease;
+}
+
+.skip-link:focus {
+  top: 12px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
 
 .container {
   width: min(var(--max), calc(100% - 48px));
@@ -76,7 +128,10 @@ a:hover { text-decoration: none; }
 }
 
 .brand { display: flex; align-items: center; gap: 14px; min-width: 0; }
-.brand-logo { height: 81px; width: auto; }
+.brand-logo {
+  height: clamp(68px, 7.5vw, 84px);
+  width: auto;
+}
 
 .nav { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
 
@@ -940,6 +995,98 @@ a:hover { text-decoration: none; }
 
 .faq-item p { margin: 0; color: var(--text-soft); line-height: 1.62; font-size: var(--fs-body-lg); }
 
+.form-card {
+  padding: 24px;
+}
+
+.form-intro {
+  color: var(--text-soft);
+  line-height: 1.62;
+  font-size: var(--fs-body-lg);
+  max-width: var(--content-width);
+}
+
+.inquiry-form {
+  display: grid;
+  gap: 16px;
+}
+
+.form-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.form-field {
+  display: grid;
+  gap: 8px;
+}
+
+.form-field label {
+  color: var(--primary-dark);
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: white;
+  color: var(--text);
+  font: inherit;
+  padding: 13px 14px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.form-field textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+  color: var(--muted);
+}
+
+.field-note,
+.form-note {
+  color: var(--muted);
+  font-size: 0.93rem;
+  line-height: 1.55;
+}
+
+.form-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.form-status {
+  min-height: 1.4em;
+  color: var(--primary-dark);
+  font-size: 0.95rem;
+}
+
+.section-actions {
+  margin-top: 18px;
+}
+
+.cta-stack {
+  display: grid;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.cta-note {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.94rem;
+  line-height: 1.55;
+}
+
 .cta-card {
   display: flex;
   align-items: center;
@@ -1048,6 +1195,7 @@ a:hover { text-decoration: none; }
   .feature-grid,
   .service-grid,
   .cta-card,
+  .form-grid,
   .brand-spec-grid,
   .color-grid,
   .component-showcase {
@@ -1089,7 +1237,7 @@ a:hover { text-decoration: none; }
   .service-card,
   .cta-card { padding: 20px; }
 
-  .brand-logo { height: 44px; }
+  .brand-logo { height: clamp(52px, 13vw, 64px); }
   .section { padding: 24px 0; }
   .footer-shell { padding: 26px 0 18px; }
   .footer-inner { padding: 16px 0 22px; }
@@ -1147,6 +1295,19 @@ a:hover { text-decoration: none; }
   .hero-stat-grid,
   .feature-grid,
   .service-grid { grid-template-columns: 1fr; }
+  .form-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+  .cta-stack {
+    width: 100%;
+  }
+  .cta-stack .btn {
+    width: 100%;
+  }
+  .form-actions .btn {
+    width: 100%;
+  }
   .footer-links {
     gap: 10px;
     flex-direction: column;

@@ -3,35 +3,109 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Support | FH Development Studio</title>
+  <title>Support and Inquiries | FH Development Studio</title>
   <meta
     name="description"
-    content="Contact FH Development Studio for app support, product questions, or inquiries about mobile and web development services."
+    content="Contact FH Development Studio for app support, privacy questions, product feedback, or new inquiries about mobile and web development services."
   />
+  <meta name="theme-color" content="#1146A6" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Support and Inquiries | FH Development Studio" />
+  <meta
+    property="og:description"
+    content="Use the FH Development Studio support page for product questions, privacy requests, and new project inquiries."
+  />
+  <meta property="og:url" content="https://www.fhdevelopmentstudio.com/support.html" />
+  <meta property="og:image" content="https://www.fhdevelopmentstudio.com/social-preview.svg" />
+  <meta property="og:image:alt" content="FH Development Studio brand preview with blue gradient background and service tagline." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Support and Inquiries | FH Development Studio" />
+  <meta
+    name="twitter:description"
+    content="Use the FH Development Studio support page for product questions, privacy requests, and new project inquiries."
+  />
+  <meta name="twitter:image" content="https://www.fhdevelopmentstudio.com/social-preview.svg" />
+  <link rel="canonical" href="https://www.fhdevelopmentstudio.com/support.html" />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="manifest" href="site.webmanifest" />
   <link rel="icon" type="image/png" href="assets/fh-icon.png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://www.fhdevelopmentstudio.com/#organization",
+          "name": "FH Development Studio",
+          "url": "https://www.fhdevelopmentstudio.com/",
+          "logo": "https://www.fhdevelopmentstudio.com/assets/fh-logo.svg",
+          "email": "support@fhdevelopmentstudio.com"
+        },
+        {
+          "@type": "ContactPage",
+          "@id": "https://www.fhdevelopmentstudio.com/support.html#contact-page",
+          "url": "https://www.fhdevelopmentstudio.com/support.html",
+          "name": "Support and Inquiries",
+          "about": {
+            "@id": "https://www.fhdevelopmentstudio.com/#organization"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://www.fhdevelopmentstudio.com/support.html#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What can this page be used for?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Use this page for product support questions, bug reports, feature feedback, privacy questions, website issues, and new business inquiries related to mobile or web development work."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How quickly will you respond?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Typical response time is 1 to 2 business days. More complex product questions or project inquiries may require additional follow-up after the first response."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can this page be used for development inquiries?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Use this page for new app, website, redesign, internal tool, or product improvement inquiries."
+              }
+            }
+          ]
+        }
+      ]
+    }
+  </script>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="index.html" aria-label="FH Development Studio Home">
-        <img class="brand-logo" src="assets/fh-logo.png" alt="FH Development Studio logo" />
+      <a class="brand" href="index.html" aria-label="FH Development Studio home">
+        <img class="brand-logo" src="assets/fh-logo.svg" alt="FH Development Studio logo with FH monogram." />
       </a>
       <nav class="nav" aria-label="Main navigation">
         <a href="index.html">Home</a>
-        <a href="marketing.html">Services</a>
+        <a href="services.html">Services</a>
         <a href="privacy.html">Privacy</a>
-        <a class="active" href="support.html">Support</a>
-        <a href="#contact">Contact</a>
+        <a class="active" aria-current="page" href="support.html">Support</a>
       </nav>
     </div>
   </header>
 
-  <main>
-    <section class="page-banner">
+  <main id="main-content">
+    <section class="page-banner" aria-labelledby="support-title">
       <div class="container page-banner-inner">
         <span class="eyebrow eyebrow-light">Support and Contact</span>
-        <h1>Reach FH Development Studio directly.</h1>
+        <h1 id="support-title">Reach FH Development Studio directly.</h1>
         <p>
           Use this page for app support, privacy questions, product feedback, or to start a conversation
           about a mobile app, website, or custom software project.
@@ -39,7 +113,7 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section" aria-labelledby="contact-title">
       <div class="container support-grid support-grid-wide">
         <div class="card support-card" id="contact">
           <div class="support-card-title">
@@ -50,7 +124,7 @@
                 <rect x="6" y="10" width="52" height="44" rx="6" stroke="#1146A6" stroke-width="3.5"/>
               </svg>
             </span>
-            <span>Contact FH Development Studio</span>
+            <span id="contact-title">Contact FH Development Studio</span>
           </div>
 
           <div class="support-box">
@@ -71,19 +145,19 @@
               <a class="btn btn-primary" href="mailto:support@fhdevelopmentstudio.com?subject=FH%20Development%20Studio%20Inquiry">
                 Send an Email
               </a>
-              <a class="btn btn-secondary btn-secondary-dark" href="marketing.html">
+              <a class="btn btn-secondary btn-secondary-dark" href="services.html">
                 View Services
               </a>
             </div>
           </div>
         </div>
 
-        <div class="card faq-card">
+        <div class="card faq-card" aria-labelledby="support-details-title">
           <div class="faq-title">
             <span class="faq-icon-wrap" aria-hidden="true">
               <img src="assets/fh-icon.png" alt="" />
             </span>
-            <span>Support Details</span>
+            <span id="support-details-title">Support Details</span>
           </div>
 
           <div class="faq-list">
@@ -121,13 +195,94 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section" aria-labelledby="inquiry-title">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Inquiry Form</span>
+          <h2 class="section-title" id="inquiry-title">Start with a lightweight inquiry.</h2>
+          <p class="section-intro">
+            Clear context helps support requests move faster and helps project conversations start with better recommendations, tighter scope, and fewer assumptions.
+          </p>
+        </div>
+        <div class="card form-card">
+          <p class="form-intro">
+            This form opens your default email app with a prefilled inquiry draft. It is a lightweight way to share the basics without adding a separate backend form service.
+          </p>
+          <form class="inquiry-form" id="inquiry-form" data-mailto-form novalidate>
+            <div class="form-grid">
+              <div class="form-field">
+                <label for="inquiry-name">Name</label>
+                <input id="inquiry-name" name="name" type="text" autocomplete="name" required />
+              </div>
+              <div class="form-field">
+                <label for="inquiry-email">Email</label>
+                <input id="inquiry-email" name="email" type="email" autocomplete="email" required />
+              </div>
+              <div class="form-field">
+                <label for="inquiry-company">Company</label>
+                <input id="inquiry-company" name="company" type="text" autocomplete="organization" />
+              </div>
+              <div class="form-field">
+                <label for="inquiry-type">Inquiry Type</label>
+                <select id="inquiry-type" name="inquiry_type">
+                  <option value="New Project">New Project</option>
+                  <option value="Product Support">Product Support</option>
+                  <option value="Privacy Question">Privacy Question</option>
+                  <option value="General Question">General Question</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label for="inquiry-platform">Platforms or Context</label>
+                <input id="inquiry-platform" name="platform" type="text" placeholder="iPhone app, responsive website, internal tool, FHWebCheck, etc." />
+              </div>
+              <div class="form-field">
+                <label for="inquiry-timeline">Timing</label>
+                <input id="inquiry-timeline" name="timeline" type="text" placeholder="Immediate, this quarter, exploring options, etc." />
+              </div>
+              <div class="form-field">
+                <label for="inquiry-budget">Budget Range</label>
+                <select id="inquiry-budget" name="budget">
+                  <option value="Not sure yet">Not sure yet</option>
+                  <option value="Under $5,000">Under $5,000</option>
+                  <option value="$5,000 to $15,000">$5,000 to $15,000</option>
+                  <option value="$15,000 to $30,000">$15,000 to $30,000</option>
+                  <option value="$30,000+">$30,000+</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label for="inquiry-goal">Primary Goal</label>
+                <select id="inquiry-goal" name="goal">
+                  <option value="Launch something new">Launch something new</option>
+                  <option value="Improve an existing product">Improve an existing product</option>
+                  <option value="Increase leads or conversions">Increase leads or conversions</option>
+                  <option value="Fix support or usability issues">Fix support or usability issues</option>
+                  <option value="Clarify scope and options">Clarify scope and options</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="inquiry-message">Message</label>
+              <textarea id="inquiry-message" name="message" required placeholder="Share the problem you are trying to solve, what you need, and any helpful details."></textarea>
+            </div>
+            <p class="field-note">Required fields: name, email, and message.</p>
+            <div class="form-actions">
+              <button class="btn btn-primary" type="submit">Create Email Draft</button>
+              <a class="btn btn-secondary btn-secondary-dark" href="mailto:support@fhdevelopmentstudio.com">Email Support Directly</a>
+            </div>
+            <p class="form-status" aria-live="polite"></p>
+            <p class="form-note">Most inquiries receive an initial response within 1 to 2 business days. If your email app does not open automatically, use the direct email link instead.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="working-together-title">
       <div class="container">
         <div class="section-heading">
           <span class="eyebrow">Working Together</span>
-          <h2 class="section-title">What to send for support or project inquiries.</h2>
+          <h2 class="section-title" id="working-together-title">What to send for support or project inquiries.</h2>
           <p class="section-intro">
-            Clear context helps support requests move faster and helps project conversations start with better recommendations, tighter scope, and fewer assumptions.
+            Better context leads to faster troubleshooting, better recommendations, and clearer next steps.
           </p>
         </div>
         <div class="card content-card">
@@ -181,11 +336,11 @@
       </div>
     </section>
 
-    <section class="section section-tinted">
+    <section class="section section-tinted" aria-labelledby="fhwebcheck-title">
       <div class="container">
         <div class="section-heading">
           <span class="eyebrow">FHWebCheck</span>
-          <h2 class="section-title">Quick answers for the current app.</h2>
+          <h2 class="section-title" id="fhwebcheck-title">Quick answers for the current app.</h2>
         </div>
         <div class="card content-card">
           <div class="content-stack">
@@ -231,7 +386,8 @@
       </div>
       <div class="footer-links" aria-label="Footer links">
         <a href="index.html">Home</a>
-        <a href="marketing.html">Services</a>
+        <a href="services.html">Services</a>
+        <a href="process.html">Process</a>
         <a href="privacy.html">Privacy</a>
         <a href="mailto:support@fhdevelopmentstudio.com">support@fhdevelopmentstudio.com</a>
       </div>
@@ -240,5 +396,6 @@
       © 2026 FH Development Studio. All rights reserved.
     </div>
   </footer>
+  <script src="site.js" defer></script>
 </body>
 </html>
