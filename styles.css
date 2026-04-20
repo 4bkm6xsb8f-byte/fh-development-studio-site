@@ -78,19 +78,24 @@ section[id],
 
 .skip-link {
   position: absolute;
-  left: 16px;
-  top: -48px;
+  left: 50%;
+  top: 10px;
+  transform: translate(-50%, -160%);
   z-index: 1100;
-  padding: 10px 14px;
-  border-radius: 10px;
-  background: var(--primary-dark);
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(13, 53, 128, 0.96);
   color: white;
   font-weight: 700;
-  transition: top 0.18s ease;
+  box-shadow: 0 10px 24px rgba(10, 36, 90, 0.18);
+  transition: transform 0.18s ease, opacity 0.18s ease;
+  opacity: 0;
 }
 
 .skip-link:focus {
-  top: 12px;
+  transform: translate(-50%, 0);
+  opacity: 1;
 }
 
 .sr-only {
@@ -129,7 +134,7 @@ section[id],
 
 .brand { display: flex; align-items: center; gap: 14px; min-width: 0; }
 .brand-logo {
-  height: clamp(68px, 7.5vw, 84px);
+  height: clamp(62px, 7vw, 76px);
   width: auto;
 }
 
@@ -1237,7 +1242,7 @@ section[id],
   .service-card,
   .cta-card { padding: 20px; }
 
-  .brand-logo { height: clamp(52px, 13vw, 64px); }
+  .brand-logo { height: clamp(48px, 12vw, 58px); }
   .section { padding: 24px 0; }
   .footer-shell { padding: 26px 0 18px; }
   .footer-inner { padding: 16px 0 22px; }
