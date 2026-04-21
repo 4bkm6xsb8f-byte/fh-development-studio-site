@@ -508,15 +508,20 @@ section[id],
 }
 
 .process-card {
-  position: relative;
-  padding-top: 54px;
+  padding-top: 22px;
 }
 
 .process-step {
-  position: absolute;
-  top: 20px;
-  left: 24px;
-  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 52px;
+  padding: 6px 12px;
+  margin-bottom: 16px;
+  border-radius: 999px;
+  background: rgba(17, 70, 166, 0.08);
+  border: 1px solid rgba(17, 70, 166, 0.14);
+  font-size: 0.82rem;
   font-weight: 800;
   color: var(--primary-mid);
   letter-spacing: 0.1em;
@@ -1059,6 +1064,86 @@ section[id],
   min-height: 1.4em;
   color: var(--primary-dark);
   font-size: 0.95rem;
+}
+
+.form-section-stack {
+  display: grid;
+  gap: 18px;
+}
+
+.checkbox-workflow {
+  display: grid;
+  gap: 18px;
+}
+
+.workflow-section {
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 20px;
+  background: linear-gradient(180deg, #ffffff 0%, #f7fbff 100%);
+}
+
+.workflow-section h3 {
+  margin: 0 0 8px;
+  color: var(--primary-dark);
+  font-size: 1.12rem;
+  line-height: 1.22;
+}
+
+.workflow-section p {
+  margin: 0 0 14px;
+  color: var(--text-soft);
+  line-height: 1.58;
+  font-size: var(--fs-body-lg);
+}
+
+.checklist {
+  display: grid;
+  gap: 12px;
+}
+
+.check-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 12px;
+  align-items: start;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: #ffffff;
+  border: 1px solid rgba(17, 70, 166, 0.1);
+}
+
+.check-item input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  accent-color: var(--primary);
+}
+
+.check-item strong {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--primary-dark);
+  font-size: 0.98rem;
+}
+
+.check-item span {
+  display: block;
+  color: var(--text-soft);
+  line-height: 1.55;
+  font-size: 0.96rem;
+}
+
+.placeholder-panel {
+  display: grid;
+  gap: 16px;
+}
+
+.placeholder-note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.93rem;
+  line-height: 1.55;
 }
 
 .section-actions {

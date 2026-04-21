@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Discovery Workflow | FH Development Studio</title>
+  <meta
+    name="description"
+    content="A checklist-based discovery and scoping workflow for FH Development Studio projects."
+  />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#1146A6" />
+  <link rel="canonical" href="https://www.fhdevelopmentstudio.com/discovery-workflow.html" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="manifest" href="site.webmanifest" />
+  <link rel="icon" type="image/svg+xml" href="assets/fh-icon.svg" />
+  <link rel="icon" type="image/png" href="assets/fh-icon.png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="FH Development Studio home">
+        <img class="brand-logo" src="assets/fh-logo.svg" alt="FH Development Studio logo with FH monogram." />
+      </a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="support.html">Support</a>
+        <a href="admin-login.html">Admin Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="page-banner" aria-labelledby="workflow-title">
+      <div class="container page-banner-inner">
+        <span class="eyebrow eyebrow-light">Discovery Workflow</span>
+        <h1 id="workflow-title">A checklist workflow for discovery and scoping.</h1>
+        <p>
+          This page is a working reference for the full discovery process, from intake through recommendations,
+          scope alignment, and handoff into build planning.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="workflow-overview-title">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Overview</span>
+          <h2 class="section-title" id="workflow-overview-title">Use this checklist to keep scoping clear, complete, and accountable.</h2>
+          <p class="section-intro">
+            The workflow is intentionally not connected to any backend yet. It exists as a structured planning surface the upcoming admin app can adopt.
+          </p>
+        </div>
+
+        <div class="checkbox-workflow">
+          <section class="workflow-section" aria-labelledby="workflow-intake-title">
+            <h3 id="workflow-intake-title">1. Intake and Initial Framing</h3>
+            <p>Capture the basics before discussing solutions so the recommendation starts from the real problem and constraints.</p>
+            <div class="checklist">
+              <label class="check-item"><input type="checkbox" /><span><strong>Clarify requester and business context</strong><span>Record the company, point of contact, and whether the work supports a new initiative, an existing product, or internal operations.</span></span></label>
+              <label class="check-item"><input type="checkbox" /><span><strong>Define the problem in plain language</strong><span>Document what is not working today, who is affected, and what success would feel like from the client’s perspective.</span></span></label>
+              <label class="check-item"><input type="checkbox" /><span><strong>Identify delivery pressure</strong><span>Note deadlines, launch windows, staffing constraints, or dependencies that materially shape scope decisions.</span></span></label>
+            </div>
+          </section>
+
+          <section class="workflow-section" aria-labelledby="workflow-users-title">
+            <h3 id="workflow-users-title">2. Users, Platforms, and Product Context</h3>
+            <p>Make sure the team understands who the product serves and where it needs to perform well.</p>
+            <div class="checklist">
+              <label class="check-item"><input type="checkbox" /><span><strong>List target users or stakeholder groups</strong><span>Capture primary users, secondary users, internal teams, and anyone else who influences requirements or approval.</span></span></label>
+              <label class="check-item"><input type="checkbox" /><span><strong>Confirm platform expectations</strong><span>Document whether the work targets iPhone, web, responsive marketing pages, internal dashboards, or a multi-platform release.</span></span></label>
+              <label class="check-item"><input type="checkbox" /><span><strong>Review current assets or product state</strong><span>Record existing designs, codebases, live URLs, analytics, support notes, or screenshots that provide relevant context.</span></span></label>
+            </div>
+          </section>
+
+          <section class="workflow-section" aria-labelledby="workflow-scope-title">
+            <h3 id="workflow-scope-title">3. Scope Definition</h3>
+            <p>Translate the problem into a practical first-release scope before design and build recommendations are made.</p>
+            <div class="checklist">
+              <label class="check-item"><input type="checkbox" /><span><strong>Define must-have outcomes</strong><span>Separate required capabilities from secondary ideas so the first release is realistic and strategically useful.</span></span></label>
+              <label class="check-item"><input type="checkbox" /><span><strong>List explicit out-of-scope items</strong><span>Document what will not be included in the first phase to reduce ambiguity and prevent hidden expansion later.</span></span></label>
+              <label class="check-item"><input type="checkbox" /><span><strong>Identify dependencies and blockers</strong><span>Capture content, credentials, assets, approvals, integrations, app store requirements, or third-party services needed before work can proceed smoothly.</span></span></label>
+            </div>
+          </section>
+
+          <section class="workflow-section" aria-labelledby="workflow-risk-title">
+            <h3 id="workflow-risk-title">4. Risk and Recommendation Review</h3>
+            <p>Pressure-test the plan before the work shifts into estimates, sequencing, and execution.</p>
+            <div class="checklist">
+              <label class="check-item"><input type="checkbox" /><span><strong>Call out technical and delivery risk</strong><span>Note any architecture concerns, unknown integrations, unclear content ownership, or timeline assumptions that could change the recommendation.</span></span></label>
+              <label class="check-item"><input type="checkbox" /><span><strong>Choose the strongest first-release approach</strong><span>Document whether the best path is a lean MVP, a focused redesign, a support stabilization pass, or a staged implementation plan.</span></span></label>
+              <label class="check-item"><input type="checkbox" /><span><strong>Align on next-step recommendation</strong><span>Summarize the recommended scope, likely sequence, expected inputs, and what FH Development Studio should prepare next.</span></span></label>
+            </div>
+          </section>
+
+          <section class="workflow-section" aria-labelledby="workflow-handoff-title">
+            <h3 id="workflow-handoff-title">5. Handoff Into Delivery Planning</h3>
+            <p>Close discovery by making the decision trail clear enough for design, development, or admin workflow follow-up.</p>
+            <div class="checklist">
+              <label class="check-item"><input type="checkbox" /><span><strong>Capture approved priorities</strong><span>Record what is approved for the first phase, what is deferred, and who signed off on the direction.</span></span></label>
+              <label class="check-item"><input type="checkbox" /><span><strong>Document communication expectations</strong><span>Note preferred cadence, key approvers, response timing, and any launch or review checkpoints.</span></span></label>
+              <label class="check-item"><input type="checkbox" /><span><strong>Prepare build-ready notes</strong><span>Summarize the outcome so the future admin app, delivery checklist, or scope record can inherit a clean starting point.</span></span></label>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-shell">
+      <div class="footer-brand">
+        <strong>FH Development Studio</strong>
+        <p>Mobile apps, web experiences, and custom software built with focus and care.</p>
+      </div>
+      <div class="footer-links" aria-label="Footer links">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="process.html">Process</a>
+        <a href="support.html">Support</a>
+      </div>
+    </div>
+    <div class="container footer-inner">
+      © <span data-current-year></span> FH Development Studio. All rights reserved.
+    </div>
+  </footer>
+  <script src="site.js" defer></script>
+</body>
+</html>

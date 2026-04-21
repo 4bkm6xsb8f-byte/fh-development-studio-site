@@ -11,13 +11,14 @@
   <meta name="robots" content="noindex, nofollow" />
   <link rel="canonical" href="https://www.fhdevelopmentstudio.com/brand-standards.html" />
   <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" type="image/png" href="assets/fh-icon.png" />
+  <link rel="icon" type="image/svg+xml" href="assets/fh-icon.svg" />
+  <link rel="icon" type="image/png" href="assets/fh-icon.png" sizes="32x32" />
 </head>
 <body>
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="index.html" aria-label="FH Development Studio Home">
-        <img class="brand-logo" src="assets/fh-logo.png" alt="FH Development Studio logo with FH monogram." />
+        <img class="brand-logo" src="assets/fh-logo.svg" alt="FH Development Studio logo with FH monogram." />
       </a>
       <nav class="nav" aria-label="Main navigation">
         <a href="index.html">Home</a>
@@ -25,6 +26,7 @@
         <a class="active" href="brand-standards.html">Brand</a>
         <a href="privacy.html">Privacy</a>
         <a href="support.html">Support</a>
+        <a href="admin-login.html">Admin Login</a>
       </nav>
     </div>
   </header>
@@ -85,15 +87,15 @@
                   <div class="logo-showcase">
                     <div class="logo-sample logo-sample-light">
                       <span class="brand-label">Light Background</span>
-                      <img class="logo-size-lg" src="assets/fh-logo.png" alt="FH Development Studio full logo" />
+                      <img class="logo-size-lg" src="assets/fh-logo.svg" alt="FH Development Studio full logo" />
                     </div>
                     <div class="logo-sample logo-sample-soft">
                       <span class="brand-label">Soft Background</span>
-                      <img class="logo-size-md" src="assets/fh-logo.png" alt="FH Development Studio full logo medium size" />
+                      <img class="logo-size-md" src="assets/fh-logo.svg" alt="FH Development Studio full logo medium size" />
                     </div>
                     <div class="logo-sample logo-sample-dark">
                       <span class="brand-label brand-label-light">Dark Background</span>
-                      <img class="logo-size-sm" src="assets/fh-logo.png" alt="FH Development Studio full logo small size" />
+                      <img class="logo-size-sm" src="assets/fh-logo.svg" alt="FH Development Studio full logo small size" />
                     </div>
                   </div>
                   <ul>
@@ -106,15 +108,15 @@
                   <div class="logo-showcase">
                     <div class="logo-sample logo-sample-light logo-sample-square">
                       <span class="brand-label">64px</span>
-                      <img class="icon-size-lg" src="assets/fh-icon.png" alt="FH Development Studio icon large" />
+                      <img class="icon-size-lg" src="assets/fh-icon.svg" alt="FH Development Studio icon large" />
                     </div>
                     <div class="logo-sample logo-sample-soft logo-sample-square">
                       <span class="brand-label">48px</span>
-                      <img class="icon-size-md" src="assets/fh-icon.png" alt="FH Development Studio icon medium" />
+                      <img class="icon-size-md" src="assets/fh-icon.svg" alt="FH Development Studio icon medium" />
                     </div>
                     <div class="logo-sample logo-sample-dark logo-sample-square">
                       <span class="brand-label brand-label-light">32px</span>
-                      <img class="icon-size-sm" src="assets/fh-icon.png" alt="FH Development Studio icon small" />
+                      <img class="icon-size-sm" src="assets/fh-icon.svg" alt="FH Development Studio icon small" />
                     </div>
                   </div>
                   <ul>
@@ -356,8 +358,9 @@
       </div>
     </div>
     <div class="container footer-inner">
-      © 2026 FH Development Studio. All rights reserved.
+      © <span data-current-year></span> FH Development Studio. All rights reserved.
     </div>
   </footer>
+  <script src="site.js" defer></script>
 </body>
 </html>

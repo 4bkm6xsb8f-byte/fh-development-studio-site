@@ -28,7 +28,8 @@
   <link rel="canonical" href="https://www.fhdevelopmentstudio.com/services.html" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="manifest" href="site.webmanifest" />
-  <link rel="icon" type="image/png" href="assets/fh-icon.png" />
+  <link rel="icon" type="image/svg+xml" href="assets/fh-icon.svg" />
+  <link rel="icon" type="image/png" href="assets/fh-icon.png" sizes="32x32" />
   <link rel="apple-touch-icon" href="apple-touch-icon.png" />
   <script type="application/ld+json">
     {
@@ -39,7 +40,7 @@
           "@id": "https://www.fhdevelopmentstudio.com/#organization",
           "name": "FH Development Studio",
           "url": "https://www.fhdevelopmentstudio.com/",
-          "logo": "https://www.fhdevelopmentstudio.com/assets/fh-logo.png",
+          "logo": "https://www.fhdevelopmentstudio.com/assets/fh-logo.svg",
           "email": "support@fhdevelopmentstudio.com"
         },
         {
@@ -67,13 +68,14 @@
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="index.html" aria-label="FH Development Studio home">
-        <img class="brand-logo" src="assets/fh-logo.png" alt="FH Development Studio logo with FH monogram." />
+        <img class="brand-logo" src="assets/fh-logo.svg" alt="FH Development Studio logo with FH monogram." />
       </a>
       <nav class="nav" aria-label="Main navigation">
         <a href="index.html">Home</a>
         <a class="active" aria-current="page" href="services.html">Services</a>
         <a href="privacy.html">Privacy</a>
         <a href="support.html">Support</a>
+        <a href="admin-login.html">Admin Login</a>
       </nav>
     </div>
   </header>
@@ -241,8 +243,9 @@
       </div>
     </div>
     <div class="container footer-inner">
-      © 2026 FH Development Studio. All rights reserved.
+      © <span data-current-year></span> FH Development Studio. All rights reserved.
     </div>
   </footer>
+  <script src="site.js" defer></script>
 </body>
 </html>

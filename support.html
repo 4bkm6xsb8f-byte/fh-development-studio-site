@@ -28,7 +28,8 @@
   <link rel="canonical" href="https://www.fhdevelopmentstudio.com/support.html" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="manifest" href="site.webmanifest" />
-  <link rel="icon" type="image/png" href="assets/fh-icon.png" />
+  <link rel="icon" type="image/svg+xml" href="assets/fh-icon.svg" />
+  <link rel="icon" type="image/png" href="assets/fh-icon.png" sizes="32x32" />
   <link rel="apple-touch-icon" href="apple-touch-icon.png" />
   <script type="application/ld+json">
     {
@@ -39,7 +40,7 @@
           "@id": "https://www.fhdevelopmentstudio.com/#organization",
           "name": "FH Development Studio",
           "url": "https://www.fhdevelopmentstudio.com/",
-          "logo": "https://www.fhdevelopmentstudio.com/assets/fh-logo.png",
+          "logo": "https://www.fhdevelopmentstudio.com/assets/fh-logo.svg",
           "email": "support@fhdevelopmentstudio.com"
         },
         {
@@ -90,13 +91,14 @@
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="index.html" aria-label="FH Development Studio home">
-        <img class="brand-logo" src="assets/fh-logo.png" alt="FH Development Studio logo with FH monogram." />
+        <img class="brand-logo" src="assets/fh-logo.svg" alt="FH Development Studio logo with FH monogram." />
       </a>
       <nav class="nav" aria-label="Main navigation">
         <a href="index.html">Home</a>
         <a href="services.html">Services</a>
         <a href="privacy.html">Privacy</a>
         <a class="active" aria-current="page" href="support.html">Support</a>
+        <a href="admin-login.html">Admin Login</a>
       </nav>
     </div>
   </header>
@@ -155,7 +157,7 @@
         <div class="card faq-card" aria-labelledby="support-details-title">
           <div class="faq-title">
             <span class="faq-icon-wrap" aria-hidden="true">
-              <img src="assets/fh-icon.png" alt="" />
+              <img src="assets/fh-icon.svg" alt="" />
             </span>
             <span id="support-details-title">Support Details</span>
           </div>
@@ -272,6 +274,77 @@
             <p class="form-status" aria-live="polite"></p>
             <p class="form-note">Most inquiries receive an initial response within 1 to 2 business days. If your email app does not open automatically, use the direct email link instead.</p>
           </form>
+        </div>
+        <div class="card form-card">
+          <div class="form-section-stack">
+            <p class="form-intro">
+              This request and bug intake form is reserved for the upcoming admin workflow. It is intentionally present but not connected to a backend yet.
+            </p>
+            <form class="inquiry-form" id="request-form" novalidate>
+              <div class="form-grid">
+                <div class="form-field">
+                  <label for="request-name">Name</label>
+                  <input id="request-name" name="request_name" type="text" autocomplete="name" />
+                </div>
+                <div class="form-field">
+                  <label for="request-email">Email</label>
+                  <input id="request-email" name="request_email" type="email" autocomplete="email" />
+                </div>
+                <div class="form-field">
+                  <label for="request-type">Submission Type</label>
+                  <select id="request-type" name="request_type">
+                    <option value="Bug Report">Bug Report</option>
+                    <option value="Support Request">Support Request</option>
+                    <option value="Feature Request">Feature Request</option>
+                    <option value="General Issue">General Issue</option>
+                  </select>
+                </div>
+                <div class="form-field">
+                  <label for="request-product">Product or Project</label>
+                  <input id="request-product" name="request_product" type="text" placeholder="FHWebCheck, website, client portal, etc." />
+                </div>
+                <div class="form-field">
+                  <label for="request-platform">Platform or Environment</label>
+                  <input id="request-platform" name="request_platform" type="text" placeholder="iPhone, Firefox on iOS, desktop web, internal tool, etc." />
+                </div>
+                <div class="form-field">
+                  <label for="request-priority">Priority</label>
+                  <select id="request-priority" name="request_priority">
+                    <option value="Low">Low</option>
+                    <option value="Normal">Normal</option>
+                    <option value="High">High</option>
+                    <option value="Urgent">Urgent</option>
+                  </select>
+                </div>
+                <div class="form-field">
+                  <label for="request-location">Page, Screen, or Area</label>
+                  <input id="request-location" name="request_location" type="text" placeholder="Support page, onboarding flow, dashboard screen, etc." />
+                </div>
+                <div class="form-field">
+                  <label for="request-time">When It Happened</label>
+                  <input id="request-time" name="request_time" type="text" placeholder="Date, time, or approximate timing" />
+                </div>
+              </div>
+              <div class="form-field">
+                <label for="request-steps">Steps to Reproduce or Request Context</label>
+                <textarea id="request-steps" name="request_steps" placeholder="Describe the sequence, request, or issue details."></textarea>
+              </div>
+              <div class="form-grid">
+                <div class="form-field">
+                  <label for="request-expected">Expected Result</label>
+                  <textarea id="request-expected" name="request_expected" placeholder="What should have happened?"></textarea>
+                </div>
+                <div class="form-field">
+                  <label for="request-actual">Actual Result</label>
+                  <textarea id="request-actual" name="request_actual" placeholder="What happened instead?"></textarea>
+                </div>
+              </div>
+              <div class="form-actions">
+                <button class="btn btn-primary" type="button">Submit Request / Bug</button>
+              </div>
+              <p class="form-note">This form is intentionally unwired for now. Submission routing will be connected when the admin app is in place.</p>
+            </form>
+          </div>
         </div>
       </div>
     </section>
@@ -424,7 +497,7 @@
       </div>
     </div>
     <div class="container footer-inner">
-      © 2026 FH Development Studio. All rights reserved.
+      © <span data-current-year></span> FH Development Studio. All rights reserved.
     </div>
   </footer>
   <script src="site.js" defer></script>

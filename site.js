@@ -1,4 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll("[data-current-year]").forEach((node) => {
+    node.textContent = String(new Date().getFullYear());
+  });
+
   const form = document.querySelector("[data-mailto-form]");
   if (!form) {
     return;
