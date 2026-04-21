@@ -1,4 +1,5 @@
-const ADMIN_API_BASE = "https://app.fhdevelopmentstudio.com/api/public";
+const PAGE_EVENTS_URL = "https://app.fhdevelopmentstudio.com/api/public/page-events";
+const INQUIRIES_URL = "https://app.fhdevelopmentstudio.com/api/public/inquiries";
 
 function setStatus(form, message, isError) {
   const status = form.querySelector(".form-status");
@@ -10,22 +11,13 @@ function setStatus(form, message, isError) {
   status.style.color = isError ? "#b42828" : "";
 }
 
-function normalizeCurrentPath() {
-  if (window.location.protocol === "file:") {
-    return null;
-  }
-
-  return `${window.location.pathname}${window.location.search}`;
-}
-
-async function postJson(url, payload, keepalive = false) {
+async function postJson(url, payload) {
   const response = await fetch(url, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(payload),
-    keepalive,
   });
 
   const data = await response.json().catch(() => ({}));
@@ -37,34 +29,61 @@ async function postJson(url, payload, keepalive = false) {
   return data;
 }
 
+async function submitFhInquiry(payload) {
+  const response = await fetch(INQUIRIES_URL, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      submissionType: payload.submissionType || "sales",
+      subject: payload.subject,
+      details: payload.details,
+      requesterName: payload.requesterName,
+      requesterEmail: payload.requesterEmail,
+      requesterPhone: payload.requesterPhone,
+      priority: payload.priority || "medium",
+      source: "www.fhdevelopmentstudio.com form",
+      pagePath: window.location.pathname,
+      pageTitle: document.title,
+      channel: "marketing-site-intake",
+      metadata: {
+        href: window.location.href,
+        formId: payload.formId || null,
+      },
+    }),
+  });
+
+  if (!response.ok) {
+    throw new Error("Inquiry submission failed");
+  }
+
+  return response.json();
+}
+
 function buildInquiryPayload(form) {
   const data = new FormData(form);
   const inquiryType = (data.get("inquiry_type") || "").toString().trim();
   const normalizedType =
     inquiryType === "New Project"
-      ? "sales"
+      ? "new_project"
       : inquiryType === "Product Support"
         ? "support"
-        : "general";
+        : inquiryType === "Privacy Question"
+          ? "support"
+          : "sales";
 
-  const metadata = {
-    company: (data.get("company") || "").toString().trim(),
-    platform: (data.get("platform") || "").toString().trim(),
-    timeline: (data.get("timeline") || "").toString().trim(),
-    budget: (data.get("budget") || "").toString().trim(),
-    goal: (data.get("goal") || "").toString().trim(),
-    inquiryType,
-    pageUrl: window.location.href,
-    formId: form.id,
-  };
+  const company = (data.get("company") || "").toString().trim();
+  const platform = (data.get("platform") || "").toString().trim();
+  const timeline = (data.get("timeline") || "").toString().trim();
+  const budget = (data.get("budget") || "").toString().trim();
+  const goal = (data.get("goal") || "").toString().trim();
 
   const details = [
     `Inquiry type: ${inquiryType || "General Question"}`,
-    `Company: ${metadata.company || "Not provided"}`,
-    `Platforms or context: ${metadata.platform || "Not provided"}`,
-    `Timing: ${metadata.timeline || "Not provided"}`,
-    `Budget range: ${metadata.budget || "Not provided"}`,
-    `Primary goal: ${metadata.goal || "Not provided"}`,
+    `Company: ${company || "Not provided"}`,
+    `Platforms or context: ${platform || "Not provided"}`,
+    `Timing: ${timeline || "Not provided"}`,
+    `Budget range: ${budget || "Not provided"}`,
+    `Primary goal: ${goal || "Not provided"}`,
     "",
     "Message:",
     (data.get("message") || "").toString().trim(),
@@ -76,11 +95,9 @@ function buildInquiryPayload(form) {
     details,
     requesterName: (data.get("name") || "").toString().trim(),
     requesterEmail: (data.get("email") || "").toString().trim(),
-    source: "www.fhdevelopmentstudio.com",
-    pagePath: normalizeCurrentPath(),
-    pageTitle: document.title,
-    channel: "website-sales-support",
-    metadata,
+    requesterPhone: undefined,
+    priority: "medium",
+    formId: form.id,
   };
 }
 
@@ -96,49 +113,41 @@ function buildRequestPayload(form) {
           ? "support"
           : "general";
 
-  const metadata = {
-    requestType,
-    product: (data.get("request_product") || "").toString().trim(),
-    platform: (data.get("request_platform") || "").toString().trim(),
-    priority: (data.get("request_priority") || "").toString().trim(),
-    location: (data.get("request_location") || "").toString().trim(),
-    occurredAt: (data.get("request_time") || "").toString().trim(),
-    expected: (data.get("request_expected") || "").toString().trim(),
-    actual: (data.get("request_actual") || "").toString().trim(),
-    pageUrl: window.location.href,
-    formId: form.id,
-  };
+  const product = (data.get("request_product") || "").toString().trim();
+  const platform = (data.get("request_platform") || "").toString().trim();
+  const priority = (data.get("request_priority") || "").toString().trim();
+  const location = (data.get("request_location") || "").toString().trim();
+  const occurredAt = (data.get("request_time") || "").toString().trim();
+  const expected = (data.get("request_expected") || "").toString().trim();
+  const actual = (data.get("request_actual") || "").toString().trim();
 
   const details = [
     `Submission type: ${requestType || "General Issue"}`,
-    `Product or project: ${metadata.product || "Not provided"}`,
-    `Platform or environment: ${metadata.platform || "Not provided"}`,
-    `Priority: ${metadata.priority || "Medium"}`,
-    `Page, screen, or area: ${metadata.location || "Not provided"}`,
-    `When it happened: ${metadata.occurredAt || "Not provided"}`,
+    `Product or project: ${product || "Not provided"}`,
+    `Platform or environment: ${platform || "Not provided"}`,
+    `Priority: ${priority || "Medium"}`,
+    `Page, screen, or area: ${location || "Not provided"}`,
+    `When it happened: ${occurredAt || "Not provided"}`,
     "",
     "Steps or context:",
     (data.get("request_steps") || "").toString().trim(),
     "",
     "Expected result:",
-    metadata.expected || "Not provided",
+    expected || "Not provided",
     "",
     "Actual result:",
-    metadata.actual || "Not provided",
+    actual || "Not provided",
   ].join("\n");
 
   return {
     submissionType,
-    subject: `${requestType || "General Issue"}: ${metadata.product || "Website Submission"}`,
+    subject: `${requestType || "General Issue"}: ${product || "Website Submission"}`,
     details,
     requesterName: (data.get("request_name") || "").toString().trim(),
     requesterEmail: (data.get("request_email") || "").toString().trim(),
-    priority: metadata.priority,
-    source: "www.fhdevelopmentstudio.com",
-    pagePath: normalizeCurrentPath(),
-    pageTitle: document.title,
-    channel: "website-requests",
-    metadata,
+    requesterPhone: undefined,
+    priority: priority ? priority.toLowerCase() : "medium",
+    formId: form.id,
   };
 }
 
@@ -159,26 +168,10 @@ async function handleFormSubmit(form, buildPayload, successMessage) {
 
     setStatus(form, "Sending your submission to FH Development Studio...", false);
 
-    await postJson(`${ADMIN_API_BASE}/inquiries`, buildPayload(form));
+    await submitFhInquiry(buildPayload(form));
 
     setStatus(form, successMessage, false);
     form.reset();
-
-    if (window.location.protocol !== "file:") {
-      await postJson(
-        `${ADMIN_API_BASE}/page-events`,
-        {
-          path: normalizeCurrentPath(),
-          title: document.title,
-          source: "www.fhdevelopmentstudio.com",
-          eventType: "form_submit",
-          referrer: document.referrer || "",
-          userAgent: navigator.userAgent,
-          metadata: { formId: form.id },
-        },
-        true,
-      );
-    }
   } catch (error) {
     setStatus(
       form,
@@ -194,27 +187,28 @@ async function handleFormSubmit(form, buildPayload, successMessage) {
 }
 
 async function trackPageView() {
-  const path = normalizeCurrentPath();
-
-  if (!path) {
+  if (window.location.protocol === "file:") {
     return;
   }
 
   try {
-    await postJson(
-      `${ADMIN_API_BASE}/page-events`,
-      {
-        path,
+    await fetch(PAGE_EVENTS_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        path: window.location.pathname,
         title: document.title,
+        referrer: document.referrer || undefined,
         source: "www.fhdevelopmentstudio.com",
         eventType: "page_view",
-        referrer: document.referrer || "",
         userAgent: navigator.userAgent,
+        metadata: {
+          href: window.location.href,
+        },
       },
-      true,
-    );
-  } catch (_error) {
-    // Silent fail to avoid disrupting the public site experience.
+    });
+  } catch (error) {
+    console.error("FH page tracking failed", error);
   }
 }
 
@@ -247,6 +241,8 @@ document.addEventListener("DOMContentLoaded", () => {
       );
     });
   }
+});
 
-  trackPageView();
+window.addEventListener("load", async () => {
+  await trackPageView();
 });
