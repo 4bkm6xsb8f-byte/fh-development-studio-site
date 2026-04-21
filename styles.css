@@ -135,7 +135,7 @@ section[id],
 
 .brand { display: flex; align-items: center; gap: 14px; min-width: 0; }
 .brand-logo {
-  height: clamp(62px, 7vw, 76px);
+  height: clamp(93px, 10.5vw, 114px);
   width: auto;
 }
 
@@ -1314,7 +1314,7 @@ section[id],
   .service-card,
   .cta-card { padding: 20px; }
 
-  .brand-logo { height: clamp(52px, 12.8vw, 62px); }
+  .brand-logo { height: clamp(78px, 19.2vw, 93px); }
   .section { padding: 24px 0; }
   .footer-shell { padding: 26px 0 18px; }
   .footer-inner { padding: 16px 0 22px; }

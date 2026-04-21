@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0.00 0.00 768.00 512.00" width="768.00" height="512.00">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="100.00 160.00 568.00 192.00" width="568.00" height="192.00">
 <g stroke-width="2.00" fill="none" stroke-linecap="butt">
 <path stroke="#e4e3e5" vector-effect="non-scaling-stroke" d="M 12.38 0.00 L 1.48 0.12 C 1.16 0.13 0.91 0.38 0.91 0.69 L 0.91 510.51 C 0.91 510.85 1.19 511.13 1.53 511.13 L 766.62 511.13 C 766.86 511.13 767.06 510.93 767.06 510.68 L 767.06 0.74 C 767.06 0.44 766.83 0.20 766.54 0.19 L 762.44 0.00"/>
 <path stroke="#8cc3eb" vector-effect="non-scaling-stroke" d="M 251.86 187.22 C 251.86 186.94 251.63 186.71 251.35 186.71 L 240.07 186.71 C 239.79 186.71 239.56 186.94 239.56 187.22 L 239.56 197.96 C 239.56 198.24 239.79 198.47 240.07 198.47 L 251.35 198.47 C 251.63 198.47 251.86 198.24 251.86 197.96 L 251.86 187.22"/>
