@@ -8,25 +8,78 @@ function setStatus(form, message, isError) {
   }
 
   status.textContent = message;
-  status.style.color = isError ? "#b42828" : "";
+  status.classList.toggle("is-error", Boolean(isError));
+  status.classList.toggle("is-success", Boolean(message) && !isError);
 }
 
-async function postJson(url, payload) {
-  const response = await fetch(url, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(payload),
-  });
+function clearStatus(form) {
+  setStatus(form, "", false);
+}
 
-  const data = await response.json().catch(() => ({}));
-
-  if (!response.ok) {
-    throw new Error(data?.error || "Submission failed.");
+function getFieldLabel(field) {
+  const id = field.getAttribute("id");
+  if (!id) {
+    return field.getAttribute("name") || "This field";
   }
 
-  return data;
+  const label = document.querySelector(`label[for="${id}"]`);
+  return label ? label.textContent.trim() : field.getAttribute("name") || "This field";
+}
+
+function getValidationMessage(field) {
+  const value = field.value.trim();
+
+  if (field.required && !value) {
+    return `${getFieldLabel(field)} is required.`;
+  }
+
+  if (field.type === "email" && value && !field.validity.valid) {
+    return "Please enter a valid email address.";
+  }
+
+  return field.validationMessage || "";
+}
+
+function validateForm(form) {
+  const fields = Array.from(form.querySelectorAll("input, select, textarea"));
+  const messages = [];
+
+  fields.forEach((field) => {
+    field.setCustomValidity("");
+    const message = getValidationMessage(field);
+    if (message) {
+      field.setCustomValidity(message);
+      messages.push(message);
+    }
+  });
+
+  if (!messages.length) {
+    clearStatus(form);
+    return true;
+  }
+
+  const firstInvalidField = fields.find((field) => !field.checkValidity());
+  if (firstInvalidField) {
+    firstInvalidField.reportValidity();
+    firstInvalidField.focus();
+  }
+
+  setStatus(form, messages[0], true);
+  return false;
+}
+
+function attachFieldValidation(form) {
+  form.querySelectorAll("input, select, textarea").forEach((field) => {
+    const clearFieldError = () => {
+      field.setCustomValidity("");
+      if (form.querySelector(".form-status")?.classList.contains("is-error")) {
+        clearStatus(form);
+      }
+    };
+
+    field.addEventListener("input", clearFieldError);
+    field.addEventListener("change", clearFieldError);
+  });
 }
 
 async function submitFhInquiry(payload) {
@@ -52,11 +105,13 @@ async function submitFhInquiry(payload) {
     }),
   });
 
+  const data = await response.json().catch(() => ({}));
+
   if (!response.ok) {
-    throw new Error("Inquiry submission failed");
+    throw new Error(data?.error || "We could not send your submission right now. Please try again or email support@fhdevelopmentstudio.com.");
   }
 
-  return response.json();
+  return data;
 }
 
 function buildInquiryPayload(form) {
@@ -152,8 +207,7 @@ function buildRequestPayload(form) {
 }
 
 async function handleFormSubmit(form, buildPayload, successMessage) {
-  if (!form.reportValidity()) {
-    setStatus(form, "Please complete the required fields before continuing.", true);
+  if (!validateForm(form)) {
     return;
   }
 
@@ -205,7 +259,7 @@ async function trackPageView() {
         metadata: {
           href: window.location.href,
         },
-      },
+      }),
     });
   } catch (error) {
     console.error("FH page tracking failed", error);
@@ -221,23 +275,25 @@ document.addEventListener("DOMContentLoaded", () => {
   const requestForm = document.querySelector('[data-admin-form="request"]');
 
   if (inquiryForm) {
+    attachFieldValidation(inquiryForm);
     inquiryForm.addEventListener("submit", (event) => {
       event.preventDefault();
       handleFormSubmit(
         inquiryForm,
         buildInquiryPayload,
-        "Your inquiry was sent successfully. FH Development Studio will review it shortly.",
+        "Your inquiry was sent successfully. FH Development Studio will review it and follow up soon.",
       );
     });
   }
 
   if (requestForm) {
+    attachFieldValidation(requestForm);
     requestForm.addEventListener("submit", (event) => {
       event.preventDefault();
       handleFormSubmit(
         requestForm,
         buildRequestPayload,
-        "Your request was submitted successfully. The team can now review it in the admin workspace.",
+        "Your request was submitted successfully. The FH Development Studio team can now review it in the admin workspace.",
       );
     });
   }

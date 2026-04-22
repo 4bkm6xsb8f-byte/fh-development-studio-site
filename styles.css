@@ -139,7 +139,11 @@ section[id],
   width: auto;
 }
 
-.nav { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
+.nav { display: flex; align-items: center; gap: 28px; flex: 1 1 auto; min-width: 0; flex-wrap: wrap; }
+
+.nav-admin {
+  margin-left: auto;
+}
 
 .nav a {
   color: var(--text);
@@ -994,6 +998,10 @@ section[id],
   padding: 24px;
 }
 
+.form-card + .form-card {
+  margin-top: 20px;
+}
+
 .form-intro {
   color: var(--text-soft);
   line-height: 1.62;
@@ -1064,6 +1072,15 @@ section[id],
   min-height: 1.4em;
   color: var(--primary-dark);
   font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.form-status.is-error {
+  color: #b42828;
+}
+
+.form-status.is-success {
+  color: #1f7a34;
 }
 
 .form-section-stack {
@@ -1261,6 +1278,9 @@ section[id],
     gap: 12px 18px;
     align-items: flex-start;
   }
+  .nav-admin {
+    margin-left: auto;
+  }
   .nav a.active::after,
   .nav a:hover::after { bottom: -8px; }
 
@@ -1321,6 +1341,9 @@ section[id],
   .nav {
     gap: 10px 14px;
   }
+  .nav-admin {
+    margin-left: 0;
+  }
   .nav a {
     font-size: 0.92rem;
   }
@@ -1376,6 +1399,9 @@ section[id],
   .form-actions {
     align-items: stretch;
     flex-direction: column;
+  }
+  .form-card + .form-card {
+    margin-top: 24px;
   }
   .cta-stack {
     width: 100%;
