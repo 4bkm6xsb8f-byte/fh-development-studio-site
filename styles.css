@@ -1248,6 +1248,11 @@ section[id],
   font-size: 0.96rem;
 }
 
+.footer-links a:last-child {
+  flex-basis: 100%;
+  margin-top: 6px;
+}
+
 .footer-inner {
   min-height: 0;
   display: flex;
