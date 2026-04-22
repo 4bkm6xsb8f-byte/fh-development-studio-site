@@ -1240,6 +1240,8 @@ section[id],
   display: flex;
   flex-wrap: wrap;
   gap: 18px;
+  justify-content: flex-end;
+  text-align: right;
 }
 
 .footer-links a {
@@ -1251,6 +1253,7 @@ section[id],
 .footer-links a:last-child {
   flex-basis: 100%;
   margin-top: 6px;
+  text-align: right;
 }
 
 .footer-inner {
@@ -1418,7 +1421,7 @@ section[id],
   .footer-links {
     gap: 10px;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: flex-end;
   }
   .workmark-lg { font-size: 2.4rem; }
   .workmark-md { font-size: 2rem; }
