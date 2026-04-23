@@ -135,7 +135,7 @@ section[id],
 
 .brand { display: flex; align-items: center; gap: 14px; min-width: 0; }
 .brand-logo {
-  height: clamp(93px, 10.5vw, 114px);
+  height: clamp(65px, 7.35vw, 80px);
   width: auto;
 }
 
@@ -155,6 +155,11 @@ section[id],
   font-size: 0.95rem;
   position: relative;
   padding: 8px 0;
+}
+
+.nav-admin,
+.nav-admin:visited {
+  color: var(--accent-strong);
 }
 
 .nav a.active::after,
@@ -1006,6 +1011,17 @@ section[id],
   margin-top: 20px;
 }
 
+.forms-layout {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  align-items: start;
+}
+
+.forms-layout .form-card + .form-card {
+  margin-top: 0;
+}
+
 .form-intro {
   color: var(--text-soft);
   line-height: 1.62;
@@ -1085,6 +1101,13 @@ section[id],
 
 .form-status.is-success {
   color: #1f7a34;
+}
+
+.form-field input.is-invalid,
+.form-field select.is-invalid,
+.form-field textarea.is-invalid {
+  border-color: #c84545;
+  box-shadow: 0 0 0 3px rgba(200, 69, 69, 0.12);
 }
 
 .form-section-stack {
@@ -1343,7 +1366,7 @@ section[id],
   .service-card,
   .cta-card { padding: 20px; }
 
-  .brand-logo { height: clamp(78px, 19.2vw, 93px); }
+  .brand-logo { height: clamp(55px, 13.4vw, 65px); }
   .section { padding: 20px 0; }
   .footer-shell { padding: 26px 0 18px; }
   .footer-inner { padding: 16px 0 22px; }
@@ -1402,11 +1425,16 @@ section[id],
   .feature-grid,
   .service-grid { grid-template-columns: 1fr; }
   .app-showcase { grid-template-columns: 1fr; }
+  .forms-layout {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
   .form-actions {
     align-items: stretch;
     flex-direction: column;
   }
-  .form-card + .form-card {
+  .form-card + .form-card,
+  .forms-layout .form-card + .form-card {
     margin-top: 24px;
   }
   .cta-stack {

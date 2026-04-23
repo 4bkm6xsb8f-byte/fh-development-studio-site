@@ -16,6 +16,10 @@ function clearStatus(form) {
   setStatus(form, "", false);
 }
 
+function setFieldInvalidState(field, isInvalid) {
+  field.classList.toggle("is-invalid", Boolean(isInvalid));
+}
+
 function getFieldLabel(field) {
   const id = field.getAttribute("id");
   if (!id) {
@@ -47,6 +51,7 @@ function validateForm(form) {
   fields.forEach((field) => {
     field.setCustomValidity("");
     const message = getValidationMessage(field);
+    setFieldInvalidState(field, Boolean(message));
     if (message) {
       field.setCustomValidity(message);
       messages.push(message);
@@ -72,6 +77,7 @@ function attachFieldValidation(form) {
   form.querySelectorAll("input, select, textarea").forEach((field) => {
     const clearFieldError = () => {
       field.setCustomValidity("");
+      setFieldInvalidState(field, false);
       if (form.querySelector(".form-status")?.classList.contains("is-error")) {
         clearStatus(form);
       }
@@ -79,31 +85,47 @@ function attachFieldValidation(form) {
 
     field.addEventListener("input", clearFieldError);
     field.addEventListener("change", clearFieldError);
+    field.addEventListener("blur", () => {
+      const message = getValidationMessage(field);
+      field.setCustomValidity(message || "");
+      setFieldInvalidState(field, Boolean(message));
+      if (message) {
+        setStatus(form, message, true);
+      }
+    });
   });
 }
 
 async function submitFhInquiry(payload) {
-  const response = await fetch(INQUIRIES_URL, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      submissionType: payload.submissionType || "sales",
-      subject: payload.subject,
-      details: payload.details,
-      requesterName: payload.requesterName,
-      requesterEmail: payload.requesterEmail,
-      requesterPhone: payload.requesterPhone,
-      priority: payload.priority || "medium",
-      source: "www.fhdevelopmentstudio.com form",
-      pagePath: window.location.pathname,
-      pageTitle: document.title,
-      channel: "marketing-site-intake",
-      metadata: {
-        href: window.location.href,
-        formId: payload.formId || null,
-      },
-    }),
-  });
+  let response;
+
+  try {
+    response = await fetch(INQUIRIES_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        submissionType: payload.submissionType || "sales",
+        subject: payload.subject,
+        details: payload.details,
+        requesterName: payload.requesterName,
+        requesterEmail: payload.requesterEmail,
+        requesterPhone: payload.requesterPhone,
+        priority: payload.priority || "medium",
+        source: "www.fhdevelopmentstudio.com form",
+        pagePath: window.location.pathname,
+        pageTitle: document.title,
+        channel: "marketing-site-intake",
+        metadata: {
+          href: window.location.href,
+          formId: payload.formId || null,
+        },
+      }),
+    });
+  } catch (error) {
+    throw new Error(
+      "We could not reach the FH Development Studio intake service right now. Please try again in a moment or email support@fhdevelopmentstudio.com.",
+    );
+  }
 
   const data = await response.json().catch(() => ({}));
 
@@ -226,6 +248,10 @@ async function handleFormSubmit(form, buildPayload, successMessage) {
 
     setStatus(form, successMessage, false);
     form.reset();
+    form.querySelectorAll("input, select, textarea").forEach((field) => {
+      field.setCustomValidity("");
+      setFieldInvalidState(field, false);
+    });
   } catch (error) {
     setStatus(
       form,
