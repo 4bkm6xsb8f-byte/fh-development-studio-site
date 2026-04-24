@@ -131,12 +131,51 @@ section[id],
   align-items: center;
   justify-content: space-between;
   gap: 24px;
+  position: relative;
 }
 
 .brand { display: flex; align-items: center; gap: 14px; min-width: 0; }
 .brand-logo {
   height: clamp(65px, 7.35vw, 80px);
   width: auto;
+}
+
+.menu-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border: 1px solid rgba(17, 70, 166, 0.14);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 10px 24px rgba(13, 53, 128, 0.08);
+  color: var(--primary-dark);
+}
+
+.menu-toggle-bar {
+  display: block;
+  width: 20px;
+  height: 2px;
+  border-radius: 999px;
+  background: currentColor;
+  transition: transform 180ms ease, opacity 180ms ease;
+}
+
+.menu-toggle-bar + .menu-toggle-bar {
+  margin-top: 4px;
+}
+
+.menu-toggle[aria-expanded="true"] .menu-toggle-bar:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.menu-toggle[aria-expanded="true"] .menu-toggle-bar:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle[aria-expanded="true"] .menu-toggle-bar:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
 }
 
 .nav {
@@ -1370,11 +1409,40 @@ section[id],
   .section { padding: 20px 0; }
   .footer-shell { padding: 26px 0 18px; }
   .footer-inner { padding: 16px 0 22px; }
-  .nav {
-    gap: 10px 14px;
+  .header-inner {
+    min-height: 78px;
+    gap: 16px;
   }
+  .menu-toggle {
+    display: inline-flex;
+    flex-direction: column;
+    flex: 0 0 auto;
+  }
+  .nav {
+    display: none;
+    position: absolute;
+    top: calc(100% - 2px);
+    right: 0;
+    z-index: 1100;
+    width: min(260px, calc(100vw - 28px));
+    padding: 16px 18px;
+    border: 1px solid rgba(17, 70, 166, 0.12);
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 20px 40px rgba(13, 53, 128, 0.16);
+    gap: 12px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .nav.is-open { display: flex; }
   .nav a {
     font-size: 0.92rem;
+    width: 100%;
+    padding: 6px 0;
+  }
+  .nav a.active::after,
+  .nav a:hover::after {
+    bottom: -4px;
   }
   .hero-layout {
     gap: 24px;

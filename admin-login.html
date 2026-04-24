@@ -24,7 +24,12 @@
       <a class="brand" href="index.html" aria-label="FH Development Studio home">
         <img class="brand-logo" src="assets/fh-logo.svg" alt="FH Development Studio logo with FH monogram." />
       </a>
-      <nav class="nav" aria-label="Main navigation">
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation menu" data-menu-toggle>
+        <span class="menu-toggle-bar"></span>
+        <span class="menu-toggle-bar"></span>
+        <span class="menu-toggle-bar"></span>
+      </button>
+      <nav class="nav" id="site-nav" aria-label="Main navigation" data-mobile-nav>
         <a href="index.html">Home</a>
         <a href="services.html">Services</a>
         <a class="nav-admin active" aria-current="page" href="admin-login.html">Admin Login</a>

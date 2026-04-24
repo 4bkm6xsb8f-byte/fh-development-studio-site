@@ -1,5 +1,6 @@
 const PAGE_EVENTS_URL = "https://app.fhdevelopmentstudio.com/api/public/page-events";
 const INQUIRIES_URL = "https://app.fhdevelopmentstudio.com/api/public/inquiries";
+const MOBILE_MENU_BREAKPOINT = 720;
 
 function setStatus(form, message, isError) {
   const status = form.querySelector(".form-status");
@@ -18,6 +19,63 @@ function clearStatus(form) {
 
 function setFieldInvalidState(field, isInvalid) {
   field.classList.toggle("is-invalid", Boolean(isInvalid));
+}
+
+function setupMobileMenu() {
+  const toggle = document.querySelector("[data-menu-toggle]");
+  const nav = document.querySelector("[data-mobile-nav]");
+
+  if (!toggle || !nav) {
+    return;
+  }
+
+  const closeMenu = () => {
+    toggle.setAttribute("aria-expanded", "false");
+    nav.classList.remove("is-open");
+  };
+
+  const openMenu = () => {
+    toggle.setAttribute("aria-expanded", "true");
+    nav.classList.add("is-open");
+  };
+
+  toggle.addEventListener("click", () => {
+    const expanded = toggle.getAttribute("aria-expanded") === "true";
+    if (expanded) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  });
+
+  document.addEventListener("click", (event) => {
+    if (window.innerWidth > MOBILE_MENU_BREAKPOINT) {
+      return;
+    }
+
+    if (!nav.contains(event.target) && !toggle.contains(event.target)) {
+      closeMenu();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeMenu();
+      toggle.focus();
+    }
+  });
+
+  nav.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      closeMenu();
+    });
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > MOBILE_MENU_BREAKPOINT) {
+      closeMenu();
+    }
+  });
 }
 
 function getFieldLabel(field) {
@@ -296,6 +354,8 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll("[data-current-year]").forEach((node) => {
     node.textContent = String(new Date().getFullYear());
   });
+
+  setupMobileMenu();
 
   const inquiryForm = document.querySelector('[data-admin-form="inquiry"]');
   const requestForm = document.querySelector('[data-admin-form="request"]');
