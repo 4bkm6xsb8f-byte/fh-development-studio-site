@@ -553,6 +553,33 @@ section[id],
   justify-content: flex-start;
 }
 
+.app-downloads {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 12px;
+  align-items: center;
+  margin-top: 18px;
+  color: var(--text-soft);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.app-downloads strong {
+  color: var(--primary-dark);
+  margin-right: 2px;
+}
+
+.app-downloads a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.app-downloads a:hover,
+.app-downloads a:focus-visible {
+  text-decoration: underline;
+}
+
 .inline-actions {
   display: flex;
   gap: 14px;
@@ -1412,11 +1439,18 @@ section[id],
   .header-inner {
     min-height: 78px;
     gap: 16px;
+    justify-content: flex-start;
+  }
+  .brand {
+    flex: 1 1 auto;
+    min-width: 0;
   }
   .menu-toggle {
     display: inline-flex;
     flex-direction: column;
     flex: 0 0 auto;
+    margin-left: auto;
+    align-self: center;
   }
   .nav {
     display: none;
