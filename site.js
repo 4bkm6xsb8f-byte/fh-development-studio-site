@@ -4,6 +4,10 @@ const MOBILE_MENU_BREAKPOINT = 720;
 const PHOTOS_STORAGE_KEY = "fhds-photo-groups-v1";
 const PHOTO_MAX_EDGE = 1800;
 const PHOTO_JPEG_QUALITY = 0.86;
+const PHOTOS_MAX_PER_BATCH = 20;
+const PHOTOS_MAX_SINGLE_SIZE = 12 * 1024 * 1024;
+const PHOTOS_MAX_TOTAL_SIZE = 64 * 1024 * 1024;
+const PHOTOS_MAX_GROUP_NAME_LENGTH = 190;
 
 function setStatus(form, message, isError) {
   const status = form.querySelector(".form-status");
@@ -414,6 +418,50 @@ function loadImage(src) {
   });
 }
 
+function formatBytes(bytes) {
+  if (bytes >= 1024 * 1024) {
+    return (bytes / (1024 * 1024)).toFixed(1) + " MB";
+  }
+
+  if (bytes >= 1024) {
+    return Math.round(bytes / 1024) + " KB";
+  }
+
+  return bytes + " bytes";
+}
+
+function validatePhotoBatch(name, files) {
+  const trimmedName = name.trim();
+
+  if (!trimmedName) {
+    return "Please enter a group name before saving.";
+  }
+
+  if (trimmedName.length > PHOTOS_MAX_GROUP_NAME_LENGTH) {
+    return "Group names must stay under " + PHOTOS_MAX_GROUP_NAME_LENGTH + " characters.";
+  }
+
+  if (!files.length) {
+    return "Please choose one or more photos for this group.";
+  }
+
+  if (files.length > PHOTOS_MAX_PER_BATCH) {
+    return "You can upload up to " + PHOTOS_MAX_PER_BATCH + " photos at a time.";
+  }
+
+  const oversizedFile = files.find((file) => file.size > PHOTOS_MAX_SINGLE_SIZE);
+  if (oversizedFile) {
+    return oversizedFile.name + " is too large. Each photo must be 12 MB or smaller.";
+  }
+
+  const totalSize = files.reduce((sum, file) => sum + file.size, 0);
+  if (totalSize > PHOTOS_MAX_TOTAL_SIZE) {
+    return "This batch is too large at " + formatBytes(totalSize) + ". Keep grouped uploads at 64 MB or less.";
+  }
+
+  return "";
+}
+
 async function normalizePhoto(file) {
   const source = await readAsDataUrl(file);
 
@@ -573,13 +621,9 @@ function initPhotosPage() {
     const fileInput = form.querySelector('input[name="group_photos"]');
     const files = Array.from(fileInput?.files || []);
 
-    if (!name) {
-      setPhotoStatus("Please enter a group name before saving.", true);
-      return;
-    }
-
-    if (!files.length) {
-      setPhotoStatus("Please choose one or more photos for this group.", true);
+    const batchValidationMessage = validatePhotoBatch(name, files);
+    if (batchValidationMessage) {
+      setPhotoStatus(batchValidationMessage, true);
       return;
     }
 
@@ -596,7 +640,7 @@ function initPhotosPage() {
       const groups = loadPhotoGroups();
       groups.unshift({
         id: `group-${Date.now()}`,
-        name,
+        name: name.slice(0, PHOTOS_MAX_GROUP_NAME_LENGTH),
         description,
         createdAt: new Date().toISOString(),
         photos,
