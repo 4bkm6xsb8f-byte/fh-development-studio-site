@@ -1,9 +1,6 @@
 const PAGE_EVENTS_URL = "https://app.fhdevelopmentstudio.com/api/public/page-events";
 const INQUIRIES_URL = "https://app.fhdevelopmentstudio.com/api/public/inquiries";
 const MOBILE_MENU_BREAKPOINT = 720;
-const PHOTOS_STORAGE_KEY = "fhds-photo-groups-v1";
-const PHOTO_MAX_EDGE = 1800;
-const PHOTO_JPEG_QUALITY = 0.86;
 
 function setStatus(form, message, isError) {
   const status = form.querySelector(".form-status");
@@ -77,49 +74,6 @@ function setupMobileMenu() {
   window.addEventListener("resize", () => {
     if (window.innerWidth > MOBILE_MENU_BREAKPOINT) {
       closeMenu();
-    }
-  });
-}
-
-function injectPhotosLinks() {
-  const currentPage = window.location.pathname.split("/").pop() || "index.html";
-
-  document.querySelectorAll("[data-mobile-nav]").forEach((nav) => {
-    if (nav.querySelector('a[href="photos.html"]')) {
-      return;
-    }
-
-    const link = document.createElement("a");
-    link.href = "photos.html";
-    link.textContent = "Photos";
-
-    if (currentPage === "photos.html") {
-      link.classList.add("active");
-      link.setAttribute("aria-current", "page");
-    }
-
-    const adminLink = nav.querySelector(".nav-admin");
-    if (adminLink) {
-      nav.insertBefore(link, adminLink);
-    } else {
-      nav.appendChild(link);
-    }
-  });
-
-  document.querySelectorAll(".footer-links").forEach((footerLinks) => {
-    if (footerLinks.querySelector('a[href="photos.html"]')) {
-      return;
-    }
-
-    const link = document.createElement("a");
-    link.href = "photos.html";
-    link.textContent = "Photos";
-    const supportLink = footerLinks.querySelector('a[href="support.html"]');
-
-    if (supportLink) {
-      footerLinks.insertBefore(link, supportLink);
-    } else {
-      footerLinks.appendChild(link);
     }
   });
 }
@@ -396,231 +350,11 @@ async function trackPageView() {
   }
 }
 
-function readAsDataUrl(file) {
-  return new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.onload = () => resolve(String(reader.result || ""));
-    reader.onerror = () => reject(new Error(`Could not read ${file.name}.`));
-    reader.readAsDataURL(file);
-  });
-}
-
-function loadImage(src) {
-  return new Promise((resolve, reject) => {
-    const image = new Image();
-    image.onload = () => resolve(image);
-    image.onerror = () => reject(new Error("Could not process one of the selected images."));
-    image.src = src;
-  });
-}
-
-async function normalizePhoto(file) {
-  const source = await readAsDataUrl(file);
-
-  if (!file.type.startsWith("image/")) {
-    return source;
-  }
-
-  const image = await loadImage(source);
-  const longestEdge = Math.max(image.naturalWidth, image.naturalHeight);
-
-  if (longestEdge <= PHOTO_MAX_EDGE && source.length < 1_800_000) {
-    return source;
-  }
-
-  const scale = PHOTO_MAX_EDGE / longestEdge;
-  const width = Math.max(1, Math.round(image.naturalWidth * scale));
-  const height = Math.max(1, Math.round(image.naturalHeight * scale));
-  const canvas = document.createElement("canvas");
-  canvas.width = width;
-  canvas.height = height;
-  const context = canvas.getContext("2d");
-
-  if (!context) {
-    return source;
-  }
-
-  context.drawImage(image, 0, 0, width, height);
-
-  if (file.type === "image/png") {
-    return canvas.toDataURL("image/png");
-  }
-
-  return canvas.toDataURL("image/jpeg", PHOTO_JPEG_QUALITY);
-}
-
-function loadPhotoGroups() {
-  try {
-    const raw = window.localStorage.getItem(PHOTOS_STORAGE_KEY);
-    if (!raw) {
-      return [];
-    }
-
-    const parsed = JSON.parse(raw);
-    return Array.isArray(parsed) ? parsed : [];
-  } catch (error) {
-    console.error("Could not load saved photo groups", error);
-    return [];
-  }
-}
-
-function savePhotoGroups(groups) {
-  window.localStorage.setItem(PHOTOS_STORAGE_KEY, JSON.stringify(groups));
-}
-
-function formatGroupDate(value) {
-  try {
-    return new Intl.DateTimeFormat("en-US", {
-      month: "short",
-      day: "numeric",
-      year: "numeric",
-    }).format(new Date(value));
-  } catch (error) {
-    return value;
-  }
-}
-
-function renderPhotoGroups(root, groups) {
-  const list = root.querySelector("[data-photos-list]");
-  const empty = root.querySelector("[data-photos-empty]");
-  const summary = root.querySelector("[data-photos-summary]");
-
-  if (!list || !empty || !summary) {
-    return;
-  }
-
-  summary.innerHTML = groups.length
-    ? `<strong>${groups.length}</strong><span>${groups.length === 1 ? "photo group saved" : "photo groups saved"}</span>`
-    : `<strong>0</strong><span>No photo groups yet</span>`;
-
-  empty.hidden = Boolean(groups.length);
-  list.innerHTML = "";
-
-  groups.forEach((group) => {
-    const article = document.createElement("article");
-    article.className = "photos-group-card";
-    article.innerHTML = `
-      <div class="photos-group-head">
-        <div>
-          <h4>${group.name}</h4>
-          <div class="photos-group-meta">
-            <span class="photos-group-pill">${group.photos.length} ${group.photos.length === 1 ? "photo" : "photos"}</span>
-            <span class="photos-group-pill">Saved ${formatGroupDate(group.createdAt)}</span>
-          </div>
-        </div>
-        <button type="button" class="photos-delete" data-delete-group="${group.id}">Delete group</button>
-      </div>
-      ${group.description ? `<p class="photos-group-description">${group.description}</p>` : ""}
-      <div class="photos-grid">
-        ${group.photos
-          .map(
-            (photo) => `
-              <figure class="photos-frame">
-                <img src="${photo.dataUrl}" alt="${photo.name}" loading="lazy" />
-              </figure>
-            `,
-          )
-          .join("")}
-      </div>
-    `;
-    list.appendChild(article);
-  });
-}
-
-function setupPhotoDeletes(root, groups, onChange) {
-  root.querySelectorAll("[data-delete-group]").forEach((button) => {
-    button.addEventListener("click", () => {
-      const id = button.getAttribute("data-delete-group");
-      const nextGroups = groups.filter((group) => group.id !== id);
-      savePhotoGroups(nextGroups);
-      onChange(nextGroups);
-    });
-  });
-}
-
-function initPhotosPage() {
-  const root = document.querySelector("[data-photos-page]");
-  if (!root) {
-    return;
-  }
-
-  const form = root.querySelector("[data-photos-form]");
-  const status = root.querySelector("[data-photos-status]");
-
-  if (!form || !status) {
-    return;
-  }
-
-  const setPhotoStatus = (message, isError = false) => {
-    status.textContent = message;
-    status.classList.toggle("is-error", Boolean(isError));
-    status.classList.toggle("is-success", Boolean(message) && !isError);
-  };
-
-  const refresh = (groups) => {
-    renderPhotoGroups(root, groups);
-    setupPhotoDeletes(root, groups, refresh);
-  };
-
-  refresh(loadPhotoGroups());
-
-  form.addEventListener("submit", async (event) => {
-    event.preventDefault();
-
-    const data = new FormData(form);
-    const name = String(data.get("group_name") || "").trim();
-    const description = String(data.get("group_description") || "").trim();
-    const fileInput = form.querySelector('input[name="group_photos"]');
-    const files = Array.from(fileInput?.files || []);
-
-    if (!name) {
-      setPhotoStatus("Please enter a group name before saving.", true);
-      return;
-    }
-
-    if (!files.length) {
-      setPhotoStatus("Please choose one or more photos for this group.", true);
-      return;
-    }
-
-    try {
-      setPhotoStatus("Saving photo group...");
-
-      const photos = await Promise.all(
-        files.map(async (file) => ({
-          name: file.name,
-          dataUrl: await normalizePhoto(file),
-        })),
-      );
-
-      const groups = loadPhotoGroups();
-      groups.unshift({
-        id: `group-${Date.now()}`,
-        name,
-        description,
-        createdAt: new Date().toISOString(),
-        photos,
-      });
-
-      savePhotoGroups(groups);
-      refresh(groups);
-      form.reset();
-      setPhotoStatus("Photo group saved successfully.");
-    } catch (error) {
-      setPhotoStatus(
-        error instanceof Error ? error.message : "Something went wrong while saving this photo group.",
-        true,
-      );
-    }
-  });
-}
-
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll("[data-current-year]").forEach((node) => {
     node.textContent = String(new Date().getFullYear());
   });
 
-  injectPhotosLinks();
   setupMobileMenu();
 
   const inquiryForm = document.querySelector('[data-admin-form="inquiry"]');
@@ -649,8 +383,6 @@ document.addEventListener("DOMContentLoaded", () => {
       );
     });
   }
-
-  initPhotosPage();
 });
 
 window.addEventListener("load", async () => {
