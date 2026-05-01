@@ -1370,8 +1370,10 @@ section[id],
   .header-inner {
     min-height: auto;
     padding: 16px 0;
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
   }
 
   .nav {
@@ -1438,8 +1440,10 @@ section[id],
   .footer-inner { padding: 16px 0 22px; }
   .header-inner {
     min-height: 78px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
     gap: 16px;
-    justify-content: flex-start;
   }
   .brand {
     flex: 1 1 auto;
