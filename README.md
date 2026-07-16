@@ -2,6 +2,14 @@
 
 Static marketing website for FH Development Studio, hosted with GitHub Pages at `www.fhdevelopmentstudio.com`.
 
+## Related FH Development Studio repositories
+
+This site is one of three related repositories:
+
+- [`FHDevelopmentStudio`](https://github.com/4bkm6xsb8f-byte/FHDevelopmentStudio) — the umbrella monorepo that ties the site and admin app together.
+- `fh-development-studio-site` (this repository) — the public marketing site.
+- [`fh-development-studio-admin`](https://github.com/4bkm6xsb8f-byte/fh-development-studio-admin) — the internal Next.js operations app that this site's `admin-login.html` links into, and that receives this site's public inquiry and page-tracking submissions.
+
 ## Project Structure
 
 - `index.html` - Home page and primary service positioning.
