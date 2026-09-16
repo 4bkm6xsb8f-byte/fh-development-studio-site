@@ -3,14 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Admin Login | FH Development Studio</title>
+  <title>Links | FH Development Studio</title>
   <meta
     name="description"
-    content="Placeholder admin login page for the upcoming FH Development Studio admin app."
+    content="Review FH Development Studio daily links and other important destinations from one simple, organized page."
   />
-  <meta name="robots" content="noindex, nofollow" />
   <meta name="theme-color" content="#1146A6" />
-  <link rel="canonical" href="https://www.fhdevelopmentstudio.com/admin-login.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Links | FH Development Studio" />
+  <meta
+    property="og:description"
+    content="A simple links page for daily review destinations and other important FH Development Studio resources."
+  />
+  <meta property="og:url" content="https://www.fhdevelopmentstudio.com/links.html" />
+  <meta property="og:image" content="https://www.fhdevelopmentstudio.com/social-preview.svg" />
+  <meta property="og:image:alt" content="FH Development Studio brand preview with blue gradient background and service tagline." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Links | FH Development Studio" />
+  <meta
+    name="twitter:description"
+    content="A simple links page for daily review destinations and other important FH Development Studio resources."
+  />
+  <meta name="twitter:image" content="https://www.fhdevelopmentstudio.com/social-preview.svg" />
+  <link rel="canonical" href="https://www.fhdevelopmentstudio.com/links.html" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="manifest" href="site.webmanifest" />
   <link rel="icon" type="image/svg+xml" href="assets/fh-icon.svg" />
@@ -32,50 +47,38 @@
       <nav class="nav" id="site-nav" aria-label="Main navigation" data-mobile-nav>
         <a href="index.html">Home</a>
         <a href="services.html">Services</a>
-        <a href="links.html">Links</a>
-        <a class="nav-admin active" aria-current="page" href="admin-login.html">Admin Login</a>
+        <a class="active" aria-current="page" href="links.html">Links</a>
+        <a class="nav-admin" href="https://app.fhdevelopmentstudio.com/sign-in?callbackUrl=%2F">Admin Login</a>
       </nav>
     </div>
   </header>
 
   <main id="main-content">
-    <section class="page-banner" aria-labelledby="admin-login-title">
+    <section class="page-banner" aria-labelledby="links-page-title">
       <div class="container page-banner-inner">
-        <span class="eyebrow eyebrow-light">Admin</span>
-        <h1 id="admin-login-title">Admin access placeholder.</h1>
+        <span class="eyebrow eyebrow-light">Links</span>
+        <h1 id="links-page-title">A focused list of destinations to review quickly and consistently.</h1>
         <p>
-          This screen is ready for the upcoming admin app connection. The interface is present, but no authentication or backend workflow is attached yet.
+          Use this page as a simple jumping-off point for the pages that need regular evaluation and daily follow-through.
         </p>
       </div>
     </section>
 
-    <section class="section" aria-labelledby="admin-login-form-title">
+    <section class="section" aria-labelledby="daily-links-title">
       <div class="container">
         <div class="section-heading">
-          <span class="eyebrow">Login</span>
-          <h2 class="section-title" id="admin-login-form-title">Reserved for future admin access.</h2>
+          <span class="eyebrow">Daily</span>
+          <h2 class="section-title" id="daily-links-title">Daily evaluation links.</h2>
           <p class="section-intro">
-            Staff login now lives in the live admin app. This placeholder page remains as a reference page inside the marketing site.
+            Start here with the pages that need to be checked each day.
           </p>
         </div>
-        <div class="card form-card">
-          <div class="placeholder-panel">
-            <form class="inquiry-form" novalidate>
-              <div class="form-grid">
-                <div class="form-field">
-                  <label for="admin-email">Email</label>
-                  <input id="admin-email" name="admin_email" type="email" autocomplete="username" />
-                </div>
-                <div class="form-field">
-                  <label for="admin-password">Password</label>
-                  <input id="admin-password" name="admin_password" type="password" autocomplete="current-password" />
-                </div>
-              </div>
-              <div class="form-actions">
-                <a class="btn btn-primary" href="https://app.fhdevelopmentstudio.com/sign-in?callbackUrl=%2F">Continue to Admin Login</a>
-              </div>
-            </form>
-            <p class="placeholder-note">The live sign-in is hosted at app.fhdevelopmentstudio.com. I can wire the request forms and page tracking once the admin app’s intake and analytics endpoints are available.</p>
+        <div class="card links-card">
+          <div class="links-section">
+            <a class="links-item" href="https://apps.nekoosacottagehaven.com/facebook/login/" target="_blank" rel="noopener noreferrer">
+              <span class="links-item-title">Nekoosa Cottage Haven Facebook Login</span>
+              <span class="links-item-url">https://apps.nekoosacottagehaven.com/facebook/login/</span>
+            </a>
           </div>
         </div>
       </div>
