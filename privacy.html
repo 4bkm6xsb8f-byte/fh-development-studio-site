@@ -6,14 +6,14 @@
   <title>Privacy Policy | FH Development Studio</title>
   <meta
     name="description"
-    content="Read the FH Development Studio privacy policy for website inquiries, support communications, and data practices for our apps, including FHWebCheck, FHCams, FHNetworkMap, FHShot, and FHDarts."
+    content="Read the FH Development Studio privacy policy for website inquiries, support communications, and the data practices of every FH app and system, with a section for each one."
   />
   <meta name="theme-color" content="#1146A6" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Privacy Policy | FH Development Studio" />
   <meta
     property="og:description"
-    content="A plain-language privacy policy covering FH Development Studio websites, support communications, and product data practices."
+    content="A plain-language privacy policy covering FH Development Studio websites, support communications, and the data practices of every FH app and system."
   />
   <meta property="og:url" content="https://www.fhdevelopmentstudio.com/privacy.html" />
   <meta property="og:image" content="https://www.fhdevelopmentstudio.com/assets/og-image.png" />
@@ -24,7 +24,7 @@
   <meta name="twitter:title" content="Privacy Policy | FH Development Studio" />
   <meta
     name="twitter:description"
-    content="A plain-language privacy policy covering FH Development Studio websites, support communications, and product data practices."
+    content="A plain-language privacy policy covering FH Development Studio websites, support communications, and the data practices of every FH app and system."
   />
   <meta name="twitter:image" content="https://www.fhdevelopmentstudio.com/assets/og-image.png" />
   <link rel="canonical" href="https://www.fhdevelopmentstudio.com/privacy.html" />
@@ -165,12 +165,79 @@
                 If a user requests support, they may choose to share screenshots or game details for troubleshooting, and that information is used only to investigate the issue or respond to the request.
               </p>
             </div>
+            <div class="content-block" id="mydeas">
+              <h2>Mydeas</h2>
+              <p>
+                Mydeas is a note-taking app and web service that requires an account. Creating one with an email address stores that address, a display name, and a hashed password; signing in with Apple or Google instead stores a provider identifier and, when the provider supplies them, a name and email address.
+                The service stores what the user puts into it: notes, notebooks, tags, comments, tasks, attachments such as photos, videos, audio files, and PDFs, an optional profile photo, files imported from Evernote or Notion, and the text of any feedback sent from inside the app.
+                Mydeas collects no product-usage analytics, carries no advertising or advertising identifier, and does not ask for location. Since September 24, 2026 it sends crash and error reports to Sentry; those reports carry no user identity, no IP address, no screenshots, and no session replay.
+                Other companies process data on Mydeas's behalf in specific places: Stripe for billing on the web, AWS Textract to read text out of attached images when the account's own scan-text setting is turned on (off by default for accounts created since September 24, 2026), Anthropic for AI actions, which run only when the user turns them on and send only the text of the note being acted on, Apple and Google for sign-in, and Sentry for error reports.
+                Notes are stored on servers FH Development Studio operates, and the app keeps a local copy on the device so notes work offline; the note content in that local copy is encrypted on the device. Data is encrypted in transit. Note content is not end-to-end encrypted: it is stored in a form the service can read so that sync, search, sharing, and version history work, which means a small number of people operating the servers could technically access it.
+                A user can delete their account from the app or the website, export any single note as Markdown or HTML, and export the whole account as a ZIP file containing every note, its attachments, and a manifest.
+                The detailed policy for Mydeas is at <a href="https://www.mydeasapp.com/privacy">www.mydeasapp.com/privacy</a>; read that one for the full account of how Mydeas handles data.
+              </p>
+            </div>
+            <div class="content-block" id="barcrawl">
+              <h2>BarCrawl</h2>
+              <p>
+                BarCrawl is a bar discovery and review app that requires an account. An account stores an email address, a display name, a date of birth, and sign-in credentials, or a provider identifier when the user signs in with Apple or Google; a profile photo is optional. The date of birth exists to enforce a 21-and-over age gate.
+                The app uses device location while it is in use to show nearby bars. Raw coordinates are never stored. Only a coarse resolved area, such as a city or metro, is kept, and only with consent through a "Remember my area" setting in the app; turning that setting off deletes the stored area.
+                BarCrawl stores content the user creates: ratings, reviews, photos, direct messages, friend activity, and bar survey responses. Every uploaded photo is re-encoded before storage, which removes the metadata a camera writes into the file, including GPS coordinates.
+                The service also records device and push notification identifiers, and keeps its own record of screen views, sessions, sign-ups, sign-ins, account deletions, and security events, tied to the account while the user is signed in. Those records are not used to build advertising profiles and are not sold.
+                BarCrawl shows ads from bars and other advertisers. Ads are targeted on the resolved area only, never on precise location, and each campaign is capped at a set number of views per person per day. An ad click is stored with the account identifier for up to 90 days.
+                Other companies process data on BarCrawl's behalf: Google Maps and Google Places for maps and bar information, Apple and Google for sign-in, Firebase Cloud Messaging for push notifications, Resend for transactional email, Stripe for payments on bar and business subscriptions only (never for individual app users), Branch for referral links and install attribution, Sentry for error monitoring, and Cloudflare for delivering the website and API.
+                Data is stored on servers FH Development Studio operates. A user can delete their account from Settings in the app, and can request a copy of their data as a JSON file; verified requests are answered within 45 days.
+                The detailed policy for BarCrawl is at <a href="https://app.gobarcrawl.com/privacy">app.gobarcrawl.com/privacy</a>.
+              </p>
+            </div>
+            <div class="content-block" id="fhwordguess">
+              <h2>FHWordGuess</h2>
+              <p>
+                FHWordGuess is a word game with no account and no sign-up. It shows no ads, contains no tracking or analytics, and includes no third-party software kits of any kind.
+                Game history, statistics, and settings are stored on the device using Apple's SwiftData framework. If the player is signed in to iCloud, that same history is also synced through Apple's CloudKit into the player's own private iCloud database, so it is available on their other devices and survives a reinstall.
+                FH Development Studio cannot see or access that private iCloud data, and it is never sent to company-operated servers. If iCloud is unavailable — no iCloud account signed in, or iCloud turned off for the app — the game stores everything only on the device and keeps working; nothing already on the device is deleted. Deleting the app removes the copy on the device.
+                If a user requests support, they may choose to share screenshots or game details for troubleshooting, and that information is used only to investigate the issue or respond to the request.
+              </p>
+            </div>
+            <div class="content-block" id="tablehop">
+              <h2>TableHop</h2>
+              <p>
+                TableHop is a restaurant discovery app that requires an account. An account stores an email address, a display name, a date of birth, and sign-in credentials, or a provider identifier when the user signs in with Apple or Google; a profile photo is optional.
+                The app uses device location while it is in use to show nearby restaurants, and does not track location in the background. Raw coordinates are never stored. Only a coarse resolved area, such as a city or metro, is kept, and only with consent through a "Remember my area" setting; turning that setting off deletes the stored area.
+                TableHop stores content the user creates: ratings, reviews, photos, direct messages, friend activity, and survey responses. Every uploaded photo is re-encoded before storage, which removes the metadata a camera writes into the file, including GPS coordinates.
+                The service records device and push notification identifiers, and keeps its own record of screen views, sessions, sign-ups, sign-ins, account deletions, and security events, tied to the account while the user is signed in. It uses no third-party analytics, advertising pixels, or cross-site tracking. Ads in the app are targeted on the resolved area only, and an ad click is stored with the account identifier for up to 90 days.
+                Other companies process data on TableHop's behalf: Google Maps and Google Places for maps and restaurant information, Apple and Google for sign-in, Firebase Cloud Messaging for push notifications, Resend for transactional email, Stripe for payments on restaurant and business subscriptions only (never for individual app users), Branch for referral links, Sentry for error monitoring, and Cloudflare and Amazon Web Services for hosting and delivery.
+                Data is stored on servers FH Development Studio operates. A user can delete their account and request a copy of their data from inside the app.
+                The detailed policy for TableHop is at <a href="https://app.gotablehop.com/privacy">app.gotablehop.com/privacy</a>.
+              </p>
+            </div>
+            <div class="content-block" id="midwest-operations">
+              <h2>Midwest Operations</h2>
+              <p>
+                Midwest Operations is a client project. FH Development Studio built and maintains it on behalf of Midwest Equipment Dock and Lift Services, LLC, and it runs on servers operated for that company.
+                It is a staff-only office web app and field app with no public sign-up. It holds that company's own business records: client contact and project details, job and equipment records, technician notes, job photos, staff scheduling and time tracking, and leads submitted through the company's website.
+                The field app asks for device location while it is in use so a technician can find the nearest assigned job and open directions to it.
+                The system connects to Google Maps for geocoding and maps, Google Calendar and Google Sheets for scheduling and record sync, Gmail for the company's office inbox, and Facebook for publishing posts from the company's page.
+                Midwest Equipment Dock and Lift Services, LLC is responsible for its own customer data and decides how that data is used. If you are a customer of that company and have a privacy question or request, see <a href="https://www.midwestdockandlift.com/privacy">www.midwestdockandlift.com/privacy</a> and contact that company's office directly rather than FH Development Studio.
+              </p>
+            </div>
+            <div class="content-block" id="hospitality-intelligence-radar">
+              <h2>Hospitality Intelligence Radar</h2>
+              <p>
+                Hospitality Intelligence Radar is a private business tool operated by FH Development Studio, LLC. It has no public sign-up; an invited list of people may sign in with Google, Apple, or a local account.
+                For those users it stores the email address and name they sign in with, their role, and a log of sign-ins and of actions taken inside the tool so the work can be audited. Those usage records are deleted after 180 days. The tool uses no third-party analytics and shows no advertising, and it does not use location, contacts, photos, or an advertising identifier.
+                The subject matter of the tool is business information about hotel companies and the people who run them: names, job titles, business email addresses, and the public pages that information was read from. Each value is stored alongside its source. The tool is used for research and for preparing lists; it does not send messages. Anyone listed can ask to be removed or suppressed, and a suppression is permanent.
+                Other companies process data on the tool's behalf: Anthropic, whose service reads fetched public pages and proposes findings that are then re-checked against the source; Apple for push notifications and sign-in; Google for sign-in; and Cloudflare and Amazon Web Services for hosting and delivery.
+                Data is held on a server in the United States and in encrypted backups of that server. The iPhone app stores a sign-in token in the device keychain and nothing else, and push notifications carry a count and a change, never a person's name.
+                The detailed policy for this tool is at <a href="https://hospitalityintelligenceradar.com/privacy.html">hospitalityintelligenceradar.com/privacy.html</a>.
+              </p>
+            </div>
             <div class="content-block">
               <h2>Third-Party Services</h2>
               <p>
-                FH Development Studio products are not built around third-party advertising networks. If a future product version adds analytics,
-                cloud sync, camera-vendor integrations, or another external service, this policy should be updated to describe that change clearly,
-                including what data is involved and why the service is needed.
+                This varies by product, so check the section for the app you are using. The utility apps — FHWebCheck, FHCams, FHNetworkMap, FHShot, FHDarts, and FHWordGuess — use no third-party services at all; FHDarts and FHWordGuess sync through the user's own iCloud account, which is Apple's service and not a third party FH Development Studio sends data to.
+                Mydeas and BarCrawl do use outside companies, named in their sections above, for things like billing, sign-in, push notifications, email delivery, maps, and error reporting. BarCrawl also shows ads, targeted on a coarse resolved area rather than precise location.
+                No FH Development Studio product sells personal information or shares it with data brokers. If a product adds an outside service, this policy and that product's own policy should be updated to say what data is involved and why.
               </p>
             </div>
             <div class="content-block">
@@ -201,8 +268,10 @@
             <div class="content-block">
               <h2>User Control</h2>
               <p>
-                Users can manage or remove stored URLs within the app. Deleting the app may also remove locally stored data,
-                subject to device behavior, operating system settings, and backup configuration.
+                What a user can do depends on how the product stores data, so check the section for the app you are using.
+                In the apps with no account — FHWebCheck, FHCams, FHNetworkMap, FHShot, FHDarts, and FHWordGuess — the data lives on the device, can be edited or removed inside the app, and is removed when the app is deleted, subject to device behavior, operating system settings, and backup configuration.
+                FHDarts and FHWordGuess also sync to the user's own private iCloud database. That copy belongs to the user's Apple account, not to FH Development Studio; signing out of iCloud or turning iCloud off for the app stops syncing, and the iCloud copy is managed through the user's own Apple account settings.
+                In the apps with an account — Mydeas and BarCrawl — a user can update their profile, export a copy of their data, and delete the account from inside the app. Deleting the account removes the records tied to it, and each product's own policy sets out exactly what is removed and how long a request takes.
               </p>
             </div>
             <div class="content-block">

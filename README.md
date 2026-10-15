@@ -12,15 +12,47 @@ This site is one of three related repositories:
 
 ## Project Structure
 
-- `index.html` - Home page and primary service positioning.
+- `index.html` - Home page, positioning, and the flagship product cards that link into `apps.html`.
+- `apps.html` - Every shipped app, one section each, plus the `ItemList` structured data for them.
 - `services.html`, `process.html`, `support.html`, `privacy.html`, `terms.html` - Supporting site pages.
 - `brand-standards.html` and `discovery-workflow.html` - Brand and workflow reference pages.
 - `admin-login.html` - Redirect-style entry point for the admin experience.
-- `styles.css` - Shared site styling.
+- `styles.css` - Shared site styling, including the product-section and badge components used by `apps.html`.
 - `site.js` - Shared browser behavior.
-- `assets/` - Logos, icons, and product screenshots.
+- `assets/` - Logos, icons, and the social preview image (`og-image.png`).
+- `assets/apps/` - Per-app icons and screenshots, all processed to one size and format (see App Content below).
 - `CNAME` - GitHub Pages custom domain.
 - `sitemap.xml` and `robots.txt` - Search indexing metadata.
+
+The header nav and footer are hand-copied into every page; there is no include system. Adding or renaming a page means editing all of them.
+
+## App Content
+
+Each app appears in up to four places, and all of them have to agree:
+
+1. `apps.html` - the full section: icon, status and platform badges, description, "What it does", "What we built", store links, and screenshots.
+2. `index.html` - flagship cards for the lead products, and the "Also built and shipped" line.
+3. `support.html` - the app-support pointer list near the top, plus a question-and-answer section per app. FHShot and FHDarts use this page as their App Store support URL.
+4. `privacy.html` - a `content-block` per app with an `id` (for example `#fhshot`), so an app's store listing can deep-link to its own section. FHWordGuess uses this page as its App Store privacy URL.
+
+### Image spec
+
+All app imagery lives in `assets/apps/`, named `<app>-icon` or `<app>-<n>-<slug>`, written as both `.png` and `.webp` and referenced with `<picture>`:
+
+| Kind | Size | WebP quality |
+|---|---|---|
+| Icon | 256x256 | 90 |
+| Phone screenshot | 600x1304 | 80 |
+| Mac, web, or landscape screenshot | 1200x750 | 82 |
+
+Screenshots are fitted and then padded to the exact size on `#eef4fb` so every app's row lines up. Produce them with `magick` and `cwebp`:
+
+```bash
+magick <source>.png -resize 600x1304 -background '#eef4fb' -gravity center -extent 600x1304 -strip assets/apps/<app>-1-<slug>.png
+cwebp -q 80 assets/apps/<app>-1-<slug>.png -o assets/apps/<app>-1-<slug>.webp
+```
+
+Screenshots of client systems must use sample data only, never real customer records.
 
 ## Local Development
 
@@ -41,3 +73,16 @@ Changes are deployed by pushing the static files on `main` to GitHub. The files 
 - Update `sitemap.xml` when pages are added, removed, or renamed.
 - Keep canonical URLs and Open Graph metadata aligned with `www.fhdevelopmentstudio.com`.
 - Keep icon and logo references in sync with the assets in `assets/`.
+
+### When an app ships or changes
+
+Store status goes stale faster than anything else on this site. When an app is released, adds a platform, or gains a feature worth naming:
+
+- `apps.html` - update the status badge (`badge-live`, `badge-soon`, `badge-client`) and platform badges, add the store button, and add or update the entry in the `ItemList` structured data. Keep the positions in that list sequential.
+- `index.html` - update the flagship card badges and the "Also built and shipped" line.
+- `support.html` - add or update that app's question-and-answer section, and the pointer list near the top.
+- `privacy.html` - add or update that app's section, and bump "Last Updated".
+- Add the app's images to `assets/apps/` using the spec above.
+- Check the claims against the store, not from memory: `curl -s "https://itunes.apple.com/lookup?id=<app-id>"` for Apple, and the Play listing page for Android.
+
+Nothing on the site should claim an app is coming soon once it is live, and no feature should be described here before it ships.

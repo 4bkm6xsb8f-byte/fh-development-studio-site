@@ -6,7 +6,7 @@
   <title>Support and Inquiries | FH Development Studio</title>
   <meta
     name="description"
-    content="Get support for FH Development Studio apps, ask a privacy question, or start a conversation about building an app and the system behind it."
+    content="Get support for FH Development Studio apps, including Mydeas, BarCrawl, FHShot, FHDarts, FHWordGuess, FHWebCheck, FHCams, and FHNetworkMap, ask a privacy question, or start a conversation about building an app and the system behind it."
   />
   <meta name="theme-color" content="#1146A6" />
   <meta property="og:type" content="website" />
@@ -81,6 +81,46 @@
                 "@type": "Answer",
                 "text": "Yes. Tell us what you want people to be able to do, who will use it (customers, staff, or both), which platforms you have in mind, and any timing you already know."
               }
+            },
+            {
+              "@type": "Question",
+              "name": "What does the Mydeas free plan include, and how do I upgrade?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The free plan covers 500 notes, three signed-in devices, 100 MB of attachments, one AI action a day, and 20 images read for text a day. Reaching a limit stops you adding more; it never hides or deletes notes you already have. Paid plans are bought on the web at mydeasapp.com rather than inside the app, so the app only shows which plan your account is on."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Who can use BarCrawl?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "You need to be at least 21, or the legal drinking age where you are if that is higher. Every account records a date of birth before it can use the app, and signing in with Apple or Google still asks for one, because those services don't share it. An under-age attempt pauses further tries for 24 hours."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "My FHShot screenshots are blank. What is wrong?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "macOS needs Screen Recording permission before any app can capture the screen. Without it, the capture still saves, but the image comes out blank, black, or showing only your wallpaper. Open System Settings, go to Privacy & Security, then Screen Recording, turn FHShot on, and relaunch the app. FHShot also shows a warning row in its menu when the permission is missing, and clicking that row takes you there."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do I connect FHDarts to my board?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Switch the board on, keep it close by, and let FHDarts scan. There is no pairing step to work through and no GRAN account to create. A scan gives up after 30 seconds and says no board was found; to try again, open Settings, find the Board section, and tap Scan for board. FHDarts also looks again by itself when the board powers on, after a dropped connection, and when you come back to the app. FHDarts is an independent app and is not affiliated with, endorsed by, or sponsored by GRAN DARTS."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "I'm colour-blind. Can I still read the FHWordGuess tiles?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, and there is nothing to switch on. Every tile carries a shape as well as a colour: a checkmark for the right spot, a triangle for a letter that is in the word but in the wrong place, and a dash for a letter that is not in the word. The result never depends on colour alone. Settings explains this under Accessibility."
+              }
             }
           ]
         }
@@ -133,12 +173,14 @@
         </div>
         <div class="card about-card">
           <ul class="about-list" aria-label="Where to get support for each app">
-            <li><span class="check" aria-hidden="true"></span><span><strong>Mydeas:</strong> help and account questions at <a href="https://www.mydeasapp.com">mydeasapp.com</a> or <a href="mailto:support@mydeasapp.com">support@mydeasapp.com</a>.</span></li>
-            <li><span class="check" aria-hidden="true"></span><span><strong>BarCrawl:</strong> help for app users and bar owners at <a href="https://gobarcrawl.com">gobarcrawl.com</a>.</span></li>
-            <li><span class="check" aria-hidden="true"></span><span><strong>Midwest Operations:</strong> built for Midwest Dock and Lift staff, who get support through their own office.</span></li>
-            <li><span class="check" aria-hidden="true"></span><span><strong>FHWordGuess:</strong> see the <a href="https://4bkm6xsb8f-byte.github.io/wordguess-support/">FHWordGuess support page</a>.</span></li>
-            <li><span class="check" aria-hidden="true"></span><span><strong>FHShot:</strong> <a href="#contact">email us</a> or use the request form below.</span></li>
-            <li><span class="check" aria-hidden="true"></span><span><strong>FHDarts:</strong> coming soon. Questions before release can go to <a href="#contact">our support inbox</a>.</span></li>
+            <li><span class="check" aria-hidden="true"></span><span><strong>Mydeas:</strong> <a href="#mydeas-support-title">quick answers below</a>, plus help and account questions at <a href="https://www.mydeasapp.com">mydeasapp.com</a> or <a href="mailto:support@mydeasapp.com">support@mydeasapp.com</a>.</span></li>
+            <li><span class="check" aria-hidden="true"></span><span><strong>BarCrawl:</strong> <a href="#barcrawl-support-title">quick answers below</a>, plus help for app users and bar owners at <a href="https://gobarcrawl.com/support">gobarcrawl.com/support</a>.</span></li>
+            <li><span class="check" aria-hidden="true"></span><span><strong>TableHop:</strong> help for diners and restaurant owners at <a href="https://gotablehop.com/support.html">gotablehop.com/support</a>, or email <a href="mailto:support@gotablehop.com">support@gotablehop.com</a>.</span></li>
+            <li><span class="check" aria-hidden="true"></span><span><strong>Midwest Operations:</strong> a staff-only app, built for Midwest Dock and Lift. Staff get support through the Midwest office.</span></li>
+            <li><span class="check" aria-hidden="true"></span><span><strong>Hospitality Intelligence Radar:</strong> a private tool for an invited team, with its own <a href="https://hospitalityintelligenceradar.com/support.html">support page</a>.</span></li>
+            <li><span class="check" aria-hidden="true"></span><span><strong>FHWordGuess:</strong> <a href="#fhwordguess-support-title">quick answers below</a>, plus the <a href="https://4bkm6xsb8f-byte.github.io/wordguess-support/">FHWordGuess support page</a>.</span></li>
+            <li><span class="check" aria-hidden="true"></span><span><strong>FHShot:</strong> <a href="#fhshot-support-title">quick answers below</a>.</span></li>
+            <li><span class="check" aria-hidden="true"></span><span><strong>FHDarts:</strong> <a href="#fhdarts-support-title">quick answers below</a>.</span></li>
             <li><span class="check" aria-hidden="true"></span><span><strong>FHWebCheck:</strong> <a href="#fhwebcheck-title">quick answers below</a>.</span></li>
             <li><span class="check" aria-hidden="true"></span><span><strong>FHCams:</strong> <a href="#fhcams-support-title">quick answers below</a>.</span></li>
             <li><span class="check" aria-hidden="true"></span><span><strong>FHNetworkMap:</strong> <a href="#fhnetworkmap-support-title">quick answers below</a>.</span></li>
@@ -449,7 +491,380 @@
       </div>
     </section>
 
-    <section class="section section-tinted" aria-labelledby="fhwebcheck-title">
+    <section class="section section-tinted" aria-labelledby="mydeas-support-title">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Mydeas</span>
+          <h2 class="section-title" id="mydeas-support-title">Quick answers about notes, plans, and your account.</h2>
+          <p class="section-intro">
+            Mydeas keeps your notes in step across the devices you use. These are the questions we hear most. For anything about your own account, email support@mydeasapp.com and include the address you signed up with.
+          </p>
+        </div>
+        <div class="card content-card">
+          <div class="content-stack">
+            <div class="content-block">
+              <h2>Where do I get help, and which devices can I use?</h2>
+              <p>
+                Answers live at <a href="https://www.mydeasapp.com">mydeasapp.com</a>, and account questions go to
+                <a href="mailto:support@mydeasapp.com">support@mydeasapp.com</a>. Mydeas runs on iPhone, on the web, and on Android
+                through Google Play. A Mac app is built but not released yet, so there is nothing to download for the Mac today.
+              </p>
+            </div>
+            <div class="content-block">
+              <h2>I can't sign in. What should I check?</h2>
+              <p>
+                You can sign in with an email address and password, with Google, or with Apple. If you first created the account one way,
+                use that same way to get back in. A password reset link works once and expires after an hour, so if it has gone stale,
+                request a new one. On the free plan you can be signed in on three devices at once, and signing in on a fourth signs out the
+                oldest one. You can see and end your own sessions under Settings, in Signed-in devices.
+              </p>
+            </div>
+            <div class="content-block">
+              <h2>What does the free plan include, and how do I upgrade?</h2>
+              <p>
+                The free plan covers 500 notes, three signed-in devices, 100 MB of attachments, one AI action a day, and 20 images read for
+                text a day. Reaching a limit stops you adding more; it never hides or deletes notes you already have. Paid plans are bought
+                on the web at mydeasapp.com rather than inside the app, so the app only shows which plan your account is on.
+              </p>
+            </div>
+            <div class="content-block">
+              <h2>I imported from Evernote or Notion. Where did my notes go?</h2>
+              <p>
+                Import lives under Settings, and the Import into box lets you pick the notebook the notes land in. It starts on No notebook.
+                For a Notion or Markdown export, the top-level folders become notebooks unless you choose one yourself. An Evernote
+                <code>.enex</code> file has no folders to read, so those notes arrive unfiled unless you pick a notebook first.
+              </p>
+            </div>
+            <div class="content-block">
+              <h2>Can I write without a connection?</h2>
+              <p>
+                On iPhone and Android, yes. Edits are stored on the device and merge when you are back online, and you keep searching while
+                offline. On the web it is narrower: a note you already have open stays editable through a dropped connection and merges when
+                it returns, but opening the web app cold needs a connection. Either way, Mydeas merges changes rather than filing a second
+                conflicting copy for you to find later.
+              </p>
+            </div>
+            <div class="content-block">
+              <h2>Are the AI features and the text-in-scans search on?</h2>
+              <p>
+                Both are off until you switch them on, under Settings, in AI and scanned text. One exception is worth knowing: accounts
+                created before 24 September 2026 already had reading text in images turned on, because it was working for them before the
+                setting existed. It can be switched off in the same place.
+              </p>
+            </div>
+            <div class="content-block">
+              <h2>How do I get my notes out, or close my account?</h2>
+              <p>
+                Any note exports as Markdown or HTML, and your whole account exports as one ZIP file, on every plan, up to three full exports
+                an hour. Deleting is under Settings, in Account: you re-type your account email to confirm, and it takes effect straight away
+                with no undo, so export first if you want a copy. One more thing to know: notes are encrypted in transit, but Mydeas is not
+                end-to-end encrypted, because sync, search, and sharing need to read them.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="barcrawl-support-title">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">BarCrawl</span>
+          <h2 class="section-title" id="barcrawl-support-title">Quick answers for people out, and for bars.</h2>
+          <p class="section-intro">
+            BarCrawl shows you bars nearby with hours, photos, events, and messages to friends. If you own a bar, you can claim your listing
+            and manage it in the owner portal at <a href="https://portal.gobarcrawl.com">portal.gobarcrawl.com</a>. Full help lives at
+            <a href="https://gobarcrawl.com/support">gobarcrawl.com/support</a>.
+          </p>
+        </div>
+        <div class="card content-card">
+          <div class="content-stack">
+            <div class="content-block">
+              <h2>Who can use BarCrawl?</h2>
+              <p>
+                You need to be at least 21, or the legal drinking age where you are if that is higher. Every account records a date of birth
+                before it can use the app, and signing in with Apple or Google still asks for one, because those services don't share it.
+                An under-age attempt pauses further tries for 24 hours.
+              </p>
+            </div>
+            <div class="content-block">
+              <h2>Signing in, deleting your account, or getting a copy of your data.</h2>
+              <p>
+                You can sign in with an email address and password or with Google, and with Apple on iPhone and iPad. Forgotten passwords
+                reset by email. To delete the account, open Settings, scroll to the bottom, and tap Delete Account; it takes effect
+                immediately and cannot be undone. If you are the only owner of a bar with an active subscription, cancel that subscription in
+                the owner portal first. For a copy of your data, email
+                <a href="mailto:support@gobarcrawl.com">support@gobarcrawl.com</a> and you will get a machine-readable file within 45 days.
+              </p>
+            </div>
+            <div class="content-block">
+              <h2>Why does it ask for my location, and what is "Remember my area"?</h2>
+              <p>
+                Location is what puts bars near you at the top, and you can also search a different area by hand. Remember my area, in
+                Settings, keeps a coarse area such as your city or metro so local content still works when there is no live location fix.
+                It never stores your exact coordinates, it is off until you turn it on, and turning it off deletes the area already stored.
+              </p>
+            </div>
+            <div class="content-block">
+              <h2>A bar is missing, closed, or has the wrong details.</h2>
+              <p>
+                Listings are built from Google Maps and Google Places, from OpenStreetMap, and from public government data such as census
+                boundaries, state liquor-license registries, and municipal inspection records. Public records lag behind real life, so a
+                closed bar can linger and a new one can be absent. Use Add a bar on the home screen to add one, or report a listing from the
+                bar's page and tell us what is wrong. One report per bar per person is enough; it goes to a person to check.
+              </p>
+            </div>
+            <div class="content-block">
+              <h2>What happens to photos I add, and how do I report or block someone?</h2>
+              <p>
+                Every image is re-encoded before it is saved, so the data a camera writes into the file, including GPS coordinates, device
+                identifiers, and capture time, does not survive. Only the pixels do. Photos from app users are also reviewed by a person
+                before they appear on a bar's page. You can report a photo, rating, message, post, bar, person, or ad, and you can block
+                someone, which ends the friendship and stops messages and friend requests in both directions.
+              </p>
+            </div>
+            <div class="content-block">
+              <h2>Notifications and the ads you see.</h2>
+              <p>
+                Posts and specials near you has its own switch in Settings, so you can turn promotional notifications off and still get
+                messages and friend requests. Everything else is the single on-or-off switch your phone gives the app, in your phone's own
+                settings. Ads are aimed using your resolved area only, never your exact location and never a profile of you, and there is a
+                daily limit on how many times one campaign can reach you: three a day by default, and between one and ten if the bar sets it.
+                You can report an ad the same way you report anything else.
+              </p>
+            </div>
+            <div class="content-block">
+              <h2>I own a bar. How do I claim the listing?</h2>
+              <p>
+                Start at <a href="https://portal.gobarcrawl.com">portal.gobarcrawl.com</a> and claim the bar there. Claims are checked by a
+                person before access is granted, and we may call the number you give to confirm it, so add a number we can reach you on.
+                Once you have access you can add photos on any tier. The paid tier adds the menu, a live camera, surveys, guest messaging,
+                and your own posts, and billing is managed in the portal.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-tinted" aria-labelledby="fhshot-support-title">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">FHShot</span>
+          <h2 class="section-title" id="fhshot-support-title">Quick answers for screenshots from the menu bar.</h2>
+          <p class="section-intro">
+            FHShot puts screen capture one click away in the Mac menu bar and saves each shot as a PNG in a folder you choose. Most questions
+            are about permission, the save folder, and keyboard shortcuts.
+          </p>
+        </div>
+        <div class="card content-card">
+          <div class="content-stack">
+            <div class="content-block">
+              <h2>My screenshots are blank. What is wrong?</h2>
+              <p>
+                macOS needs Screen Recording permission before any app can capture the screen. Without it, the capture still saves, but the
+                image comes out blank, black, or showing only your wallpaper. Open System Settings, go to Privacy &amp; Security, then Screen
+                Recording, turn FHShot on, and relaunch the app. FHShot also shows a warning row in its menu when the permission is missing,
+                and clicking that row takes you there.
+              </p>
+            </div>
+            <div class="content-block">
+              <h2>Why does it ask me to pick a folder?</h2>
+              <p>
+                FHShot runs in the macOS App Sandbox, which the Mac App Store requires, so it cannot write anywhere until you grant it a
+                folder. It asks on your first capture, and then remembers that choice, so you only do it once. Open Save Folder and Choose
+                Save Folder are both in the menu if you want to look or move it later.
+              </p>
+            </div>
+            <div class="content-block">
+              <h2>How do keyboard shortcuts work?</h2>
+              <p>
+                No shortcut is set when you install FHShot; you assign the ones you want under Keyboard Shortcuts in the menu. A shortcut has
+                to include Command, Control, or Option, and Shift on its own is refused. While recording one, Delete clears it and Escape
+                leaves it as it was. If macOS already owns the combination you pick, the shortcut will simply never fire, so choose another.
+                The greyed-out shortcuts shown next to each capture mode are macOS's own screenshot shortcuts, not FHShot's.
+              </p>
+            </div>
+            <div class="content-block">
+              <h2>Can it copy to the clipboard, or wait before capturing?</h2>
+              <p>
+                Both are switches in the menu and both start off. Also Copy to Clipboard puts each shot on the clipboard as well as saving the
+                file, so you never get a copy instead of a file. The 5-Second Delay applies to full-screen captures only, because selection and
+                window captures wait for you anyway and macOS ignores a delay for them.
+              </p>
+            </div>
+            <div class="content-block">
+              <h2>What is the row of recent captures for?</h2>
+              <p>
+                FHShot keeps the last five captures in the menu as thumbnails. Click one to open it, or drag one straight into an email,
+                document, or chat, which hands over the real file. You can also reveal one in the Finder. The row is hidden until you have
+                taken a shot, and an entry drops off if you move, rename, or delete the file behind it.
+              </p>
+            </div>
+            <div class="content-block">
+              <h2>Where is the icon, and can it start with my Mac?</h2>
+              <p>
+                FHShot is a camera icon in the menu bar, with no Dock icon and no window. An app cannot choose where its icon sits, but you
+                can: hold Command and drag the icon along the menu bar, and macOS keeps it there. Open at Login is a switch in the menu.
+                macOS sometimes wants to approve that itself, in which case FHShot points you to Login Items in System Settings.
+              </p>
+            </div>
+            <div class="content-block">
+              <h2>What does it need, and what does it send?</h2>
+              <p>
+                FHShot needs macOS 13 Ventura or later. It has no account, collects no analytics, and has no network permission at all, so
+                screenshots cannot leave your Mac. If a save fails, it tells you with an alert rather than failing quietly. Cancelling a
+                selection capture with Escape saves nothing, which is deliberate rather than an error.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="fhdarts-support-title">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">FHDarts</span>
+          <h2 class="section-title" id="fhdarts-support-title">Quick answers for scoring, boards, and stats.</h2>
+          <p class="section-intro">
+            FHDarts reads throws from GRANBOARD Bluetooth dartboards, and it also scores games by hand when there is no board. Most questions
+            are about connecting, fixing a misread dart, and where the stats live.
+          </p>
+        </div>
+        <div class="card content-card">
+          <div class="content-stack">
+            <div class="content-block">
+              <h2>How do I connect to my board?</h2>
+              <p>
+                Switch the board on, keep it close by, and let FHDarts scan. There is no pairing step to work through and no GRAN account to
+                create. The first run asks how you want to score, and you can change that later in Settings. A scan gives up after 30 seconds
+                and says no board was found; to try again, open Settings, find the Board section, and tap Scan for board. FHDarts also looks
+                again by itself when the board powers on, after a dropped connection, and when you come back to the app. If it says the board
+                has forgotten this device, remove it in your iPhone's Bluetooth settings and tap Scan once more. FHDarts is an independent app
+                and is not affiliated with, endorsed by, or sponsored by GRAN DARTS.
+              </p>
+            </div>
+            <div class="content-block">
+              <h2>A dart bounced out, or the board read it wrong.</h2>
+              <p>
+                Tap Keypad and enter the dart by hand. The pad stays open for the rest of the turn, and Double and Treble apply to the next
+                dart only. If a score has already landed wrong, Undo takes back the last dart, and it reaches back across turns and legs
+                rather than only within the current turn.
+              </p>
+            </div>
+            <div class="content-block">
+              <h2>Can I play without a board?</h2>
+              <p>
+                Yes. In Settings, under Board, set Score with to By hand. Every dart is then entered on the keypad and Bluetooth is not used
+                at all, so the games, drills, and stats all work the same way.
+              </p>
+            </div>
+            <div class="content-block">
+              <h2>Which games and drills are included?</h2>
+              <p>
+                Match play covers 301, 501, 701, and 901, each with Double in and Double out switches, Cricket with an optional Cut-throat
+                mode, and Killer. The drills are Count-Up, Bob's 27, Around the Clock, Shanghai, Catch 40, 121 Checkout, and Halve-It, and
+                each one keeps your personal best.
+              </p>
+            </div>
+            <div class="content-block">
+              <h2>Can I play alone, and how do legs and sets work?</h2>
+              <p>
+                There is a computer opponent at five levels: Novice, Pub, League, County, and Pro. Handicaps are separate, and give an
+                individual player a different starting score so an uneven pair still get a fair game. You can set first to a number of legs,
+                and switch on sets as well, with up to eight players in a game. An unfinished match can be picked up again from the Play
+                screen or from History.
+              </p>
+            </div>
+            <div class="content-block">
+              <h2>How do I turn the spoken caller off?</h2>
+              <p>
+                In Settings, under Caller, switch off Call the scores. Call the remaining score and Tick on every dart are separate switches
+                in the same place. The caller uses the speech built into iOS, so it plays sound and never listens; FHDarts does not use the
+                microphone. If the voice sounds flat, iOS can download a better one under Settings, Accessibility, Spoken Content, Voices.
+              </p>
+            </div>
+            <div class="content-block">
+              <h2>Where are my stats, and do they move to another device?</h2>
+              <p>
+                Stats are built from every dart stored, and the Stats screen includes a heat map of where your darts land, with a picker for
+                each player. Settings has a Data section that exports all matches as a CSV or a JSON file, one row per dart. History syncs
+                through your own private iCloud account, which we cannot see or reach. Signed out of iCloud, everything still works and nothing
+                is lost: it simply stays on that device. Sync runs while the app is open, so a second device may need opening before it catches
+                up. FHDarts needs iOS 17 or later and runs on iPhone and iPad.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-tinted" aria-labelledby="fhwordguess-support-title">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">FHWordGuess</span>
+          <h2 class="section-title" id="fhwordguess-support-title">Quick answers for the five-letter word game.</h2>
+          <p class="section-intro">
+            FHWordGuess is a five-letter word puzzle for iPhone and iPad with no daily wait. There is also a
+            <a href="https://4bkm6xsb8f-byte.github.io/wordguess-support/">separate support page</a> for the app.
+          </p>
+        </div>
+        <div class="card content-card">
+          <div class="content-stack">
+            <div class="content-block">
+              <h2>How do I play?</h2>
+              <p>
+                Guess the word in six tries. Each guess has to be a real five-letter word. After every guess, each tile tells you whether that
+                letter is in the right spot, in the word but somewhere else, or not in the word at all.
+              </p>
+            </div>
+            <div class="content-block">
+              <h2>I'm colour-blind. Can I still read the tiles?</h2>
+              <p>
+                Yes, and there is nothing to switch on. Every tile carries a shape as well as a colour: a checkmark for the right spot, a
+                triangle for a letter that is in the word but in the wrong place, and a dash for a letter that is not in the word. The result
+                never depends on colour alone. Settings explains this under Accessibility.
+              </p>
+            </div>
+            <div class="content-block">
+              <h2>Do I have to wait for a new puzzle?</h2>
+              <p>
+                No. There is no once-a-day puzzle and no timer. When a round ends, tap New Game and play again as often as you like. Each round
+                picks a fresh word and avoids the ones you have had recently.
+              </p>
+            </div>
+            <div class="content-block">
+              <h2>Where is Hard Mode?</h2>
+              <p>
+                Open Settings with the gear icon on the game screen, and switch on Hard Mode under Gameplay. It makes every later guess use
+                the hints you have already uncovered. It takes effect on your next new game rather than part-way through the one you are
+                playing.
+              </p>
+            </div>
+            <div class="content-block">
+              <h2>Can I change how it looks?</h2>
+              <p>
+                Settings has two separate controls. Appearance, under Theme, follows your system setting or stays on Light or Dark. Style,
+                under Game Background, is either None or Gradient, and choosing Gradient lets you pick between Steel Dusk, Amber Glow, Ink
+                Fade, and Paper Mist. The background shows behind the board on the game screen only.
+              </p>
+            </div>
+            <div class="content-block">
+              <h2>Where are my statistics kept?</h2>
+              <p>
+                Games played, win rate, current and best streaks, and your guess distribution are stored on the device and sync through your
+                own iCloud account, which we cannot see or reach. With iCloud off, or signed out, the game works exactly the same and the stats
+                simply stay on that device. Sync runs while the app is open, so a second device may need opening before it catches up.
+                FHWordGuess has no account, no ads, and no third-party tracking, and it needs iOS 17 or later on iPhone or iPad.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="fhwebcheck-title">
       <div class="container">
         <div class="section-heading">
           <span class="eyebrow">FHWebCheck</span>
@@ -521,7 +936,7 @@
       </div>
     </section>
 
-    <section class="section" aria-labelledby="fhcams-support-title">
+    <section class="section section-tinted" aria-labelledby="fhcams-support-title">
       <div class="container">
         <div class="section-heading">
           <span class="eyebrow">FHCams</span>
@@ -557,7 +972,7 @@
       </div>
     </section>
 
-    <section class="section section-tinted" aria-labelledby="fhnetworkmap-support-title">
+    <section class="section" aria-labelledby="fhnetworkmap-support-title">
       <div class="container">
         <div class="section-heading">
           <span class="eyebrow">FHNetworkMap</span>

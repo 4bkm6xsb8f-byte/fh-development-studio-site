@@ -6,7 +6,7 @@
   <title>Apps | FH Development Studio</title>
   <meta
     name="description"
-    content="Apps we've designed and built for iPhone, Android, Mac, and the web, including Mydeas, BarCrawl, and Midwest Operations, and the systems behind them."
+    content="Apps we've designed and built for iPhone, Android, Mac, and the web, including Mydeas, BarCrawl, TableHop, and Midwest Operations, and the systems behind them."
   />
   <meta name="theme-color" content="#1146A6" />
   <meta property="og:type" content="website" />
@@ -34,140 +34,172 @@
   <link rel="icon" type="image/png" href="assets/fh-icon.png" sizes="32x32" />
   <link rel="apple-touch-icon" href="apple-touch-icon.png" />
   <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "Organization",
-          "@id": "https://www.fhdevelopmentstudio.com/#organization",
-          "name": "FH Development Studio",
-          "url": "https://www.fhdevelopmentstudio.com/",
-          "logo": "https://www.fhdevelopmentstudio.com/assets/fh-logo.svg",
-          "email": "support@fhdevelopmentstudio.com"
-        },
-        {
-          "@type": "ItemList",
-          "@id": "https://www.fhdevelopmentstudio.com/apps.html#apps",
-          "name": "Apps by FH Development Studio",
-          "url": "https://www.fhdevelopmentstudio.com/apps.html",
-          "itemListElement": [
-            {
-              "@type": "ListItem",
-              "position": 1,
-              "item": {
-                "@type": "SoftwareApplication",
-                "@id": "https://www.fhdevelopmentstudio.com/apps.html#mydeas",
-                "name": "Mydeas",
-                "operatingSystem": "iOS",
-                "applicationCategory": "ProductivityApplication",
-                "url": "https://apps.apple.com/us/app/mydeas-app/id6810789029",
-                "image": "https://www.fhdevelopmentstudio.com/assets/apps/mydeas-icon.png",
-                "author": {
-                  "@id": "https://www.fhdevelopmentstudio.com/#organization"
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://www.fhdevelopmentstudio.com/#organization",
+            "name": "FH Development Studio",
+            "url": "https://www.fhdevelopmentstudio.com/",
+            "logo": "https://www.fhdevelopmentstudio.com/assets/fh-logo.svg",
+            "email": "support@fhdevelopmentstudio.com"
+          },
+          {
+            "@type": "ItemList",
+            "@id": "https://www.fhdevelopmentstudio.com/apps.html#apps",
+            "name": "Apps by FH Development Studio",
+            "url": "https://www.fhdevelopmentstudio.com/apps.html",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                  "@type": "SoftwareApplication",
+                  "@id": "https://www.fhdevelopmentstudio.com/apps.html#mydeas",
+                  "name": "Mydeas",
+                  "operatingSystem": "iOS, Android, Web",
+                  "applicationCategory": "ProductivityApplication",
+                  "url": "https://apps.apple.com/us/app/mydeas-app/id6810789029",
+                  "image": "https://www.fhdevelopmentstudio.com/assets/apps/mydeas-icon.png",
+                  "author": {
+                    "@id": "https://www.fhdevelopmentstudio.com/#organization"
+                  }
+                }
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                  "@type": "SoftwareApplication",
+                  "@id": "https://www.fhdevelopmentstudio.com/apps.html#barcrawl",
+                  "name": "BarCrawl",
+                  "operatingSystem": "iOS, Android",
+                  "applicationCategory": "LifestyleApplication",
+                  "url": "https://apps.apple.com/us/app/barcrawl-find-your-next-round/id6804496564",
+                  "image": "https://www.fhdevelopmentstudio.com/assets/apps/barcrawl-icon.png",
+                  "author": {
+                    "@id": "https://www.fhdevelopmentstudio.com/#organization"
+                  }
+                }
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "item": {
+                  "@type": "SoftwareApplication",
+                  "@id": "https://www.fhdevelopmentstudio.com/apps.html#tablehop",
+                  "name": "TableHop",
+                  "operatingSystem": "Android",
+                  "applicationCategory": "FoodAndDrinkApplication",
+                  "url": "https://play.google.com/store/apps/details?id=com.tablehop.tablehop",
+                  "image": "https://www.fhdevelopmentstudio.com/assets/apps/tablehop-icon.png",
+                  "author": {
+                    "@id": "https://www.fhdevelopmentstudio.com/#organization"
+                  }
+                }
+              },
+              {
+                "@type": "ListItem",
+                "position": 4,
+                "item": {
+                  "@type": "SoftwareApplication",
+                  "@id": "https://www.fhdevelopmentstudio.com/apps.html#fhwordguess",
+                  "name": "FHWordGuess",
+                  "operatingSystem": "iOS, iPadOS",
+                  "applicationCategory": "GameApplication",
+                  "url": "https://apps.apple.com/us/app/fhwordguess/id6810256865",
+                  "image": "https://www.fhdevelopmentstudio.com/assets/apps/fhwordguess-icon.png",
+                  "author": {
+                    "@id": "https://www.fhdevelopmentstudio.com/#organization"
+                  }
+                }
+              },
+              {
+                "@type": "ListItem",
+                "position": 5,
+                "item": {
+                  "@type": "SoftwareApplication",
+                  "@id": "https://www.fhdevelopmentstudio.com/apps.html#fhdarts",
+                  "name": "FHDarts",
+                  "operatingSystem": "iOS, iPadOS",
+                  "applicationCategory": "SportsApplication",
+                  "url": "https://apps.apple.com/us/app/fhdarts/id6806005275",
+                  "image": "https://www.fhdevelopmentstudio.com/assets/apps/fhdarts-icon.png",
+                  "author": {
+                    "@id": "https://www.fhdevelopmentstudio.com/#organization"
+                  }
+                }
+              },
+              {
+                "@type": "ListItem",
+                "position": 6,
+                "item": {
+                  "@type": "SoftwareApplication",
+                  "@id": "https://www.fhdevelopmentstudio.com/apps.html#fhshot",
+                  "name": "FHShot",
+                  "operatingSystem": "macOS 13 or later",
+                  "applicationCategory": "UtilitiesApplication",
+                  "url": "https://apps.apple.com/us/app/fhshot/id6810843979",
+                  "image": "https://www.fhdevelopmentstudio.com/assets/apps/fhshot-icon.png",
+                  "author": {
+                    "@id": "https://www.fhdevelopmentstudio.com/#organization"
+                  }
+                }
+              },
+              {
+                "@type": "ListItem",
+                "position": 7,
+                "item": {
+                  "@type": "SoftwareApplication",
+                  "@id": "https://www.fhdevelopmentstudio.com/apps.html#fhwebcheck",
+                  "name": "FHWebCheck",
+                  "operatingSystem": "iOS",
+                  "applicationCategory": "UtilitiesApplication",
+                  "url": "https://apps.apple.com/us/app/fhwebcheck/id6762372696",
+                  "image": "https://www.fhdevelopmentstudio.com/assets/apps/fhwebcheck-icon.png",
+                  "author": {
+                    "@id": "https://www.fhdevelopmentstudio.com/#organization"
+                  }
+                }
+              },
+              {
+                "@type": "ListItem",
+                "position": 8,
+                "item": {
+                  "@type": "SoftwareApplication",
+                  "@id": "https://www.fhdevelopmentstudio.com/apps.html#fhcams",
+                  "name": "FHCams",
+                  "operatingSystem": "iOS",
+                  "applicationCategory": "SecurityApplication",
+                  "url": "https://apps.apple.com/us/app/fhcams/id6763098694",
+                  "image": "https://www.fhdevelopmentstudio.com/assets/apps/fhcams-icon.png",
+                  "author": {
+                    "@id": "https://www.fhdevelopmentstudio.com/#organization"
+                  }
+                }
+              },
+              {
+                "@type": "ListItem",
+                "position": 9,
+                "item": {
+                  "@type": "SoftwareApplication",
+                  "@id": "https://www.fhdevelopmentstudio.com/apps.html#fhnetworkmap",
+                  "name": "FHNetworkMap",
+                  "operatingSystem": "iOS",
+                  "applicationCategory": "UtilitiesApplication",
+                  "url": "https://apps.apple.com/us/app/fhnetworkmap/id6763646403",
+                  "image": "https://www.fhdevelopmentstudio.com/assets/apps/fhnetworkmap-icon.png",
+                  "author": {
+                    "@id": "https://www.fhdevelopmentstudio.com/#organization"
+                  }
                 }
               }
-            },
-            {
-              "@type": "ListItem",
-              "position": 2,
-              "item": {
-                "@type": "SoftwareApplication",
-                "@id": "https://www.fhdevelopmentstudio.com/apps.html#barcrawl",
-                "name": "BarCrawl",
-                "operatingSystem": "iOS",
-                "applicationCategory": "LifestyleApplication",
-                "url": "https://apps.apple.com/us/app/barcrawl-find-your-next-round/id6804496564",
-                "image": "https://www.fhdevelopmentstudio.com/assets/apps/barcrawl-icon.png",
-                "author": {
-                  "@id": "https://www.fhdevelopmentstudio.com/#organization"
-                }
-              }
-            },
-            {
-              "@type": "ListItem",
-              "position": 3,
-              "item": {
-                "@type": "SoftwareApplication",
-                "@id": "https://www.fhdevelopmentstudio.com/apps.html#fhwordguess",
-                "name": "FHWordGuess",
-                "operatingSystem": "iOS, iPadOS",
-                "applicationCategory": "GameApplication",
-                "url": "https://apps.apple.com/us/app/fhwordguess/id6810256865",
-                "image": "https://www.fhdevelopmentstudio.com/assets/apps/fhwordguess-icon.png",
-                "author": {
-                  "@id": "https://www.fhdevelopmentstudio.com/#organization"
-                }
-              }
-            },
-            {
-              "@type": "ListItem",
-              "position": 4,
-              "item": {
-                "@type": "SoftwareApplication",
-                "@id": "https://www.fhdevelopmentstudio.com/apps.html#fhshot",
-                "name": "FHShot",
-                "operatingSystem": "macOS 13 or later",
-                "applicationCategory": "UtilitiesApplication",
-                "url": "https://apps.apple.com/us/app/fhshot/id6810843979",
-                "image": "https://www.fhdevelopmentstudio.com/assets/apps/fhshot-icon.png",
-                "author": {
-                  "@id": "https://www.fhdevelopmentstudio.com/#organization"
-                }
-              }
-            },
-            {
-              "@type": "ListItem",
-              "position": 5,
-              "item": {
-                "@type": "SoftwareApplication",
-                "@id": "https://www.fhdevelopmentstudio.com/apps.html#fhwebcheck",
-                "name": "FHWebCheck",
-                "operatingSystem": "iOS",
-                "applicationCategory": "UtilitiesApplication",
-                "url": "https://apps.apple.com/us/app/fhwebcheck/id6762372696",
-                "image": "https://www.fhdevelopmentstudio.com/assets/apps/fhwebcheck-icon.png",
-                "author": {
-                  "@id": "https://www.fhdevelopmentstudio.com/#organization"
-                }
-              }
-            },
-            {
-              "@type": "ListItem",
-              "position": 6,
-              "item": {
-                "@type": "SoftwareApplication",
-                "@id": "https://www.fhdevelopmentstudio.com/apps.html#fhcams",
-                "name": "FHCams",
-                "operatingSystem": "iOS",
-                "applicationCategory": "SecurityApplication",
-                "url": "https://apps.apple.com/us/app/fhcams/id6763098694",
-                "image": "https://www.fhdevelopmentstudio.com/assets/apps/fhcams-icon.png",
-                "author": {
-                  "@id": "https://www.fhdevelopmentstudio.com/#organization"
-                }
-              }
-            },
-            {
-              "@type": "ListItem",
-              "position": 7,
-              "item": {
-                "@type": "SoftwareApplication",
-                "@id": "https://www.fhdevelopmentstudio.com/apps.html#fhnetworkmap",
-                "name": "FHNetworkMap",
-                "operatingSystem": "iOS",
-                "applicationCategory": "UtilitiesApplication",
-                "url": "https://apps.apple.com/us/app/fhnetworkmap/id6763646403",
-                "image": "https://www.fhdevelopmentstudio.com/assets/apps/fhnetworkmap-icon.png",
-                "author": {
-                  "@id": "https://www.fhdevelopmentstudio.com/#organization"
-                }
-              }
-            }
-          ]
-        }
-      ]
-    }
-  </script>
+            ]
+          }
+        ]
+      }
+    </script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -197,7 +229,7 @@
         <span class="eyebrow eyebrow-light">Apps</span>
         <h1 id="apps-title">The apps we've built, and what it took to make them work.</h1>
         <p>
-          Some are our own products and one is client work. For each, you'll find what it does, where it runs, whether it's out yet, and what we built behind the screen.
+          Most are our own products, one is client work, and one is a private tool we run for a single team. For each, you'll find what it does, where it runs, whether it's out yet, and what we built behind the screen.
         </p>
       </div>
     </section>
@@ -209,7 +241,9 @@
             <span class="jump-nav-label">Complete products</span>
             <a href="#mydeas">Mydeas</a>
             <a href="#barcrawl">BarCrawl</a>
+            <a href="#tablehop">TableHop</a>
             <a href="#midwest-operations">Midwest Operations</a>
+            <a href="#hospitality-intelligence-radar">Hospitality Intelligence Radar</a>
           </div>
           <div class="jump-nav-group">
             <span class="jump-nav-label">Apps for iPhone and Mac</span>
@@ -243,8 +277,8 @@
                 <li class="badge badge-live">Live on the App Store</li>
                 <li class="badge">iPhone</li>
                 <li class="badge">Web</li>
-                <li class="badge">Android: coming soon</li>
-                <li class="badge">Mac: in development</li>
+                <li class="badge">Android</li>
+                <li class="badge">Mac: in testing</li>
               </ul>
             </div>
           </header>
@@ -277,9 +311,10 @@
           </div>
           <div class="product-links">
             <a class="btn btn-primary" href="https://apps.apple.com/us/app/mydeas-app/id6810789029">Download on the App Store</a>
+            <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.mydeas.app">Get it on Google Play</a>
             <a class="btn btn-secondary btn-secondary-dark" href="https://www.mydeasapp.com">Visit mydeasapp.com</a>
           </div>
-          <p class="product-note">Android: built and submitted to Google Play, not public yet. A Mac app and a Chrome web clipper are in development. Notes are encrypted in transit; Mydeas is not end-to-end encrypted. <a href="https://www.mydeasapp.com/privacy">Privacy Policy</a></p>
+          <p class="product-note">A Mac app is built and signed but not released yet, and a Chrome web clipper is still in development. Notes are encrypted in transit; Mydeas is not end-to-end encrypted. <a href="https://www.mydeasapp.com/privacy">Privacy Policy</a></p>
           <div class="product-shots" aria-label="Mydeas screenshots">
             <figure class="app-shot">
               <picture>
@@ -329,7 +364,7 @@
               <ul class="badge-row" aria-label="Status and platforms">
                 <li class="badge badge-live">Live on the App Store</li>
                 <li class="badge">iPhone</li>
-                <li class="badge">Android: coming soon</li>
+                <li class="badge">Android</li>
                 <li class="badge">Web: owner portal</li>
               </ul>
             </div>
@@ -362,10 +397,11 @@
           </div>
           <div class="product-links">
             <a class="btn btn-primary" href="https://apps.apple.com/us/app/barcrawl-find-your-next-round/id6804496564">Download on the App Store</a>
+            <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.barcrawl.barcrawl">Get it on Google Play</a>
             <a class="btn btn-secondary btn-secondary-dark" href="https://gobarcrawl.com">Visit gobarcrawl.com</a>
             <a class="btn btn-secondary btn-secondary-dark" href="https://portal.gobarcrawl.com/login">Bar Owner Portal</a>
           </div>
-          <p class="product-note">Android version coming soon. BarCrawl is for adults 21 and over. Please drink responsibly. <a href="https://app.gobarcrawl.com/privacy">Privacy Policy</a></p>
+          <p class="product-note">BarCrawl is for adults 21 and over. Please drink responsibly. <a href="https://app.gobarcrawl.com/privacy">Privacy Policy</a></p>
           <div class="product-shots" aria-label="BarCrawl screenshots">
             <figure class="app-shot">
               <picture>
@@ -400,7 +436,93 @@
       </div>
     </section>
 
-    <section class="section product-section" id="midwest-operations" aria-labelledby="midwest-operations-title">
+    <section class="section product-section" id="tablehop" aria-labelledby="tablehop-title">
+      <div class="container">
+        <article class="card apps-card product-card">
+          <header class="product-head">
+            <picture>
+              <source srcset="assets/apps/tablehop-icon.webp" type="image/webp">
+              <img class="product-icon" src="assets/apps/tablehop-icon.png" alt="" width="96" height="96">
+            </picture>
+            <div>
+              <span class="eyebrow product-eyebrow">Consumer app and restaurant platform</span>
+              <h2 class="product-name" id="tablehop-title">TableHop</h2>
+              <p class="product-tagline">Find your next table, and give restaurants a direct line to the people nearby.</p>
+              <ul class="badge-row" aria-label="Status and platforms">
+                <li class="badge badge-live">Live on Google Play</li>
+                <li class="badge">Android</li>
+                <li class="badge badge-soon">iPhone: in review</li>
+                <li class="badge">Web: owner portal</li>
+              </ul>
+            </div>
+          </header>
+          <div class="product-body">
+            <div class="app-copy">
+              <p>TableHop shows the restaurants around you on a list and a map, with hours, ratings, price, photos, and how far away each one is. Participating restaurants can add menus, daily specials, a live camera, and a direct message line, so you can see what you are walking into before you go. A feed and a calendar carry tonight's specials and events. Restaurant owners claim and run their own listing in a separate portal.</p>
+              <h3 class="product-subhead">What it does</h3>
+              <ul class="about-list" aria-label="TableHop features">
+                <li><span class="check" aria-hidden="true"></span><span><strong>See what's nearby:</strong> a list and a map of restaurants around you, with hours, ratings, price, photos, and distance.</span></li>
+                <li><span class="check" aria-hidden="true"></span><span><strong>Look before you go:</strong> menus, a live camera, and a message line at participating restaurants, plus photos from other diners.</span></li>
+                <li><span class="check" aria-hidden="true"></span><span><strong>Know what's on tonight:</strong> specials, events, and news from nearby restaurants in a feed and a calendar.</span></li>
+                <li><span class="check" aria-hidden="true"></span><span><strong>Plan with friends:</strong> add friends, message them to pick a place, and save your favorites.</span></li>
+                <li><span class="check" aria-hidden="true"></span><span><strong>Keep it civil:</strong> report and block on people, photos, reviews, messages, posts, and ads.</span></li>
+              </ul>
+            </div>
+            <div class="product-build">
+              <h3 class="product-subhead">What we built</h3>
+              <ul class="build-list">
+                <li>One app for Android and iPhone, with sign in by email, Apple, or Google.</li>
+                <li>The API server and database behind it, with nearby search that keeps restaurant details ready so the map loads quickly.</li>
+                <li>Live messaging between friends and with participating restaurants, plus push notifications.</li>
+                <li>A restaurant owner portal for claiming a listing, menus, specials, photos, and campaigns.</li>
+                <li>Subscriptions and campaign payments for restaurants, handled through Stripe.</li>
+                <li>A staff dashboard for moderation and day-to-day operations.</li>
+                <li>A review queue for diner photos, which are re-encoded so camera data including location is removed.</li>
+                <li>Restaurant listings assembled from map data, public records, and public event listings, each credited to its source.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="product-links">
+            <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.tablehop.tablehop">Get it on Google Play</a>
+            <a class="btn btn-secondary btn-secondary-dark" href="https://gotablehop.com">Visit gotablehop.com</a>
+            <a class="btn btn-secondary btn-secondary-dark" href="https://portal.gotablehop.com/login">Restaurant Portal</a>
+          </div>
+          <p class="product-note">The iPhone version is with Apple for review. Menus, live cameras, and messaging are available at participating restaurants. <a href="https://app.gotablehop.com/privacy">Privacy Policy</a></p>
+          <div class="product-shots" aria-label="TableHop screenshots">
+            <figure class="app-shot">
+              <picture>
+                <source srcset="assets/apps/tablehop-1-map.webp" type="image/webp">
+                <img src="assets/apps/tablehop-1-map.png" alt="TableHop map view showing nearby restaurants as pins around the viewer, with a search radius slider." loading="lazy" width="600" height="1304">
+              </picture>
+              <figcaption><strong>The neighborhood</strong> Set a radius and see what sits inside it.</figcaption>
+            </figure>
+            <figure class="app-shot">
+              <picture>
+                <source srcset="assets/apps/tablehop-2-restaurant.webp" type="image/webp">
+                <img src="assets/apps/tablehop-2-restaurant.png" alt="A TableHop restaurant page with a hero photo, diner photos, the address, a star rating, and an open now badge." loading="lazy" width="600" height="1304">
+              </picture>
+              <figcaption><strong>Restaurant page</strong> Hours, photos, and ratings before you walk over.</figcaption>
+            </figure>
+            <figure class="app-shot">
+              <picture>
+                <source srcset="assets/apps/tablehop-3-feed.webp" type="image/webp">
+                <img src="assets/apps/tablehop-3-feed.png" alt="TableHop feed with filters for news, events, and daily specials, showing a restaurant's dinner special." loading="lazy" width="600" height="1304">
+              </picture>
+              <figcaption><strong>Tonight</strong> Specials, events, and news from nearby.</figcaption>
+            </figure>
+            <figure class="app-shot">
+              <picture>
+                <source srcset="assets/apps/tablehop-4-premium.webp" type="image/webp">
+                <img src="assets/apps/tablehop-4-premium.png" alt="A participating restaurant's TableHop page with buttons to call, view the menu, message the restaurant, watch its live camera, and get directions." loading="lazy" width="600" height="1304">
+              </picture>
+              <figcaption><strong>Participating restaurants</strong> Call, menu, message, and a live camera.</figcaption>
+            </figure>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section product-section section-tinted" id="midwest-operations" aria-labelledby="midwest-operations-title">
       <div class="container">
         <article class="card apps-card product-card">
           <header class="product-head">
@@ -506,6 +628,89 @@
             <figcaption><strong>Job on site</strong> Directions, a call, or close out the job in one tap.</figcaption>
           </figure>
       </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section product-section" id="hospitality-intelligence-radar" aria-labelledby="radar-title">
+      <div class="container">
+        <article class="card apps-card product-card">
+          <header class="product-head">
+            <picture>
+              <source srcset="assets/apps/radar-icon.webp" type="image/webp">
+              <img class="product-icon" src="assets/apps/radar-icon.png" alt="" width="96" height="96">
+            </picture>
+            <div>
+              <span class="eyebrow product-eyebrow">Private research and account platform</span>
+              <h2 class="product-name" id="radar-title">Hospitality Intelligence Radar</h2>
+              <p class="product-tagline">Every fact knows where it came from.</p>
+              <ul class="badge-row" aria-label="Status and platforms">
+                <li class="badge badge-client">Invite only</li>
+                <li class="badge">Web</li>
+                <li class="badge badge-soon">iPhone: in review</li>
+              </ul>
+            </div>
+          </header>
+          <div class="product-body">
+            <div class="app-copy">
+              <p>Hospitality Intelligence Radar is a private tool for a team that sells hotel renovation work. It tracks the largest hotel companies in North America, the people inside them who buy that work, and dated signs that a renovation is coming. Every value on screen records the page it came from, when it was checked, and how strong that evidence is. Research runs on its own overnight, and a separate step re-checks each finding against the source before it is saved. It is used behind a sign-in by an invited group, with an iPhone app for reading and acting between meetings.</p>
+              <h3 class="product-subhead">What it does</h3>
+              <ul class="about-list" aria-label="Hospitality Intelligence Radar features">
+                <li><span class="check" aria-hidden="true"></span><span><strong>Rank by what's happening:</strong> accounts sorted by dated buying signals, with how recent the newest one is.</span></li>
+                <li><span class="check" aria-hidden="true"></span><span><strong>Explain why now:</strong> a short brief on each account where every line links to the page it came from.</span></li>
+                <li><span class="check" aria-hidden="true"></span><span><strong>Show the week's calls:</strong> the accounts worth a call, with the buyer and how well their contact details are evidenced.</span></li>
+                <li><span class="check" aria-hidden="true"></span><span><strong>Say what changed:</strong> a personal digest of new signals since the last visit, with a way to mark it seen.</span></li>
+                <li><span class="check" aria-hidden="true"></span><span><strong>Keep the data honest:</strong> queues for verification, duplicates, and near-misses that clear themselves once the record is fixed.</span></li>
+              </ul>
+            </div>
+            <div class="product-build">
+              <h3 class="product-subhead">What we built</h3>
+              <ul class="build-list">
+                <li>The research platform and database, with every claim stored next to its source page and date.</li>
+                <li>A web workbench of about two dozen screens for finding accounts, preparing outreach, and fixing data.</li>
+                <li>A native iPhone app with its own sign-in and push alerts that never name a person.</li>
+                <li>Twelve watchers that run unattended, following leadership changes, filings, job postings, public bids, and news.</li>
+                <li>Research that reads public pages with AI to propose findings, and a second step that rejects anything the page does not support.</li>
+                <li>Sign-in with Google or Apple, an invite list, and roles that decide who can approve what.</li>
+                <li>Consent and readiness checks that run again at export, with every refusal recorded.</li>
+                <li>Backups checked by restoring them, health checks, and alerts when a job stops running.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="product-links">
+            <a class="btn btn-secondary btn-secondary-dark" href="https://hospitalityintelligenceradar.com">hospitalityintelligenceradar.com</a>
+          </div>
+          <p class="product-note">This is a private tool with no public sign-up, and the iPhone app is with Apple for review. The screens below use made-up sample companies and people. <a href="https://hospitalityintelligenceradar.com/privacy.html">Privacy Policy</a></p>
+          <div class="product-shots" aria-label="Hospitality Intelligence Radar screenshots">
+            <figure class="app-shot">
+              <picture>
+                <source srcset="assets/apps/radar-1-radar.webp" type="image/webp">
+                <img src="assets/apps/radar-1-radar.png" alt="The Radar screen listing sample hotel companies ranked by score, with hot, warm, and watch labels and the age of each newest signal." loading="lazy" width="600" height="1304">
+              </picture>
+              <figcaption><strong>Radar</strong> Accounts ranked by dated signals, sample data shown.</figcaption>
+            </figure>
+            <figure class="app-shot">
+              <picture>
+                <source srcset="assets/apps/radar-2-calls.webp" type="image/webp">
+                <img src="assets/apps/radar-2-calls.png" alt="The week's calls screen with sample companies, the buyer's name and title, their email address, and a note on how well that address is evidenced." loading="lazy" width="600" height="1304">
+              </picture>
+              <figcaption><strong>This week's calls</strong> The buyer, and how solid the contact details are.</figcaption>
+            </figure>
+            <figure class="app-shot">
+              <picture>
+                <source srcset="assets/apps/radar-3-account.webp" type="image/webp">
+                <img src="assets/apps/radar-3-account.png" alt="An account page showing a why now brief with source names and dates, a verification date, and two dated signals." loading="lazy" width="600" height="1304">
+              </picture>
+              <figcaption><strong>Why now</strong> Every line cites the page and date behind it.</figcaption>
+            </figure>
+            <figure class="app-shot">
+              <picture>
+                <source srcset="assets/apps/radar-4-changed.webp" type="image/webp">
+                <img src="assets/apps/radar-4-changed.png" alt="The what changed screen listing sample companies that became ready and the new dated signals beneath them." loading="lazy" width="600" height="1304">
+              </picture>
+              <figcaption><strong>What changed</strong> New since you last looked, nothing else.</figcaption>
+            </figure>
+          </div>
         </article>
       </div>
     </section>
@@ -687,7 +892,7 @@
               <h2 class="product-name" id="fhdarts-title">FHDarts</h2>
               <p class="product-tagline">Throw, and the board keeps score.</p>
               <ul class="badge-row" aria-label="Status and platforms">
-                <li class="badge badge-soon">Coming soon</li>
+                <li class="badge badge-live">Live on the App Store</li>
                 <li class="badge">iPhone</li>
                 <li class="badge">iPad</li>
               </ul>
@@ -701,6 +906,7 @@
                 <li><span class="check" aria-hidden="true"></span><span><strong>Match play:</strong> 301, 501, 701, and 901 with double in and double out, plus Cricket, for up to eight players.</span></li>
                 <li><span class="check" aria-hidden="true"></span><span><strong>A spoken caller:</strong> every score announced, along with what you need to finish.</span></li>
                 <li><span class="check" aria-hidden="true"></span><span><strong>Practice drills:</strong> Bob's 27, Around the Clock, Shanghai, and Count-Up, each with your personal best.</span></li>
+                <li><span class="check" aria-hidden="true"></span><span><strong>Play on your own:</strong> a computer opponent at five levels, plus handicaps so uneven players get a fair game.</span></li>
                 <li><span class="check" aria-hidden="true"></span><span><strong>Real numbers:</strong> 3-dart average, checkout rate, 180s, form over time, and a map of where your darts land.</span></li>
                 <li><span class="check" aria-hidden="true"></span><span><strong>Read from the oche:</strong> the score you need is the biggest thing on screen, and the screen stays awake.</span></li>
               </ul>
@@ -715,6 +921,10 @@
                 <li>A manual entry pad for bounce-outs, missed darts, and playing without a board.</li>
               </ul>
             </div>
+          </div>
+          <div class="product-links">
+            <a class="btn btn-primary" href="https://apps.apple.com/us/app/fhdarts/id6806005275">Download on the App Store</a>
+            <a class="btn btn-secondary btn-secondary-dark" href="support.html#fhdarts-support-title">FHDarts Support</a>
           </div>
           <p class="product-note">FHDarts is an independent app and is not affiliated with or endorsed by GRAN DARTS. <a href="privacy.html#fhdarts">Privacy Policy</a></p>
           <div class="product-shots" aria-label="FHDarts screenshots">
