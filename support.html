@@ -84,6 +84,14 @@
             },
             {
               "@type": "Question",
+              "name": "Which devices can I use Mydeas on?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Mydeas runs on iPhone, on the web, and on Android through Google Play. There is a Mac app as well: download it from mydeasapp.com/downloads/mac. It is signed and notarised by Apple, but it is not in the Mac App Store, so the download comes from the site rather than from Apple."
+              }
+            },
+            {
+              "@type": "Question",
               "name": "What does the Mydeas free plan include, and how do I upgrade?",
               "acceptedAnswer": {
                 "@type": "Answer",
@@ -120,6 +128,14 @@
               "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "Yes, and there is nothing to switch on. Every tile carries a shape as well as a colour: a checkmark for the right spot, a triangle for a letter that is in the word but in the wrong place, and a dash for a letter that is not in the word. The result never depends on colour alone. Settings explains this under Accessibility."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What are the FHWordGuess leaderboards and achievements?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "There are two Game Center leaderboards, one for your streak and one for your wins, plus seven achievements. They are optional and they use your own Game Center account, which is Apple's service rather than ours. If you are not signed in to Game Center, the game plays exactly the same and simply posts nothing."
               }
             }
           ]
@@ -175,7 +191,8 @@
           <ul class="about-list" aria-label="Where to get support for each app">
             <li><span class="check" aria-hidden="true"></span><span><strong>Mydeas:</strong> <a href="#mydeas-support-title">quick answers below</a>, plus help and account questions at <a href="https://www.mydeasapp.com">mydeasapp.com</a> or <a href="mailto:support@mydeasapp.com">support@mydeasapp.com</a>.</span></li>
             <li><span class="check" aria-hidden="true"></span><span><strong>BarCrawl:</strong> <a href="#barcrawl-support-title">quick answers below</a>, plus help for app users and bar owners at <a href="https://gobarcrawl.com/support">gobarcrawl.com/support</a>.</span></li>
-            <li><span class="check" aria-hidden="true"></span><span><strong>TableHop:</strong> help for diners and restaurant owners at <a href="https://gotablehop.com/support.html">gotablehop.com/support</a>, or email <a href="mailto:support@gotablehop.com">support@gotablehop.com</a>.</span></li>
+            <li><span class="check" aria-hidden="true"></span><span><strong>TableHop:</strong> an Android app today, with the iPhone app still in development. Help for diners and restaurant owners is at <a href="https://gotablehop.com/support.html">gotablehop.com/support</a>, or email <a href="mailto:support@gotablehop.com">support@gotablehop.com</a>.</span></li>
+            <li><span class="check" aria-hidden="true"></span><span><strong>CleanRecord.co:</strong> help with an account, a removal request, or a privacy request is at <a href="https://cleanrecord.co/support">cleanrecord.co/support</a>, or email <a href="mailto:support@cleanrecord.co">support@cleanrecord.co</a>.</span></li>
             <li><span class="check" aria-hidden="true"></span><span><strong>Midwest Operations:</strong> a staff-only app, built for Midwest Dock and Lift. Staff get support through the Midwest office.</span></li>
             <li><span class="check" aria-hidden="true"></span><span><strong>Hospitality Intelligence Radar:</strong> a private tool for an invited team, with its own <a href="https://hospitalityintelligenceradar.com/support.html">support page</a>.</span></li>
             <li><span class="check" aria-hidden="true"></span><span><strong>FHWordGuess:</strong> <a href="#fhwordguess-support-title">quick answers below</a>, plus the <a href="https://4bkm6xsb8f-byte.github.io/wordguess-support/">FHWordGuess support page</a>.</span></li>
@@ -507,7 +524,9 @@
               <p>
                 Answers live at <a href="https://www.mydeasapp.com">mydeasapp.com</a>, and account questions go to
                 <a href="mailto:support@mydeasapp.com">support@mydeasapp.com</a>. Mydeas runs on iPhone, on the web, and on Android
-                through Google Play. A Mac app is built but not released yet, so there is nothing to download for the Mac today.
+                through Google Play. There is a Mac app as well: download it from
+                <a href="https://www.mydeasapp.com/downloads/mac">mydeasapp.com/downloads/mac</a>. It is signed and notarised by Apple,
+                but it is not in the Mac App Store, so the download comes from the site rather than from Apple.
               </p>
             </div>
             <div class="content-block">
@@ -538,10 +557,39 @@
             <div class="content-block">
               <h2>Can I write without a connection?</h2>
               <p>
-                On iPhone and Android, yes. Edits are stored on the device and merge when you are back online, and you keep searching while
-                offline. On the web it is narrower: a note you already have open stays editable through a dropped connection and merges when
-                it returns, but opening the web app cold needs a connection. Either way, Mydeas merges changes rather than filing a second
-                conflicting copy for you to find later.
+                Yes, on every one of them. On iPhone and Android, edits are stored on the device and merge when you are back online, and you
+                keep searching while offline. The web app works offline too: it keeps a copy of itself on the device, so it opens and stays
+                usable with no connection and merges your changes once there is one. Either way, Mydeas merges changes rather than filing a
+                second conflicting copy for you to find later.
+              </p>
+            </div>
+            <div class="content-block">
+              <h2>Can I send something to Mydeas from another app?</h2>
+              <p>
+                Yes. Share to Mydeas from any app on your iPhone, and there is a home-screen widget for starting a note without opening the
+                app first. A shared web page becomes a note titled with the page. Shared text puts its first line in the title. Files arrive
+                as attachments. Anything you share while signed out is held and filed once you sign in, so nothing is lost.
+              </p>
+            </div>
+            <div class="content-block">
+              <h2>How do I see which notes point at the one I'm reading?</h2>
+              <p>
+                A note lists its backlinks: the other notes that link to it. That means you can follow a thread in both directions instead of
+                only forward, without keeping track of the links by hand.
+              </p>
+            </div>
+            <div class="content-block">
+              <h2>Can I keep a search I run often?</h2>
+              <p>
+                Yes. A search can be saved and reopened later, so a set of terms and filters you use regularly is there to tap rather than
+                something you rebuild each time.
+              </p>
+            </div>
+            <div class="content-block">
+              <h2>How do reminders on tasks work?</h2>
+              <p>
+                A task can carry a reminder, and it arrives in the app. If you connect your Google Calendar, Mydeas can write the reminder
+                there as well, so it sits alongside the rest of your day. Until you connect a calendar, reminders stay inside Mydeas.
               </p>
             </div>
             <div class="content-block">
@@ -585,6 +633,29 @@
                 You need to be at least 21, or the legal drinking age where you are if that is higher. Every account records a date of birth
                 before it can use the app, and signing in with Apple or Google still asks for one, because those services don't share it.
                 An under-age attempt pauses further tries for 24 hours.
+              </p>
+            </div>
+            <div class="content-block">
+              <h2>How do I plan a crawl, and can I send it to a friend?</h2>
+              <p>
+                Give the crawl a name, pick the bars you want, and put them in the order you plan to visit. You can then open the whole night
+                in your phone's maps app instead of looking each bar up one at a time. A crawl can also be shared, and the friend who opens it
+                saves their own copy, so changes they make don't move your version around.
+              </p>
+            </div>
+            <div class="content-block">
+              <h2>Why am I seeing game times in the app?</h2>
+              <p>
+                Sports schedules show up in the Feed and in the Events calendar, so you can see which games are on while you are deciding
+                where to go.
+              </p>
+            </div>
+            <div class="content-block">
+              <h2>I'm in a band or I DJ. Can I post my own dates?</h2>
+              <p>
+                Yes. Bands and DJs claim a profile and post events under their own by-line. It is $19 a month, it has its own portal at
+                <a href="https://entertainer.gobarcrawl.com">entertainer.gobarcrawl.com</a>, and what it includes is written up at
+                <a href="https://gobarcrawl.com/for-entertainers.html">gobarcrawl.com/for-entertainers.html</a>.
               </p>
             </div>
             <div class="content-block">
@@ -856,7 +927,15 @@
                 Games played, win rate, current and best streaks, and your guess distribution are stored on the device and sync through your
                 own iCloud account, which we cannot see or reach. With iCloud off, or signed out, the game works exactly the same and the stats
                 simply stay on that device. Sync runs while the app is open, so a second device may need opening before it catches up.
-                FHWordGuess has no account, no ads, and no third-party tracking, and it needs iOS 17 or later on iPhone or iPad.
+                FHWordGuess has no account of ours, no ads, and no third-party tracking, and it needs iOS 17 or later on iPhone or iPad.
+              </p>
+            </div>
+            <div class="content-block">
+              <h2>What are the leaderboards and achievements?</h2>
+              <p>
+                There are two Game Center leaderboards, one for your streak and one for your wins, plus seven achievements. They are optional
+                and they use your own Game Center account, which is Apple's service rather than ours. If you are not signed in to Game Center,
+                the game plays exactly the same and simply posts nothing.
               </p>
             </div>
           </div>
