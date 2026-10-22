@@ -210,6 +210,22 @@
                     "@id": "https://www.fhdevelopmentstudio.com/#organization"
                   }
                 }
+              },
+              {
+                "@type": "ListItem",
+                "position": 11,
+                "item": {
+                  "@type": "MobileApplication",
+                  "@id": "https://www.fhdevelopmentstudio.com/apps.html#fhbuildingsearch",
+                  "name": "FHBuildingSearch",
+                  "operatingSystem": "iOS",
+                  "applicationCategory": "BusinessApplication",
+                  "url": "https://fhbuildingsearch.fhdevelopmentstudio.com/support",
+                  "image": "https://www.fhdevelopmentstudio.com/assets/apps/fhbuildingsearch-icon.png",
+                  "author": {
+                    "@id": "https://www.fhdevelopmentstudio.com/#organization"
+                  }
+                }
               }
             ]
           }
@@ -273,6 +289,7 @@
             <a href="#fhwebcheck">FHWebCheck</a>
             <a href="#fhcams">FHCams</a>
             <a href="#fhnetworkmap">FHNetworkMap</a>
+            <a href="#fhbuildingsearch">FHBuildingSearch</a>
           </div>
         </nav>
       </div>
@@ -1305,6 +1322,86 @@
                 <img src="assets/apps/fhnetworkmap-4-edit.png" alt="FHNetworkMap edit screen for renaming a device and changing its group and icon." loading="lazy" width="600" height="1304">
               </picture>
               <figcaption><strong>Edit a device</strong> Rename, group, and restyle any device.</figcaption>
+            </figure>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section product-section" id="fhbuildingsearch" aria-labelledby="fhbuildingsearch-title">
+      <div class="container">
+        <article class="card apps-card product-card">
+          <header class="product-head">
+            <picture>
+              <source srcset="assets/apps/fhbuildingsearch-icon.webp" type="image/webp">
+              <img class="product-icon" src="assets/apps/fhbuildingsearch-icon.png" alt="" width="96" height="96">
+            </picture>
+            <div>
+              <span class="eyebrow product-eyebrow">Commercial property search</span>
+              <h2 class="product-name" id="fhbuildingsearch-title">FHBuildingSearch</h2>
+              <p class="product-tagline">Find commercial and industrial property across Wisconsin, with the numbers that decide whether it is worth a look.</p>
+              <ul class="badge-row" aria-label="Status and platforms">
+                <li class="badge badge-soon">iPhone: in TestFlight</li>
+                <li class="badge">iPhone</li>
+              </ul>
+            </div>
+          </header>
+          <div class="product-body">
+            <div class="app-copy">
+              <p>FHBuildingSearch is for people who buy, broker, or lease commercial and industrial buildings. It gathers listings, auctions, and public parcel records from across Wisconsin into one map and list, so a search that normally means a dozen county websites happens in one place. Each property carries its own history, so you can see when the price moved or when it came back on the market, and the investment math is built in rather than waiting in a spreadsheet.</p>
+              <h3 class="product-subhead">What it does</h3>
+              <ul class="about-list" aria-label="FHBuildingSearch features">
+                <li><span class="check" aria-hidden="true"></span><span><strong>Search a map or a list:</strong> filter by price, size, and sale type, search around where you are, and switch between the map and a list of the same results.</span></li>
+                <li><span class="check" aria-hidden="true"></span><span><strong>See what sits underneath:</strong> flood zones, opportunity zones, and neighborhood income shown as layers on the map.</span></li>
+                <li><span class="check" aria-hidden="true"></span><span><strong>Judge a property quickly:</strong> a deal score with its reasoning shown next to it, a price history, and a plain-language summary.</span></li>
+                <li><span class="check" aria-hidden="true"></span><span><strong>Run the numbers:</strong> cap rate, net operating income, cash-on-cash, debt coverage, and return calculators, with properties compared side by side and exported as a PDF.</span></li>
+                <li><span class="check" aria-hidden="true"></span><span><strong>Hear about it first:</strong> save a search and get an email or a push alert when something matches, and get a nudge when you drive near a property you saved.</span></li>
+              </ul>
+            </div>
+            <div class="product-build">
+              <h3 class="product-subhead">What we built</h3>
+              <ul class="build-list">
+                <li>A native SwiftUI app for iPhone with map, list, favorites, comparison, and off-market screens.</li>
+                <li>A cloud service that scans county, city, and federal sources on a schedule and merges what it finds into one record per property.</li>
+                <li>Change detection that keeps a history for each property and fires saved-search alerts by email and push.</li>
+                <li>Map layers drawn from public flood, opportunity-zone, and census data, with a price heat map over them.</li>
+                <li>Sign in with Apple, synced favorites and saved searches, and account deletion from inside the app.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="product-links">
+            <a class="btn btn-secondary btn-secondary-dark" href="https://fhbuildingsearch.fhdevelopmentstudio.com/support">Support</a>
+            <a class="btn btn-secondary btn-secondary-dark" href="https://fhbuildingsearch.fhdevelopmentstudio.com/privacy">Privacy Policy</a>
+          </div>
+          <p class="product-note">FHBuildingSearch is in TestFlight while we finish the first release; it is not on the App Store yet. Property information comes from public and published sources and should be confirmed before you act on it.</p>
+          <div class="product-shots" aria-label="FHBuildingSearch screenshots">
+            <figure class="app-shot">
+              <picture>
+                <source srcset="assets/apps/fhbuildingsearch-1-discover.webp" type="image/webp">
+                <img src="assets/apps/fhbuildingsearch-1-discover.png" alt="FHBuildingSearch discover screen showing priced property pins on a Milwaukee map with filters for sale type and price." loading="lazy" width="600" height="1304">
+              </picture>
+              <figcaption><strong>Discover</strong> Priced pins on the map, filtered the way you search.</figcaption>
+            </figure>
+            <figure class="app-shot">
+              <picture>
+                <source srcset="assets/apps/fhbuildingsearch-2-detail.webp" type="image/webp">
+                <img src="assets/apps/fhbuildingsearch-2-detail.png" alt="FHBuildingSearch property detail screen with price, size, deal score, and history." loading="lazy" width="600" height="1304">
+              </picture>
+              <figcaption><strong>Property detail</strong> The numbers, the deal score, and what has changed.</figcaption>
+            </figure>
+            <figure class="app-shot">
+              <picture>
+                <source srcset="assets/apps/fhbuildingsearch-3-analyze.webp" type="image/webp">
+                <img src="assets/apps/fhbuildingsearch-3-analyze.png" alt="FHBuildingSearch analyze hub listing the investment tools available for a property." loading="lazy" width="600" height="1304">
+              </picture>
+              <figcaption><strong>Analyze</strong> Investment tools in the app, not in a spreadsheet.</figcaption>
+            </figure>
+            <figure class="app-shot">
+              <picture>
+                <source srcset="assets/apps/fhbuildingsearch-4-calculators.webp" type="image/webp">
+                <img src="assets/apps/fhbuildingsearch-4-calculators.png" alt="FHBuildingSearch calculator screen computing cap rate and related returns for a property." loading="lazy" width="600" height="1304">
+              </picture>
+              <figcaption><strong>Calculators</strong> Cap rate, cash flow, and coverage on the spot.</figcaption>
             </figure>
           </div>
         </article>
