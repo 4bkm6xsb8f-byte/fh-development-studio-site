@@ -6,7 +6,7 @@
   <title>Page Not Found | FH Development Studio</title>
   <meta name="description" content="That page isn't here. Find our services, apps, process, and support from this page instead." />
   <meta name="theme-color" content="#1146A6" />
-  <meta name="robots" content="noindex, follow" />
+  <meta name="robots" content="noindex" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Page Not Found | FH Development Studio" />
   <meta property="og:description" content="That page isn't here. Find our services, apps, process, and support from this page instead." />
@@ -50,7 +50,8 @@
   <main id="main-content">
     <section class="page-banner" aria-labelledby="notfound-title">
       <div class="container page-banner-inner">
-        <span class="eyebrow">404</span>
+        <p class="notfound-code" aria-hidden="true">404</p>
+        <span class="eyebrow">Page not found</span>
         <h1 id="notfound-title">That page isn't here.</h1>
         <p>
           The link may be out of date, or the address may have a typo in it. Nothing is broken on your end &mdash; here is where everything lives.
@@ -68,25 +69,40 @@
           <span class="eyebrow">Where to go</span>
           <h2 class="section-title" id="notfound-paths-title">Pick the one closest to what you were after.</h2>
         </div>
-        <div class="grid-two cards-grid-tight">
-          <article class="card content-card">
-            <h3>Looking for an app of ours</h3>
-            <p>Every app we have shipped is on one page, with what it does, where it runs, and the store link. <a href="/apps.html">See all apps</a>.</p>
-          </article>
-          <article class="card content-card">
-            <h3>Need help with an app you already use</h3>
-            <p>Support for each app, including the ones with their own help site, starts here. <a href="/support.html">Get support</a>, or email <a href="mailto:support@fhdevelopmentstudio.com">support@fhdevelopmentstudio.com</a>.</p>
-          </article>
-          <article class="card content-card">
-            <h3>Thinking about having something built</h3>
-            <p>What we build, and how a project actually runs from the first conversation onward. <a href="/services.html">Services</a> and <a href="/process.html">process</a>.</p>
-          </article>
-          <article class="card content-card">
-            <h3>After a policy or a login</h3>
-            <p>Read the <a href="/privacy.html">privacy policy</a> or the <a href="/terms.html">terms of use</a>. Staff can sign in at <a href="https://app.fhdevelopmentstudio.com/sign-in?callbackUrl=%2F">the admin app</a>.</p>
-          </article>
+        <div class="notfound-tiles">
+          <a class="card notfound-tile" href="/apps.html">
+            <h3>Our apps</h3>
+            <p>Every app we have shipped, what it does, where it runs, and the store link.</p>
+            <span class="notfound-tile-go">See all apps</span>
+          </a>
+          <a class="card notfound-tile" href="/support.html">
+            <h3>Support</h3>
+            <p>Help for an app you already use, including the ones with their own help site.</p>
+            <span class="notfound-tile-go">Get support</span>
+          </a>
+          <a class="card notfound-tile" href="/services.html">
+            <h3>Services</h3>
+            <p>What we build: iOS, Android, Mac, and web apps, plus the systems behind them.</p>
+            <span class="notfound-tile-go">View services</span>
+          </a>
+          <a class="card notfound-tile" href="/process.html">
+            <h3>How a project runs</h3>
+            <p>From the first conversation onward, step by step.</p>
+            <span class="notfound-tile-go">See the process</span>
+          </a>
+          <a class="card notfound-tile" href="/privacy.html">
+            <h3>Privacy policy</h3>
+            <p>What we collect, what we don't, and how to reach us about it.</p>
+            <span class="notfound-tile-go">Read the policy</span>
+          </a>
+          <a class="card notfound-tile" href="/terms.html">
+            <h3>Terms of use</h3>
+            <p>The ground rules for using our site and apps.</p>
+            <span class="notfound-tile-go">Read the terms</span>
+          </a>
         </div>
-        <p class="cta-note">If you followed a link from our own site and landed here, tell us at <a href="mailto:support@fhdevelopmentstudio.com">support@fhdevelopmentstudio.com</a> and we'll fix it.</p>
+        <p class="notfound-staff">Staff can sign in at <a href="https://app.fhdevelopmentstudio.com/sign-in?callbackUrl=%2F">the admin app</a>.</p>
+        <p class="notfound-note">If you followed a link from our own site and landed here, tell us at <a href="mailto:support@fhdevelopmentstudio.com">support@fhdevelopmentstudio.com</a> and we'll fix it.</p>
       </div>
     </section>
   </main>
