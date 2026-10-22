@@ -435,8 +435,17 @@ section[id],
   text-transform: uppercase;
 }
 
-.eyebrow-light {
-  color: rgba(255, 255, 255, 0.84);
+/* Eyebrows sit on two kinds of ground, and the default colour only works on
+   one of them. On the blue banners, the hero and the CTA cards, --primary-mid
+   measures about 1.0-1.4:1 against the gradient behind it — effectively
+   invisible — so those contexts get white, which measures ~4.7:1 where the
+   centred text actually sits. .page-banner-light is excluded: it is the pale
+   variant, where the default colour is correct. */
+.eyebrow-light,
+.page-banner:not(.page-banner-light) .eyebrow,
+.hero .eyebrow,
+.cta-card .eyebrow {
+  color: #ffffff;
 }
 
 .card {
