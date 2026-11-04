@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /brand-standards.html
 
 Sitemap: https://www.fhdevelopmentstudio.com/sitemap.xml
