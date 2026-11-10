@@ -236,6 +236,41 @@ function buildInquiryPayload(form) {
   };
 }
 
+const SMS_CONSENT_STATEMENT =
+  "I agree to receive text message alerts from FH Development Studio at the mobile number I entered. Message frequency varies. Message and data rates may apply. Reply STOP to opt out, or HELP for help.";
+
+function buildSmsConsentPayload(form) {
+  const data = new FormData(form);
+  const name = (data.get("sms_name") || "").toString().trim();
+  const email = (data.get("sms_email") || "").toString().trim();
+  const phone = (data.get("sms_phone") || "").toString().trim();
+  const role = (data.get("sms_role") || "").toString().trim();
+  const consented = form.querySelector("#sms-consent-agree")?.checked === true;
+  const consentedAt = new Date().toISOString();
+
+  const details = [
+    "Staff SMS alert consent recorded from the public consent page.",
+    `Consent given: ${consented ? "yes" : "no"}`,
+    `Consent wording shown: ${SMS_CONSENT_STATEMENT}`,
+    `Mobile number: ${phone}`,
+    role ? `Role: ${role}` : null,
+    `Recorded at: ${consentedAt}`,
+  ]
+    .filter(Boolean)
+    .join("\n");
+
+  return {
+    submissionType: "sms_consent",
+    subject: `SMS alert consent - ${name}`,
+    details,
+    requesterName: name,
+    requesterEmail: email,
+    requesterPhone: phone,
+    priority: "low",
+    formId: "sms-consent-form",
+  };
+}
+
 function buildRequestPayload(form) {
   const data = new FormData(form);
   const requestType = (data.get("request_type") || "").toString().trim();
@@ -359,6 +394,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const inquiryForm = document.querySelector('[data-admin-form="inquiry"]');
   const requestForm = document.querySelector('[data-admin-form="request"]');
+  const smsConsentForm = document.querySelector('[data-admin-form="sms-consent"]');
 
   if (inquiryForm) {
     attachFieldValidation(inquiryForm);
@@ -368,6 +404,18 @@ document.addEventListener("DOMContentLoaded", () => {
         inquiryForm,
         buildInquiryPayload,
         "Your inquiry was sent successfully. FH Development Studio will review it and follow up soon.",
+      );
+    });
+  }
+
+  if (smsConsentForm) {
+    attachFieldValidation(smsConsentForm);
+    smsConsentForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      handleFormSubmit(
+        smsConsentForm,
+        buildSmsConsentPayload,
+        "Your consent was recorded. You can stop these texts at any time by replying STOP.",
       );
     });
   }

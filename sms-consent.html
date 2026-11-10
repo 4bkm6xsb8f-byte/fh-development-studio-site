@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Staff SMS Alert Consent | FH Development Studio</title>
+  <meta
+    name="description"
+    content="How FH Development Studio staff opt in to text message alerts, what those messages say, and how to stop them."
+  />
+  <meta name="robots" content="noindex" />
+  <meta name="theme-color" content="#1146A6" />
+  <link rel="canonical" href="https://www.fhdevelopmentstudio.com/sms-consent.html" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="manifest" href="site.webmanifest" />
+  <link rel="icon" type="image/svg+xml" href="assets/fh-icon.svg" />
+  <link rel="icon" type="image/png" href="assets/fh-icon.png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/" aria-label="FH Development Studio home">
+        <img class="brand-logo" src="assets/fh-logo.svg" alt="FH Development Studio logo with FH monogram." />
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation menu" data-menu-toggle>
+        <span class="menu-toggle-bar"></span>
+        <span class="menu-toggle-bar"></span>
+        <span class="menu-toggle-bar"></span>
+      </button>
+      <nav class="nav" id="site-nav" aria-label="Main navigation" data-mobile-nav>
+        <a href="/">Home</a>
+        <a href="services.html">Services</a>
+        <a href="apps.html">Apps</a>
+        <a href="links.html">Links</a>
+        <a class="nav-admin" href="https://app.fhdevelopmentstudio.com/sign-in?callbackUrl=%2F">Admin Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="page-banner page-banner-light" aria-labelledby="sms-consent-title">
+      <div class="container page-banner-inner">
+        <span class="eyebrow">Staff SMS Alerts</span>
+        <h1 id="sms-consent-title">How FH Development Studio staff opt in to text alerts.</h1>
+        <p>
+          This page is for the small group of people who run FH Development Studio. It explains what the
+          texts are, how a staff member agrees to receive them, and how to stop them at any time.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="sms-about-title">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">What These Messages Are</span>
+          <h2 class="section-title" id="sms-about-title">Alerts about work waiting in the admin workspace.</h2>
+        </div>
+        <div class="card content-card">
+          <div class="content-stack">
+            <div class="content-block">
+              <h2>Who receives them</h2>
+              <p>
+                Only the owners and staff of FH Development Studio who hold an account in the internal admin
+                workspace at app.fhdevelopmentstudio.com. Clients, app users, and people who contact us
+                through the website never receive a text from this number. There is no marketing list, and
+                there is nothing to sign up for here unless you work with us.
+              </p>
+            </div>
+            <div class="content-block">
+              <h2>What the messages say</h2>
+              <p>
+                A short alert that something needs attention: a new inquiry or support request has arrived,
+                or a job or backup needs looking at. A message looks like this: "FH Development Studio: 2 new
+                inquiries waiting for review. Reply STOP to opt out." Nothing promotional is sent to this
+                number, and no customer information is included in the text itself.
+              </p>
+            </div>
+            <div class="content-block">
+              <h2>Which number they come from</h2>
+              <p>
+                Texts are sent from <strong>+1 (888) 700-0964</strong>. Message frequency varies with how much
+                work comes in. Message and data rates may apply.
+              </p>
+            </div>
+            <div class="content-block">
+              <h2>How to stop them</h2>
+              <p>
+                Reply <strong>STOP</strong> to any message to opt out, and <strong>HELP</strong> to get help.
+                You can also email <a href="mailto:support@fhdevelopmentstudio.com">support@fhdevelopmentstudio.com</a>
+                and ask to be removed. Opting out takes effect immediately, and it does not affect anything
+                else about your account.
+              </p>
+            </div>
+            <div class="content-block">
+              <h2>What happens to your number</h2>
+              <p>
+                The mobile number you give here is used only to send these staff alerts. It is stored in the
+                FH Development Studio admin workspace, it is never sold, rented, or shared with anyone else,
+                and it is not used for marketing. See the <a href="privacy.html">Privacy Policy</a> for how we
+                handle information generally.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-tinted" aria-labelledby="sms-form-title">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Opt In</span>
+          <h2 class="section-title" id="sms-form-title">Agree to receive staff text alerts.</h2>
+          <p class="section-intro">
+            Fill this in yourself, with your own mobile number. Nobody can opt someone else in, and alerts
+            are off until you agree here.
+          </p>
+        </div>
+        <div class="card content-card">
+          <form class="inquiry-form" id="sms-consent-form" data-admin-form="sms-consent" novalidate>
+            <div class="form-grid">
+              <div class="form-field">
+                <label for="sms-name">Full Name</label>
+                <input id="sms-name" name="sms_name" type="text" autocomplete="name" required />
+              </div>
+              <div class="form-field">
+                <label for="sms-email">Work Email</label>
+                <input id="sms-email" name="sms_email" type="email" autocomplete="email" required />
+              </div>
+              <div class="form-field">
+                <label for="sms-phone">Mobile Number</label>
+                <input id="sms-phone" name="sms_phone" type="tel" autocomplete="tel" placeholder="(920) 555-0123" required />
+              </div>
+              <div class="form-field">
+                <label for="sms-role">Role (optional)</label>
+                <input id="sms-role" name="sms_role" type="text" placeholder="Owner, developer, support" />
+              </div>
+            </div>
+            <div class="form-field">
+              <label class="check-item" for="sms-consent-agree">
+                <input id="sms-consent-agree" name="sms_consent" type="checkbox" required />
+                <span>
+                  <strong>I agree to receive text message alerts from FH Development Studio</strong>
+                  <span>
+                    at the mobile number I entered above. Message frequency varies. Message and data rates may
+                    apply. Reply STOP to opt out, or HELP for help. Consent is not a condition of any purchase.
+                  </span>
+                </span>
+              </label>
+            </div>
+            <div class="form-actions">
+              <button class="btn btn-primary" type="submit">Record My Consent</button>
+            </div>
+            <p class="form-status" aria-live="polite"></p>
+            <p class="form-note">
+              Submitting this records your agreement, the wording you agreed to, and the date and time, in the
+              FH Development Studio admin workspace. You can withdraw it at any time by replying STOP to a
+              message or emailing <a href="mailto:support@fhdevelopmentstudio.com">support@fhdevelopmentstudio.com</a>.
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-shell">
+      <div class="footer-brand">
+        <strong>FH Development Studio</strong>
+        <p>iOS, Android, Mac, and web apps, plus the systems that make them work.</p>
+      </div>
+      <div class="footer-links" aria-label="Footer links">
+        <a href="/">Home</a>
+        <a href="services.html">Services</a>
+        <a href="apps.html">Apps</a>
+        <a href="links.html">Links</a>
+        <a href="process.html">Process</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms of Use</a>
+        <a href="support.html">Support</a>
+        <a href="https://app.fhdevelopmentstudio.com/sign-in?callbackUrl=%2F">Admin Login</a>
+        <a href="mailto:support@fhdevelopmentstudio.com">support@fhdevelopmentstudio.com</a>
+      </div>
+    </div>
+    <div class="container footer-inner">
+      Copyright&nbsp;&copy;&nbsp;<span data-current-year>2026</span>&nbsp;FH Development Studio. All rights reserved.
+    </div>
+  </footer>
+  <script src="site.js" defer></script>
+</body>
+</html>
