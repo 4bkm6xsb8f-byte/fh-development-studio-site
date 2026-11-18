@@ -209,6 +209,10 @@
                 Leaderboards and achievements are optional and run on Game Center, using the player's own Game Center account: the scores and achievements posted there are held by Apple under Apple's own privacy terms, and a player who is not signed in to Game Center can play the game in full without posting anything.
                 Game history, statistics, and settings are stored on the device using Apple's SwiftData framework. If the player is signed in to iCloud, that same history is also synced through Apple's CloudKit into the player's own private iCloud database, so it is available on their other devices and survives a reinstall.
                 FH Development Studio cannot see or access that private iCloud data, and it is never sent to company-operated servers. If iCloud is unavailable — no iCloud account signed in, or iCloud turned off for the app — the game stores everything only on the device and keeps working; nothing already on the device is deleted. Deleting the app removes the copy on the device.
+                When a player shares a puzzle or challenges a friend, the app builds a link and hands it to the share sheet; where it goes from there is the player's choice. The link holds the puzzle's number (or, for an Unlimited round, the code that recreates that round) and, if the player had finished the puzzle, how many tries it took. It holds no name, account, or device identifier, and FH Development Studio is not told that it was shared.
+                FHWordGuess also has a website at 4bkm6xsb8f-byte.github.io/wordguess-support, which hosts its support pages, a browser version of the daily puzzle, hints, past puzzles, and the pages that challenge links open. That site has no accounts, no cookies, no analytics, and no advertising, and FH Development Studio keeps no record of who visits it.
+                The site is served by GitHub Pages. Like any web host, GitHub receives a visitor's IP address and the address of the page requested, and may log them for security; FH Development Studio has no access to those logs. The puzzle, hints, past puzzles, and press pages load the Barlow typeface from Google Fonts, so the visitor's browser also contacts Google, which receives the IP address and browser details in the course of sending the font files.
+                A visitor who plays a daily puzzle on the site has their guesses for that puzzle saved in the browser's local storage, so the board is still there when they come back. Those guesses never leave the browser, FH Development Studio cannot read them, and clearing the site's data in the browser's settings removes them.
                 If a user requests support, they may choose to share screenshots or game details for troubleshooting, and that information is used only to investigate the issue or respond to the request.
               </p>
             </div>
@@ -259,7 +263,7 @@
             <div class="content-block">
               <h2>Third-Party Services</h2>
               <p>
-                This varies by product, so check the section for the app you are using. The utility apps — FHWebCheck, FHCams, FHNetworkMap, FHShot, FHDarts, and FHWordGuess — use no third-party services at all; FHDarts and FHWordGuess sync through the user's own iCloud account, and FHWordGuess posts optional leaderboard scores and achievements to the player's own Game Center account. Both are Apple services tied to the user's own Apple account, not third parties FH Development Studio sends data to.
+                This varies by product, so check the section for the app you are using. The utility apps — FHWebCheck, FHCams, FHNetworkMap, FHShot, FHDarts, and FHWordGuess — use no third-party services at all; FHDarts and FHWordGuess sync through the user's own iCloud account, and FHWordGuess posts optional leaderboard scores and achievements to the player's own Game Center account. Both are Apple services tied to the user's own Apple account, not third parties FH Development Studio sends data to. The one exception is the FHWordGuess website, which is hosted by GitHub Pages and loads a typeface from Google Fonts on some pages, as its section above describes; the app itself uses neither.
                 Mydeas, BarCrawl, TableHop, CleanRecord.co, FHBuildingSearch, Midwest Operations, and Hospitality Intelligence Radar do use outside companies, named in their sections above, for things like billing, sign-in, push notifications, email delivery, maps, AI features, public-data lookups, and error reporting. BarCrawl also shows ads, targeted on a coarse resolved area rather than precise location.
                 No FH Development Studio product sells personal information or shares it with data brokers. If a product adds an outside service, this policy and that product's own policy should be updated to say what data is involved and why.
               </p>
@@ -329,7 +333,7 @@
             </div>
             <div class="content-block">
               <h2>Last Updated</h2>
-              <p>November 17, 2026</p>
+              <p>November 18, 2026</p>
             </div>
           </div>
         </div>
