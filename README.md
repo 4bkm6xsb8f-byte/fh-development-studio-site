@@ -55,6 +55,17 @@ cwebp -q 80 assets/apps/<app>-1-<slug>.png -o assets/apps/<app>-1-<slug>.webp
 
 Screenshots of client systems must use sample data only, never real customer records.
 
+## Checks
+
+`scripts/check-site.py` verifies every internal link, anchor target, image and
+asset path resolves, and that `sitemap.xml` lists exactly the public pages with
+a `<lastmod>` each. CI runs it on every push, along with a check that the
+sitemap has been regenerated. Run it yourself before committing:
+
+```bash
+python3 scripts/check-site.py
+```
+
 ## Local Development
 
 This site has no package manager, build step, or test runner. You can open the HTML files directly, or serve the repository root when testing navigation and relative assets:

@@ -1,0 +1,40 @@
+name: CI
+
+# The site has no build step, so CI checks the things that actually break on a
+# static site: a link to a page that no longer exists, an anchor whose id was
+# renamed, an image referenced but never committed, and a sitemap that has
+# drifted from the pages on disk. All four were found by hand on 2026-11-18.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  structure:
+    name: Links, anchors, assets, sitemap
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python3 scripts/check-site.py
+
+      # The sitemap's lastmod dates come from git history, so a page edited
+      # without regenerating it goes stale silently.
+      - name: Sitemap is up to date
+        run: |
+          set -euo pipefail
+          scripts/build-sitemap.sh >/dev/null
+          if ! git diff --quiet -- sitemap.xml; then
+            echo "::error file=sitemap.xml::sitemap.xml is out of date — run scripts/build-sitemap.sh and commit the result"
+            git --no-pager diff -- sitemap.xml
+            exit 1
+          fi
+          echo "sitemap.xml is current."
