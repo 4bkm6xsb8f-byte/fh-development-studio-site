@@ -21,6 +21,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          # build-sitemap.sh derives <lastmod> from each file's last commit
+          # date. A shallow clone has one commit that appears to create every
+          # file, so every page would date to today and the check would always
+          # fail.
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
