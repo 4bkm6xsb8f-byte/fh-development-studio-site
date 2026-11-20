@@ -711,7 +711,13 @@ section[id],
   color: var(--primary-mid);
 }
 
-.content-stack { display: grid; gap: 20px; }
+.content-stack {
+  display: grid;
+  /* An unbreakable string (a long URL) in any one block would otherwise widen
+     the single grid column past the card and push every block off a phone. */
+  grid-template-columns: minmax(0, 1fr);
+  gap: 20px;
+}
 
 .content-card {
   padding: 24px;
@@ -762,6 +768,8 @@ section[id],
 .content-block {
   padding: 0 0 14px;
   border-bottom: 1px solid var(--line);
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .content-block:last-child {
