@@ -2,3 +2,10 @@
 
 # Local agent tooling
 .claude/
+
+# Env & secrets. This repo is public and is served as-is over HTTP by GitHub
+# Pages, so a dropped .env here would be world-readable at a guessable URL.
+.env
+.env.*
+*.env
+!*.env.example

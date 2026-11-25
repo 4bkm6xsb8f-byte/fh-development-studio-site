@@ -80,6 +80,13 @@ Then visit `http://localhost:8000`.
 
 Changes are deployed by pushing the static files on `main` to GitHub. The files in this repository are the files served publicly by GitHub Pages.
 
+**Cloudflare sits in front of GitHub Pages**, which has two consequences worth knowing before you debug a difference between what you committed and what you see live:
+
+- Responses carry `server: cloudflare` alongside `x-github-request-id`, and `cache-control: max-age=600`. A push is not visible instantly; the edge holds the old copy for up to ten minutes.
+- Cloudflare's Email Address Obfuscation rewrites addresses in the HTML at the edge. A `mailto:` link becomes `/cdn-cgi/l/email-protection#…` and a bare address in prose becomes `<a class="__cf_email__">[email&#160;protected]</a>`, with an `email-decode.min.js` script injected. **The served bytes are therefore not the committed bytes**, and a diff of live against local will always show this. It is not drift.
+
+One side effect: a bare address written in prose (rather than as a `mailto:` link) reads as a literal "[email protected]" to a visitor with JavaScript disabled.
+
 ## Maintenance Notes
 
 - Update `sitemap.xml` when pages are added, removed, or renamed — run `scripts/build-sitemap.sh`, which rebuilds it with a `<lastmod>` per page taken from that file's last commit date. Add new pages to the `PAGES` list in that script.
